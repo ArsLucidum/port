@@ -1,0 +1,104 @@
+[
+  {
+    "title": "E-commerce Platform Redesign",
+    "slug": "ecommerce-redesign",
+    "shortDescription": "Complete redesign of an e-commerce platform focusing on user experience and conversion optimization.",
+    "description": "This project involved a complete redesign of an e-commerce platform serving over 100,000 monthly users. The existing platform suffered from poor conversion rates, confusing navigation, and accessibility issues.",
+    "image": "assets/images/project-ecommerce.jpg",
+    "tags": ["UI/UX Design", "E-commerce", "User Research", "Prototyping"],
+    "categories": ["web", "research"],
+    "featured": true,
+    "year": "2024",
+    "role": "Lead UX Designer",
+    "duration": "6 months",
+    "team": "4 designers, 6 developers",
+    "results": {
+      "conversionIncrease": "+180%",
+      "abandonmentReduction": "-45%",
+      "mobileEngagement": "+65%",
+      "userSatisfaction": "4.8/5"
+    }
+  },
+  {
+    "title": "Mobile Banking App",
+    "slug": "mobile-banking-app",
+    "shortDescription": "Design of a secure and intuitive mobile banking application with focus on accessibility.",
+    "description": "Designed a comprehensive mobile banking application that prioritizes security, accessibility, and user experience for a major financial institution.",
+    "image": "assets/images/project-banking.jpg",
+    "tags": ["Mobile Design", "Banking", "Accessibility", "Security"],
+    "categories": ["mobile", "design-system"],
+    "featured": true,
+    "year": "2023",
+    "role": "Senior UX Designer",
+    "duration": "8 months",
+    "team": "3 designers, 8 developers",
+    "results": {
+      "userAdoption": "+120%",
+      "transactionTime": "-60%",
+      "supportTickets": "-40%",
+      "accessibilityScore": "98%"
+    }
+  },
+  {
+    "title": "Design System Creation",
+    "slug": "design-system-creation",
+    "shortDescription": "Comprehensive design system development for a SaaS platform including components and guidelines.",
+    "description": "Created a scalable design system for a rapidly growing SaaS platform, establishing consistency across multiple product lines and improving development efficiency.",
+    "image": "assets/images/project-design-system.jpg",
+    "tags": ["Design System", "Component Library", "Documentation", "Scalability"],
+    "categories": ["design-system", "web"],
+    "featured": true,
+    "year": "2023",
+    "role": "Lead Design Systems Designer",
+    "duration": "4 months",
+    "team": "2 designers, 4 developers",
+    "results": {
+      "developmentSpeed": "+75%",
+      "consistencyScore": "95%",
+      "designDebt": "-80%",
+      "teamSatisfaction": "4.9/5"
+    }
+  },
+  {
+    "title": "Healthcare Portal Redesign",
+    "slug": "healthcare-portal",
+    "shortDescription": "Redesigning a patient portal to improve accessibility and user experience for healthcare management.",
+    "description": "Redesigned a patient portal used by over 50,000 patients to manage appointments, view medical records, and communicate with healthcare providers.",
+    "image": "assets/images/project-healthcare.jpg",
+    "tags": ["Healthcare", "Accessibility", "Information Architecture", "User Research"],
+    "categories": ["web", "research"],
+    "featured": false,
+    "year": "2022",
+    "role": "UX Designer",
+    "duration": "5 months",
+    "team": "3 designers, 5 developers"
+  },
+  {
+    "title": "Food Delivery App Prototype",
+    "slug": "food-delivery-app",
+    "shortDescription": "Interactive prototype for a new food delivery service focusing on local restaurants and sustainability.",
+    "description": "Created an innovative food delivery app concept that connects users with local restaurants while promoting sustainable practices and reducing food waste.",
+    "image": "assets/images/project-food-delivery.jpg",
+    "tags": ["Mobile Design", "Prototyping", "Sustainability", "Local Business"],
+    "categories": ["mobile", "prototype"],
+    "featured": false,
+    "year": "2022",
+    "role": "UX Designer",
+    "duration": "3 months",
+    "team": "2 designers, 1 researcher"
+  },
+  {
+    "title": "Educational Platform UX Research",
+    "slug": "education-research",
+    "shortDescription": "Comprehensive UX research study for an online learning platform serving K-12 students.",
+    "description": "Conducted extensive user research for an educational technology platform to understand student learning behaviors and improve engagement.",
+    "image": "assets/images/project-education.jpg",
+    "tags": ["UX Research", "Education", "User Testing", "Analytics"],
+    "categories": ["research", "web"],
+    "featured": false,
+    "year": "2021",
+    "role": "UX Researcher",
+    "duration": "4 months",
+    "team": "1 designer, 2 researchers"
+  }
+]

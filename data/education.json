@@ -1,0 +1,23 @@
+[
+  {
+    "degree": "Master of Design in Human-Computer Interaction",
+    "institution": "Stanford University",
+    "startDate": "Sep 2016",
+    "endDate": "Jun 2018",
+    "description": "Specialized in user experience design, interaction design, and design research. Thesis focused on accessibility in mobile applications for users with visual impairments."
+  },
+  {
+    "degree": "Bachelor of Arts in Graphic Design",
+    "institution": "University of California, Berkeley",
+    "startDate": "Sep 2012",
+    "endDate": "May 2016",
+    "description": "Studied visual communication, typography, and digital design. Graduated Magna Cum Laude with a focus on user interface design and information visualization."
+  },
+  {
+    "degree": "UX Design Bootcamp",
+    "institution": "General Assembly",
+    "startDate": "Jan 2018",
+    "endDate": "Mar 2018",
+    "description": "Intensive 10-week program covering UX research methods, design thinking, prototyping, and industry best practices. Completed several real-world projects with actual clients."
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "position": "Senior UX Designer",
+    "company": "TechCorp Inc.",
+    "startDate": "Jan 2022",
+    "endDate": null,
+    "description": "Leading UX design initiatives for enterprise software products, managing a team of 3 junior designers and collaborating with cross-functional teams to deliver user-centered solutions that increased user satisfaction by 40%."
+  },
+  {
+    "position": "UX Designer",
+    "company": "StartupXYZ",
+    "startDate": "Mar 2020",
+    "endDate": "Dec 2021",
+    "description": "Designed and prototyped mobile and web applications for fintech products, conducted user research and usability testing, and established the company's first design system that improved development efficiency by 60%."
+  },
+  {
+    "position": "Junior UX Designer",
+    "company": "Digital Agency Pro",
+    "startDate": "Jun 2019",
+    "endDate": "Feb 2020",
+    "description": "Supported senior designers in creating user interfaces for various client projects, gained experience in e-commerce, healthcare, and education sectors while developing strong skills in user research and interaction design."
+  },
+  {
+    "position": "UX Design Intern",
+    "company": "Innovation Labs",
+    "startDate": "Sep 2018",
+    "endDate": "May 2019",
+    "description": "Assisted in user research activities, created wireframes and prototypes, and contributed to design documentation. Gained hands-on experience with design tools and methodologies in a fast-paced startup environment."
+  }
+]

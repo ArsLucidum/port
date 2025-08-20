@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - UX Designer Portfolio</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles for projects page */
+        .projects-header {
+            background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
+            padding: calc(70px + var(--space-16)) 0 var(--space-16) 0;
+            text-align: center;
+        }
+        
+        .projects-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--space-4);
+            margin: var(--space-12) 0;
+        }
+        
+        .filter-btn {
+            padding: var(--space-3) var(--space-6);
+            border: 2px solid var(--gray-300);
+            background: var(--white);
+            color: var(--gray-600);
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            font-weight: 500;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            border-color: var(--primary-color);
+            background: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .projects-grid {
+            margin-bottom: var(--space-20);
+        }
+        
+        .project-card {
+            opacity: 1;
+            transform: scale(1);
+            transition: all var(--transition-normal);
+        }
+        
+        .project-card.hidden {
+            opacity: 0;
+            transform: scale(0.8);
+            pointer-events: none;
+        }
+        
+        .back-to-home {
+            position: fixed;
+            top: 50%;
+            left: var(--space-6);
+            transform: translateY(-50%);
+            background: var(--white);
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition-fast);
+            z-index: 100;
+        }
+        
+        .back-to-home:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        @media (max-width: 768px) {
+            .back-to-home {
+                display: none;
+            }
+            
+            .projects-filter {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: var(--space-2);
+            }
+            
+            .filter-btn {
+                flex-shrink: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">Portfolio</a>
+            <ul class="nav-menu">
+                <li><a href="../#home" class="nav-link">Home</a></li>
+                <li><a href="../#about" class="nav-link">About</a></li>
+                <li><a href="../#experience" class="nav-link">Experience</a></li>
+                <li><a href="../#education" class="nav-link">Education</a></li>
+                <li><a href="./" class="nav-link active">Projects</a></li>
+                <li><a href="../#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <a href="../" class="back-to-home" title="Back to Home">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+
+    <main>
+        <section class="projects-header">
+            <div class="container">
+                <h1>My Projects</h1>
+                <p class="section-subtitle">
+                    A comprehensive collection of my UX design work, featuring case studies, 
+                    design systems, and digital experiences I've crafted.
+                </p>
+            </div>
+        </section>
+
+        <section class="projects-content">
+            <div class="container">
+                <div class="projects-filter" id="projects-filter">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="web">Web Design</button>
+                    <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+                    <button class="filter-btn" data-filter="design-system">Design Systems</button>
+                    <button class="filter-btn" data-filter="research">UX Research</button>
+                    <button class="filter-btn" data-filter="prototype">Prototyping</button>
+                </div>
+
+                <div class="projects-grid" id="all-projects-grid">
+                    <!-- Projects will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 <span id="footer-name">Jane Doe</span>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Projects page specific JavaScript
+        let allProjects = [];
+        let currentFilter = 'all';
+
+        // Load all projects
+        async function loadAllProjects() {
+            try {
+                const response = await fetch('../data/projects.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                allProjects = await response.json();
+                renderProjects(allProjects);
+                updateProjectCount();
+            } catch (error) {
+                console.warn('Could not load projects:', error);
+                showFallbackProjects();
+            }
+        }
+
+        // Render projects
+        function renderProjects(projects) {
+            const projectsGrid = document.getElementById('all-projects-grid');
+            if (!projectsGrid) return;
+
+            projectsGrid.innerHTML = projects.map(project => `
+                <div class="project-card" data-categories="${project.categories?.join(' ') || ''}" onclick="window.location.href='${project.slug}/'">
+                    <div class="project-image">
+                        <img src="${project.image || '../assets/images/project-placeholder.jpg'}" 
+                             alt="${project.title}" 
+                             loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">${project.title}</h3>
+                        <p class="project-description">${project.shortDescription}</p>
+                        <div class="project-tags">
+                            ${project.tags?.map(tag => `<span class="project-tag">${tag}</span>`).join('') || ''}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Filter projects
+        function filterProjects(category) {
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            projectCards.forEach(card => {
+                if (category === 'all' || card.dataset.categories.includes(category)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+            
+            currentFilter = category;
+            updateProjectCount();
+        }
+
+        // Update project count
+        function updateProjectCount() {
+            const visibleProjects = document.querySelectorAll('.project-card:not(.hidden)').length;
+            const subtitle = document.querySelector('.section-subtitle');
+            if (subtitle && currentFilter !== 'all') {
+                const filterName = document.querySelector(`[data-filter="${currentFilter}"]`)?.textContent || currentFilter;
+                subtitle.textContent = `Showing ${visibleProjects} ${filterName.toLowerCase()} project${visibleProjects !== 1 ? 's' : ''}`;
+            }
+        }
+
+        // Initialize filter buttons
+        function initializeFilters() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    // Filter projects
+                    filterProjects(button.dataset.filter);
+                });
+            });
+        }
+
+        // Show fallback projects if JSON loading fails
+        function showFallbackProjects() {
+            const fallbackProjects = [
+                {
+                    title: "E-commerce Redesign",
+                    shortDescription: "Complete redesign of an e-commerce platform focusing on user experience and conversion optimization.",
+                    tags: ["UI/UX Design", "E-commerce", "User Research"],
+                    categories: ["web"],
+                    slug: "ecommerce-redesign",
+                    image: "../assets/images/project-placeholder.jpg"
+                },
+                {
+                    title: "Mobile Banking App",
+                    shortDescription: "Design of a secure and intuitive mobile banking application with focus on accessibility.",
+                    tags: ["Mobile Design", "Banking", "Accessibility"],
+                    categories: ["mobile"],
+                    slug: "mobile-banking-app",
+                    image: "../assets/images/project-placeholder.jpg"
+                },
+                {
+                    title: "Design System Creation",
+                    shortDescription: "Comprehensive design system development for a SaaS platform including components and guidelines.",
+                    tags: ["Design System", "Component Library", "Documentation"],
+                    categories: ["design-system"],
+                    slug: "design-system-creation",
+                    image: "../assets/images/project-placeholder.jpg"
+                }
+            ];
+            
+            renderProjects(fallbackProjects);
+        }
+
+        // Load profile name for footer
+        async function loadProfileName() {
+            try {
+                const response = await fetch('../data/profile.json');
+                if (response.ok) {
+                    const profileData = await response.json();
+                    const footerName = document.getElementById('footer-name');
+                    if (footerName && profileData.name) {
+                        footerName.textContent = profileData.name;
+                    }
+                }
+            } catch (error) {
+                console.warn('Could not load profile data:', error);
+            }
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', async function() {
+            await Promise.all([
+                loadAllProjects(),
+                loadProfileName()
+            ]);
+            
+            initializeFilters();
+            
+            // Add stagger animation to project cards
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+                card.classList.add('fade-in-up');
+            });
+            
+            console.log('Projects page initialized successfully!');
+        });
+
+        // Add fade-in-up animation
+        const style = document.createElement('style');
+        style.textContent = `
+            .fade-in-up {
+                opacity: 0;
+                transform: translateY(30px);
+                animation: fadeInUp 0.6s ease-out forwards;
+            }
+            
+            @keyframes fadeInUp {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

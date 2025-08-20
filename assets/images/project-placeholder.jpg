@@ -1,0 +1,18 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#f1f5f9"/>
+  <rect x="200" y="150" width="400" height="300" fill="white" stroke="#e2e8f0" stroke-width="2" rx="12"/>
+  
+  <!-- Placeholder icon -->
+  <circle cx="400" cy="250" r="40" fill="#cbd5e1"/>
+  <path d="M380 230L420 230L410 240L390 240Z" fill="white"/>
+  <circle cx="390" cy="235" r="3" fill="#9ca3af"/>
+  <path d="M380 260L400 240L420 260L420 270L380 270Z" fill="white"/>
+  
+  <!-- Placeholder text -->
+  <rect x="350" y="320" width="100" height="12" fill="#e2e8f0" rx="6"/>
+  <rect x="330" y="345" width="140" height="8" fill="#e2e8f0" rx="4"/>
+  <rect x="360" y="365" width="80" height="8" fill="#e2e8f0" rx="4"/>
+  
+  <text x="400" y="500" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="18">Project Preview</text>
+  <text x="400" y="525" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="14">Placeholder Image</text>
+</svg>

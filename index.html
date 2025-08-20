@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX Designer Portfolio</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">Portfolio</a>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="projects/index.html" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="hero-greeting">Hi, I'm</span>
+                        <span class="hero-name" id="designer-name">Jane Doe</span>
+                    </h1>
+                    <p class="hero-subtitle" id="designer-role">UX Designer crafting meaningful digital experiences</p>
+                    <p class="hero-description" id="designer-description">
+                        I specialize in creating user-centered designs that solve complex problems 
+                        and deliver exceptional digital experiences.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="projects/index.html" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="assets/images/profile.svg" alt="Designer Profile" id="profile-image">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p id="about-description">
+                            With over 5 years of experience in UX design, I'm passionate about creating 
+                            intuitive and accessible digital experiences. I believe in the power of 
+                            user research and data-driven design decisions.
+                        </p>
+                        <div class="skills">
+                            <h3>Skills & Tools</h3>
+                            <div class="skills-grid" id="skills-container">
+                                <!-- Skills will be loaded dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number" id="years-experience">5+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" id="projects-completed">50+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" id="happy-clients">25+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="experience">
+            <div class="container">
+                <h2 class="section-title">Professional Experience</h2>
+                <div class="timeline" id="experience-timeline">
+                    <!-- Experience items will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="education">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="timeline" id="education-timeline">
+                    <!-- Education items will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <section id="featured-projects" class="featured-projects">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">A selection of my recent work</p>
+                <div class="projects-grid" id="featured-projects-grid">
+                    <!-- Featured projects will be loaded dynamically -->
+                </div>
+                <div class="section-actions">
+                    <a href="projects/index.html" class="btn btn-primary">View All Projects</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Let's Work Together</h2>
+                <p class="section-subtitle">I'm always interested in new opportunities and collaborations</p>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <h3>Email</h3>
+                            <a href="mailto:hello@example.com" id="contact-email">hello@example.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <h3>LinkedIn</h3>
+                            <a href="#" target="_blank" id="contact-linkedin">linkedin.com/in/designer</a>
+                        </div>
+                        <div class="contact-item">
+                            <h3>Location</h3>
+                            <span id="contact-location">San Francisco, CA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 <span id="footer-name">Jane Doe</span>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
