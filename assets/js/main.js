@@ -357,8 +357,31 @@ function animateCounters() {
 
 // ===== PARALLAX EFFECT =====
 function handleParallax() {
-    // Hero image stays static - no parallax for now
-    // Parallax will be applied between sections later
+    const heroImage = document.getElementById('profile-image');
+    const aboutSection = document.getElementById('about');
+    const experienceSection = document.getElementById('experience');
+    
+    if (!heroImage || !aboutSection || !experienceSection) return;
+    
+    const scrollY = window.pageYOffset;
+    const aboutRect = aboutSection.getBoundingClientRect();
+    const aboutBottom = aboutRect.bottom + scrollY - window.innerHeight;
+    
+    // Start parallax when the about section is almost done scrolling
+    if (scrollY > aboutBottom) {
+        // Parallax mode: image moves up slowly as we scroll down
+        const parallaxAmount = (scrollY - aboutBottom) * 0.5;
+        heroImage.style.position = 'fixed';
+        heroImage.style.bottom = `${parallaxAmount}px`;
+        heroImage.style.right = '8%';
+        heroImage.style.transform = 'none';
+    } else {
+        // Window effect mode: image stays completely fixed
+        heroImage.style.position = 'fixed';
+        heroImage.style.bottom = '0';
+        heroImage.style.right = '8%';
+        heroImage.style.transform = 'none';
+    }
 }
 
 // ===== PROJECT CARD HOVER EFFECTS =====
