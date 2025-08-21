@@ -357,13 +357,8 @@ function animateCounters() {
 
 // ===== PARALLAX EFFECT =====
 function handleParallax() {
-    const scrolled = window.pageYOffset;
-    const parallaxElements = document.querySelectorAll('.hero-image');
-    
-    parallaxElements.forEach(element => {
-        const speed = 0.5;
-        element.style.transform = `translateY(${scrolled * speed}px)`;
-    });
+    // Hero image stays static - no parallax for now
+    // Parallax will be applied between sections later
 }
 
 // ===== PROJECT CARD HOVER EFFECTS =====
