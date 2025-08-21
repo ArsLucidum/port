@@ -1,11 +1,11 @@
 /* ===== CSS VARIABLES ===== */
 :root {
-  /* Colors */
-  --primary-color: #2563eb;
-  --primary-dark: #1d4ed8;
-  --primary-light: #3b82f6;
-  --secondary-color: #64748b;
-  --accent-color: #06b6d4;
+  /* Colors - Bárbara's Brand Identity */
+  --primary-color: #158c7f;
+  --primary-dark: #126e63;
+  --primary-light: #1fa99a;
+  --secondary-color: #164e63;
+  --accent-color: #158c7f;
   
   /* Neutrals */
   --white: #ffffff;
@@ -21,8 +21,8 @@
   --gray-900: #0f172a;
   
   /* Typography */
-  --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-display: 'Playfair Display', Georgia, serif;
+  --font-primary: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-display: 'Montserrat', system-ui, -apple-system, sans-serif;
   
   /* Font Sizes */
   --text-xs: 0.75rem;
@@ -398,6 +398,59 @@ section {
   box-shadow: var(--shadow-md);
 }
 
+/* Languages Section */
+.languages h3 {
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-6);
+  font-family: var(--font-primary);
+  font-size: var(--text-xl);
+}
+
+.languages-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.language-item {
+  background-color: var(--white);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.language-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2);
+}
+
+.language-name {
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+.language-level {
+  font-size: var(--text-sm);
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.language-progress {
+  height: 8px;
+  background-color: var(--gray-200);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.language-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+  border-radius: var(--radius-sm);
+  transition: width 1s ease-out;
+}
+
 .about-stats {
   display: flex;
   flex-direction: column;
@@ -535,6 +588,84 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: var(--space-8);
   margin-top: var(--space-12);
+}
+
+/* ===== PROJECTS CAROUSEL ===== */
+.projects-carousel {
+  position: relative;
+  margin-top: var(--space-12);
+}
+
+.carousel-container {
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  width: 350px;
+  margin: 0 auto;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  gap: var(--space-6);
+}
+
+.carousel-slide {
+  width: 350px;
+  flex-shrink: 0;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--white);
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-fast);
+  z-index: 10;
+}
+
+.carousel-nav:hover {
+  background: var(--primary-color);
+  color: var(--white);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-nav.prev {
+  left: -25px;
+}
+
+.carousel-nav.next {
+  right: -25px;
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+}
+
+.carousel-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--gray-300);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.carousel-indicator.active {
+  background: var(--primary-color);
+  transform: scale(1.2);
 }
 
 .project-card {

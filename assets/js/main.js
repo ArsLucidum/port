@@ -90,81 +90,101 @@ async function loadData(filename) {
 function getFallbackData(filename) {
     const fallbackData = {
         'profile.json': {
-            name: "Jane Doe",
-            role: "UX Designer crafting meaningful digital experiences",
-            description: "I specialize in creating user-centered designs that solve complex problems and deliver exceptional digital experiences.",
-            aboutDescription: "With over 5 years of experience in UX design, I'm passionate about creating intuitive and accessible digital experiences. I believe in the power of user research and data-driven design decisions to create products that truly serve their users.",
-            profileImage: "assets/images/profile.svg",
-            skills: ["User Research", "UI/UX Design", "Prototyping", "Wireframing", "Design Systems", "Figma", "Sketch", "Adobe XD", "InVision", "Principle", "HTML/CSS", "JavaScript", "Accessibility", "Usability Testing", "Information Architecture", "Interaction Design"],
-            stats: { yearsExperience: "5+", projectsCompleted: "50+", happyClients: "25+" },
-            contact: { email: "hello@janedoe.com", linkedin: "linkedin.com/in/janedoe", location: "San Francisco, CA" }
+            name: "Bárbara M",
+            role: "Diseñadora UX/UI / Psicóloga",
+            description: "De la Psicología al Diseño UX/UI: tras años de experiencia con personas en contextos sociales, descubrí en lo digital un poder que iba más allá de las barreras tradicionales.",
+            aboutDescription: "Mi experiencia en investigación y gestión de proyectos me permite crear soluciones centradas en usuarios desde las fases tempranas hasta su implementación. De mi recorrido como psicóloga me llevo la capacidad de iterar constantemente, porque al trabajar con personas nada ocurre como se planea. Hoy mi objetivo es diseñar entornos digitales más humanos, accesibles y significativos.",
+            profileImage: "assets/images/profile.jpeg",
+            skills: ["Figma", "Google Forms", "Notion", "Miro", "Investigación de Usuarios", "Diseño UX/UI", "Prototipado", "Wireframing", "Sistemas de Diseño", "Análisis de Datos", "Gestión de Proyectos", "Metodología de Investigación", "Psicometría", "Comunicación Efectiva", "Resolución de Conflictos", "HTML/CSS"],
+            stats: { yearsExperience: "3+", projectsCompleted: "100+", happyClients: "250+" },
+            contact: { email: "barbara@ejemplo.com", linkedin: "linkedin.com/in/barbara-m", location: "España" },
+            languages: {
+                spanish: { name: "Español", level: "Nativo", percentage: 100 },
+                english: { name: "Inglés", level: "C2", percentage: 90 }
+            }
         },
         'experience.json': [
             {
-                position: "Senior UX Designer",
-                company: "TechCorp Inc.",
-                startDate: "Jan 2022",
-                endDate: null,
-                description: "Leading UX design initiatives for enterprise software products, managing a team of 3 junior designers and collaborating with cross-functional teams to deliver user-centered solutions that increased user satisfaction by 40%."
+                position: "Coordinadora de proyectos sociales",
+                company: "Federación de Plataformas Sociales Pinardi",
+                startDate: "03/2023",
+                endDate: "05/2025",
+                description: "Acompañamiento de más de 100 usuarios mediante herramientas digitales de gestión y análisis de datos, identificando necesidades y adaptando soluciones personalizadas. Investigación de usuarios: mapeo de necesidades y diseño de experiencias de aprendizaje a través de plataformas digitales y recursos e-learning."
             },
             {
-                position: "UX Designer",
-                company: "StartupXYZ",
-                startDate: "Mar 2020",
-                endDate: "Dec 2021",
-                description: "Designed and prototyped mobile and web applications for fintech products, conducted user research and usability testing, and established the company's first design system that improved development efficiency by 60%."
+                position: "Project manager",
+                company: "Asociación Guaraní",
+                startDate: "01/2022",
+                endDate: "02/2023",
+                description: "Identificación de oportunidades de financiación, gestión de proyecto y creación de entregables en fecha. Investigación de mercado y análisis de tendencias mediante herramientas digitales y scraping automatizado, aplicando métodos de user research para comprender necesidades y comportamientos de usuarios."
             },
             {
-                position: "Junior UX Designer",
-                company: "Digital Agency Pro",
-                startDate: "Jun 2019",
-                endDate: "Feb 2020",
-                description: "Supported senior designers in creating user interfaces for various client projects, gained experience in e-commerce, healthcare, and education sectors while developing strong skills in user research and interaction design."
+                position: "Sales Assistant/RRHH",
+                company: "Visivel and Invisivel",
+                startDate: "2017",
+                endDate: "2022",
+                description: "Trabajo en entorno minorista dinámico, apoyando en la inducción de personal, planificación de turnos y gestión digital de registros mediante software de RRHH y herramientas basadas en Excel, desarrollando habilidades en organización y flujos de trabajo eficientes."
             }
         ],
         'education.json': [
             {
-                degree: "Master of Design in Human-Computer Interaction",
-                institution: "Stanford University",
-                startDate: "Sep 2016",
-                endDate: "Jun 2018",
-                description: "Specialized in user experience design, interaction design, and design research. Thesis focused on accessibility in mobile applications for users with visual impairments."
+                degree: "Google UX Design Professional Certificate",
+                institution: "Coursera - Google",
+                startDate: "12/2024",
+                endDate: "04/2025",
+                description: "Formación en fundamentos de diseño centrado en el usuario: investigación y análisis de usuarios, arquitectura de la información, responsive design, desarrollo de user stories y creación de wireframes y prototipos en Figma."
             },
             {
-                degree: "Bachelor of Arts in Graphic Design",
-                institution: "University of California, Berkeley",
-                startDate: "Sep 2012",
-                endDate: "May 2016",
-                description: "Studied visual communication, typography, and digital design. Graduated Magna Cum Laude with a focus on user interface design and information visualization."
+                degree: "Máster en Psicología Forense",
+                institution: "ISEP",
+                startDate: "2018",
+                endDate: "2020",
+                description: "Experiencia en investigación, análisis de datos y elaboración de informes técnicos claros para distintos públicos. Acostumbrada a diferenciar contextos, interpretar resultados y comunicar hallazgos de forma estructurada."
+            },
+            {
+                degree: "Grado en Psicología",
+                institution: "Universidad de Málaga",
+                startDate: "2010",
+                endDate: "2016",
+                description: "Mención en Psicología Clínica. Formación integral en las principales corrientes psicológicas junto con bases sólidas en psicometría, neuropsicología y metodología de la investigación."
             }
         ],
         'projects.json': [
             {
-                title: "E-commerce Platform Redesign",
-                slug: "sample-project",
-                shortDescription: "Complete redesign of an e-commerce platform focusing on user experience and conversion optimization.",
+                title: "Rediseño de Plataforma E-learning",
+                slug: "plataforma-elearning",
+                shortDescription: "Rediseño completo de una plataforma de aprendizaje digital centrada en la experiencia del usuario y la accesibilidad.",
                 image: "assets/images/project-1.jpg",
-                tags: ["UI/UX Design", "E-commerce", "User Research", "Prototyping"],
+                tags: ["Investigación UX", "Diseño UI", "Prototipado", "Accesibilidad"],
                 categories: ["web", "research"],
                 featured: true
             },
             {
-                title: "Mobile Banking App",
-                slug: "mobile-banking-app",
-                shortDescription: "Design of a secure and intuitive mobile banking application with focus on accessibility.",
+                title: "App Móvil para Gestión Social",
+                slug: "app-gestion-social",
+                shortDescription: "Aplicación móvil para la gestión de casos sociales y seguimiento de usuarios en organizaciones del tercer sector.",
                 image: "assets/images/project-2.jpg",
-                tags: ["Mobile Design", "Banking", "Accessibility", "Security"],
-                categories: ["mobile", "design-system"],
+                tags: ["Diseño Móvil", "UX Research", "Gestión de Datos", "Trabajo Social"],
+                categories: ["mobile", "research"],
                 featured: true
             },
             {
-                title: "Design System Creation",
-                slug: "design-system-creation",
-                shortDescription: "Comprehensive design system development for a SaaS platform including components and guidelines.",
+                title: "Sistema de Design Tokens",
+                slug: "design-tokens-system",
+                shortDescription: "Creación de un sistema completo de design tokens para garantizar consistencia visual en múltiples productos digitales.",
                 image: "assets/images/project-3.jpg",
-                tags: ["Design System", "Component Library", "Documentation", "Scalability"],
+                tags: ["Sistema de Diseño", "Design Tokens", "Figma", "Documentación"],
                 categories: ["design-system", "web"],
                 featured: true
+            },
+            {
+                title: "Prototipo Interactivo de App Educativa",
+                slug: "prototipo-app-educativa",
+                shortDescription: "Desarrollo de prototipo interactivo para aplicación educativa dirigida a estudiantes de secundaria.",
+                image: "assets/images/project-placeholder.jpg",
+                tags: ["Prototipado", "Educación", "Figma", "Testing"],
+                categories: ["prototype", "mobile"],
+                featured: false
             }
         ]
     };
@@ -220,6 +240,11 @@ async function loadProfileData() {
     if (profileData.skills) {
         loadSkills(profileData.skills);
     }
+    
+    // Load languages
+    if (profileData.languages) {
+        loadLanguages(profileData.languages);
+    }
 }
 
 // ===== SKILLS LOADING =====
@@ -230,6 +255,26 @@ function loadSkills(skills) {
     skillsContainer.innerHTML = skills.map(skill => 
         `<div class="skill-tag">${skill}</div>`
     ).join('');
+}
+
+// ===== LANGUAGES LOADING =====
+function loadLanguages(languages) {
+    const languagesContainer = document.getElementById('languages-container');
+    if (!languagesContainer || !languages) return;
+
+    const languageItems = Object.values(languages).map(lang => `
+        <div class="language-item">
+            <div class="language-header">
+                <span class="language-name">${lang.name}</span>
+                <span class="language-level">${lang.level}</span>
+            </div>
+            <div class="language-progress">
+                <div class="language-bar" style="width: ${lang.percentage}%"></div>
+            </div>
+        </div>
+    `).join('');
+
+    languagesContainer.innerHTML = languageItems;
 }
 
 // ===== EXPERIENCE DATA LOADING =====
@@ -280,25 +325,107 @@ async function loadFeaturedProjects() {
     if (!projectsData) return;
 
     const featuredProjects = projectsData.filter(project => project.featured);
-    const projectsGrid = document.getElementById('featured-projects-grid');
-    if (!projectsGrid) return;
+    const carouselTrack = document.getElementById('carousel-track');
+    if (!carouselTrack) return;
 
-    projectsGrid.innerHTML = featuredProjects.map(project => `
-        <div class="project-card" onclick="window.location.href='projects/${project.slug}/'">
-            <div class="project-image">
-                <img src="${project.image || 'assets/images/project-placeholder.jpg'}" 
-                     alt="${project.title}" 
-                     loading="lazy">
-            </div>
-            <div class="project-content">
-                <h3 class="project-title">${project.title}</h3>
-                <p class="project-description">${project.shortDescription}</p>
-                <div class="project-tags">
-                    ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+    carouselTrack.innerHTML = featuredProjects.map(project => `
+        <div class="carousel-slide">
+            <div class="project-card" onclick="window.location.href='projects/${project.slug}/'">
+                <div class="project-image">
+                    <img src="${project.image || 'assets/images/project-placeholder.jpg'}" 
+                         alt="${project.title}" 
+                         loading="lazy">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">${project.title}</h3>
+                    <p class="project-description">${project.shortDescription}</p>
+                    <div class="project-tags">
+                        ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+                    </div>
                 </div>
             </div>
         </div>
     `).join('');
+
+    // Initialize carousel
+    initializeCarousel(featuredProjects.length);
+}
+
+// ===== CAROUSEL FUNCTIONALITY =====
+let currentSlide = 0;
+let totalSlides = 0;
+
+function initializeCarousel(slideCount) {
+    totalSlides = slideCount;
+    if (totalSlides <= 1) {
+        // Hide navigation if only one slide
+        const prevBtn = document.getElementById('carousel-prev');
+        const nextBtn = document.getElementById('carousel-next');
+        if (prevBtn) prevBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+        return;
+    }
+
+    // Create indicators
+    const indicatorsContainer = document.getElementById('carousel-indicators');
+    if (indicatorsContainer) {
+        indicatorsContainer.innerHTML = Array.from({length: totalSlides}, (_, i) => 
+            `<div class="carousel-indicator ${i === 0 ? 'active' : ''}" data-slide="${i}"></div>`
+        ).join('');
+
+        // Add indicator click handlers
+        indicatorsContainer.addEventListener('click', (e) => {
+            if (e.target.classList.contains('carousel-indicator')) {
+                const slideIndex = parseInt(e.target.dataset.slide);
+                goToSlide(slideIndex);
+            }
+        });
+    }
+
+    // Add navigation button handlers
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+    
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            currentSlide = currentSlide > 0 ? currentSlide - 1 : totalSlides - 1;
+            updateCarousel();
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            currentSlide = currentSlide < totalSlides - 1 ? currentSlide + 1 : 0;
+            updateCarousel();
+        });
+    }
+
+    // Auto-advance carousel
+    setInterval(() => {
+        currentSlide = currentSlide < totalSlides - 1 ? currentSlide + 1 : 0;
+        updateCarousel();
+    }, 5000); // Auto-advance every 5 seconds
+}
+
+function goToSlide(slideIndex) {
+    currentSlide = slideIndex;
+    updateCarousel();
+}
+
+function updateCarousel() {
+    const track = document.getElementById('carousel-track');
+    const indicators = document.querySelectorAll('.carousel-indicator');
+    
+    if (track) {
+        // Calculate slide width: 350px slide + 24px gap (1.5rem)
+        const slideWidth = 374;
+        track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+    }
+
+    // Update indicators
+    indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === currentSlide);
+    });
 }
 
 // ===== TYPING ANIMATION =====

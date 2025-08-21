@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - UX Designer Portfolio</title>
+    <title>Proyectos - Bárbara M Portfolio</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         /* Additional styles for projects page */
         .projects-header {
@@ -106,12 +106,12 @@
         <div class="nav-container">
             <a href="../" class="nav-logo">Portfolio</a>
             <ul class="nav-menu">
-                <li><a href="../#home" class="nav-link">Home</a></li>
-                <li><a href="../#about" class="nav-link">About</a></li>
-                <li><a href="../#experience" class="nav-link">Experience</a></li>
-                <li><a href="../#education" class="nav-link">Education</a></li>
-                <li><a href="./" class="nav-link active">Projects</a></li>
-                <li><a href="../#contact" class="nav-link">Contact</a></li>
+                <li><a href="../index.html#home" class="nav-link">Inicio</a></li>
+                <li><a href="../index.html#about" class="nav-link">Sobre mí</a></li>
+                <li><a href="../index.html#experience" class="nav-link">Experiencia</a></li>
+                <li><a href="../index.html#education" class="nav-link">Formación</a></li>
+                <li><a href="./" class="nav-link active">Proyectos</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contacto</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -121,7 +121,7 @@
         </div>
     </nav>
 
-    <a href="../" class="back-to-home" title="Back to Home">
+    <a href="../index.html" class="back-to-home" title="Volver al inicio">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
@@ -130,10 +130,10 @@
     <main>
         <section class="projects-header">
             <div class="container">
-                <h1>My Projects</h1>
+                <h1>Mis Proyectos</h1>
                 <p class="section-subtitle">
-                    A comprehensive collection of my UX design work, featuring case studies, 
-                    design systems, and digital experiences I've crafted.
+                    Una colección completa de mi trabajo de diseño UX, con casos de estudio, 
+                    sistemas de diseño y experiencias digitales que he creado.
                 </p>
             </div>
         </section>
@@ -141,12 +141,12 @@
         <section class="projects-content">
             <div class="container">
                 <div class="projects-filter" id="projects-filter">
-                    <button class="filter-btn active" data-filter="all">All Projects</button>
-                    <button class="filter-btn" data-filter="web">Web Design</button>
-                    <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
-                    <button class="filter-btn" data-filter="design-system">Design Systems</button>
-                    <button class="filter-btn" data-filter="research">UX Research</button>
-                    <button class="filter-btn" data-filter="prototype">Prototyping</button>
+                    <button class="filter-btn active" data-filter="all">Todos los proyectos</button>
+                    <button class="filter-btn" data-filter="web">Diseño Web</button>
+                    <button class="filter-btn" data-filter="mobile">Apps Móviles</button>
+                    <button class="filter-btn" data-filter="design-system">Sistemas de Diseño</button>
+                    <button class="filter-btn" data-filter="research">Investigación UX</button>
+                    <button class="filter-btn" data-filter="prototype">Prototipado</button>
                 </div>
 
                 <div class="projects-grid" id="all-projects-grid">
@@ -158,7 +158,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 <span id="footer-name">Jane Doe</span>. All rights reserved.</p>
+            <p>&copy; 2024 <span id="footer-name">Bárbara M</span>. Todos los derechos reservados.</p>
         </div>
     </footer>
 
@@ -212,7 +212,8 @@
             const projectCards = document.querySelectorAll('.project-card');
             
             projectCards.forEach(card => {
-                if (category === 'all' || card.dataset.categories.includes(category)) {
+                const categories = card.dataset.categories.split(' ');
+                if (category === 'all' || categories.includes(category)) {
                     card.classList.remove('hidden');
                 } else {
                     card.classList.add('hidden');
@@ -227,9 +228,13 @@
         function updateProjectCount() {
             const visibleProjects = document.querySelectorAll('.project-card:not(.hidden)').length;
             const subtitle = document.querySelector('.section-subtitle');
-            if (subtitle && currentFilter !== 'all') {
-                const filterName = document.querySelector(`[data-filter="${currentFilter}"]`)?.textContent || currentFilter;
-                subtitle.textContent = `Showing ${visibleProjects} ${filterName.toLowerCase()} project${visibleProjects !== 1 ? 's' : ''}`;
+            if (subtitle) {
+                if (currentFilter !== 'all') {
+                    const filterName = document.querySelector(`[data-filter="${currentFilter}"]`)?.textContent || currentFilter;
+                    subtitle.textContent = `Mostrando ${visibleProjects} proyecto${visibleProjects !== 1 ? 's' : ''} de ${filterName.toLowerCase()}`;
+                } else {
+                    subtitle.textContent = "Una colección completa de mi trabajo de diseño UX, con casos de estudio, sistemas de diseño y experiencias digitales que he creado.";
+                }
             }
         }
 
@@ -253,27 +258,35 @@
         function showFallbackProjects() {
             const fallbackProjects = [
                 {
-                    title: "E-commerce Redesign",
-                    shortDescription: "Complete redesign of an e-commerce platform focusing on user experience and conversion optimization.",
-                    tags: ["UI/UX Design", "E-commerce", "User Research"],
-                    categories: ["web"],
-                    slug: "ecommerce-redesign",
+                    title: "Rediseño de Plataforma E-learning",
+                    shortDescription: "Rediseño completo de una plataforma de aprendizaje digital centrada en la experiencia del usuario y la accesibilidad.",
+                    tags: ["Investigación UX", "Diseño UI", "Prototipado"],
+                    categories: ["web", "research"],
+                    slug: "plataforma-elearning",
                     image: "../assets/images/project-placeholder.jpg"
                 },
                 {
-                    title: "Mobile Banking App",
-                    shortDescription: "Design of a secure and intuitive mobile banking application with focus on accessibility.",
-                    tags: ["Mobile Design", "Banking", "Accessibility"],
-                    categories: ["mobile"],
-                    slug: "mobile-banking-app",
+                    title: "App Móvil para Gestión Social",
+                    shortDescription: "Aplicación móvil para la gestión de casos sociales y seguimiento de usuarios en organizaciones del tercer sector.",
+                    tags: ["Diseño Móvil", "UX Research", "Gestión de Datos"],
+                    categories: ["mobile", "research"],
+                    slug: "app-gestion-social",
                     image: "../assets/images/project-placeholder.jpg"
                 },
                 {
-                    title: "Design System Creation",
-                    shortDescription: "Comprehensive design system development for a SaaS platform including components and guidelines.",
-                    tags: ["Design System", "Component Library", "Documentation"],
-                    categories: ["design-system"],
-                    slug: "design-system-creation",
+                    title: "Sistema de Design Tokens",
+                    shortDescription: "Creación de un sistema completo de design tokens para garantizar consistencia visual en múltiples productos digitales.",
+                    tags: ["Sistema de Diseño", "Design Tokens", "Figma"],
+                    categories: ["design-system", "web"],
+                    slug: "design-tokens-system",
+                    image: "../assets/images/project-placeholder.jpg"
+                },
+                {
+                    title: "Prototipo Interactivo de App Educativa",
+                    shortDescription: "Desarrollo de prototipo interactivo para aplicación educativa dirigida a estudiantes de secundaria.",
+                    tags: ["Prototipado", "Educación", "Figma", "Testing"],
+                    categories: ["prototype", "mobile"],
+                    slug: "prototipo-app-educativa",
                     image: "../assets/images/project-placeholder.jpg"
                 }
             ];
