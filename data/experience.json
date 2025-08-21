@@ -1,30 +1,37 @@
 [
   {
-    "position": "Senior UX Designer",
-    "company": "TechCorp Inc.",
-    "startDate": "Jan 2022",
-    "endDate": null,
-    "description": "Leading UX design initiatives for enterprise software products, managing a team of 3 junior designers and collaborating with cross-functional teams to deliver user-centered solutions that increased user satisfaction by 40%."
+    "position": "Coordinadora de proyectos sociales",
+    "company": "Federación de Plataformas Sociales Pinardi",
+    "startDate": "03/2023",
+    "endDate": "05/2025",
+    "description": "Acompañamiento de más de 100 usuarios mediante herramientas digitales de gestión y análisis de datos, identificando necesidades y adaptando soluciones personalizadas. Investigación de usuarios: mapeo de necesidades y diseño de experiencias de aprendizaje a través de plataformas digitales y recursos e-learning. Registro de casos y gestión de proyectos con sistemas electrónicos de información (I3L, Sira) y plataformas digitales públicas. Diseño y prototipado de cápsulas formativas del entorno digital incluyendo herramientas de IA y aplicando enfoques iterativos para mejorar la experiencia."
   },
   {
-    "position": "UX Designer",
-    "company": "StartupXYZ",
-    "startDate": "Mar 2020",
-    "endDate": "Dec 2021",
-    "description": "Designed and prototyped mobile and web applications for fintech products, conducted user research and usability testing, and established the company's first design system that improved development efficiency by 60%."
+    "position": "Project manager",
+    "company": "Asociación Guaraní",
+    "startDate": "01/2022",
+    "endDate": "02/2023",
+    "description": "Identificación de oportunidades de financiación, gestión de proyecto y creación de entregables en fecha. Investigación de mercado y análisis de tendencias mediante herramientas digitales y scraping automatizado, aplicando métodos de user research para comprender necesidades y comportamientos de usuarios. Planificación y coordinación de proyectos colaborativos usando herramientas en la nube y reportes automatizados, optimizando la experiencia de equipo y los flujos de trabajo en entornos multidisciplinarios. Financiación aprobada por la Unión Europea (KA2) con un presupuesto de 250.000€ llamado 'Women Sport Empowerment - WES' con dos años de duración en 5 países europeos."
   },
   {
-    "position": "Junior UX Designer",
-    "company": "Digital Agency Pro",
-    "startDate": "Jun 2019",
-    "endDate": "Feb 2020",
-    "description": "Supported senior designers in creating user interfaces for various client projects, gained experience in e-commerce, healthcare, and education sectors while developing strong skills in user research and interaction design."
+    "position": "Sales Assistant/RRHH",
+    "company": "Visivel and Invisivel",
+    "startDate": "2017",
+    "endDate": "2022",
+    "description": "Trabajo en entorno minorista dinámico, apoyando en la inducción de personal, planificación de turnos y gestión digital de registros mediante software de RRHH y herramientas basadas en Excel, desarrollando habilidades en organización y flujos de trabajo eficientes. Implementación de estrategias de atención al cliente identificando puntos de fricción en la experiencia en el comercio e implementando mejoras en la interacción que aumentaron la satisfacción del usuario. Transformación digital de las operaciones de la tienda, introduciendo herramientas para control de stock y comunicación interna (Google Workspace, Trello, interfaces POS), mejorando la usabilidad y eficiencia de procesos internos."
   },
   {
-    "position": "UX Design Intern",
-    "company": "Innovation Labs",
-    "startDate": "Sep 2018",
-    "endDate": "May 2019",
-    "description": "Assisted in user research activities, created wireframes and prototypes, and contributed to design documentation. Gained hands-on experience with design tools and methodologies in a fast-paced startup environment."
+    "position": "Coordinadora logística de proyectos europeos",
+    "company": "Amigos de Europa",
+    "startDate": "2015",
+    "endDate": "2017",
+    "description": "Coordinación logística de proyectos europeos, gestionando viajes, planificación de eventos y soporte a participantes mediante plataformas digitales (Google Sheets, Rome2Rio, Airbnb for Work), desarrollando habilidades de organización de flujos de usuario y experiencia de servicio. Facilitación de comunicación interna y externa en equipos internacionales usando plataformas colaborativas (Slack, Zoom, Google Drive). Desarrollo de flujos de trabajo centrados en el usuario en entornos multiculturales, priorizando accesibilidad, claridad digital y usabilidad para el equipo en todas las tareas de coordinación."
+  },
+  {
+    "position": "Psicóloga",
+    "company": "Teléfono de la Esperanza",
+    "startDate": "09/2016",
+    "endDate": "07/2017",
+    "description": "Atención psicológica inicial por teléfono siguiendo protocolos digitales de intervención y desarrollo habilidades de interacción centrada en el usuario. Coordinación de acciones con equipos de emergencia mediante sistemas de comunicación en tiempo real, reforzando la gestión de flujos de información y colaboración digital. Registro y análisis de casos utilizando herramientas básicas de CRM, asegurando el cumplimiento de la protección de datos, fortaleciendo competencias en documentación y análisis de información del usuario."
   }
 ]

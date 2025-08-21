@@ -1,23 +1,51 @@
 [
   {
-    "degree": "Master of Design in Human-Computer Interaction",
-    "institution": "Stanford University",
-    "startDate": "Sep 2016",
-    "endDate": "Jun 2018",
-    "description": "Specialized in user experience design, interaction design, and design research. Thesis focused on accessibility in mobile applications for users with visual impairments."
+    "degree": "Google UX Design Professional Certificate",
+    "institution": "Coursera - Google",
+    "startDate": "12/2024",
+    "endDate": "04/2025",
+    "description": "Formación en fundamentos de diseño centrado en el usuario: investigación y análisis de usuarios, arquitectura de la información, responsive design, desarrollo de user stories y creación de wireframes y prototipos en Figma. Incluye prácticas en user research, usabilidad, design reviews y presentaciones."
   },
   {
-    "degree": "Bachelor of Arts in Graphic Design",
-    "institution": "University of California, Berkeley",
-    "startDate": "Sep 2012",
-    "endDate": "May 2016",
-    "description": "Studied visual communication, typography, and digital design. Graduated Magna Cum Laude with a focus on user interface design and information visualization."
+    "degree": "Figma UI/UX Design Advanced",
+    "institution": "Udemy - Daniel Walter Scott",
+    "startDate": "05/2025",
+    "endDate": "05/2025",
+    "description": "Formación en técnicas de diseño digital. Manejo de workflows de diseño, gestión de design assets, estilos y componentes, aplicación de layouts basados en grid y columnas, así como uso de variables y design tokens para garantizar consistencia visual, escalabilidad y eficiencia en proyectos UX/UI."
   },
   {
-    "degree": "UX Design Bootcamp",
-    "institution": "General Assembly",
-    "startDate": "Jan 2018",
-    "endDate": "Mar 2018",
-    "description": "Intensive 10-week program covering UX research methods, design thinking, prototyping, and industry best practices. Completed several real-world projects with actual clients."
+    "degree": "CSS y HTML",
+    "institution": "Autoformación",
+    "startDate": "07/2025",
+    "endDate": "Actualidad",
+    "description": "Conocimientos básicos de CSS y HTML para comprender mejor la implementación técnica del diseño y mejorar la colaboración con equipos de desarrollo."
+  },
+  {
+    "degree": "Máster en Psicología Forense",
+    "institution": "ISEP",
+    "startDate": "2018",
+    "endDate": "2020",
+    "description": "Experiencia en investigación, análisis de datos y elaboración de informes técnicos claros para distintos públicos. Acostumbrada a diferenciar contextos, interpretar resultados y comunicar hallazgos de forma estructurada."
+  },
+  {
+    "degree": "Postgrado en Psicopatología Infanto Juvenil",
+    "institution": "ISEP",
+    "startDate": "2017",
+    "endDate": "2018",
+    "description": "Prevención, diagnóstico y análisis del comportamiento en niños y jóvenes, con un enfoque contextual e integral. Base sólida en observación, investigación cualitativa y comprensión de las necesidades del usuario."
+  },
+  {
+    "degree": "Máster en Mediación de Conflictos Sociales",
+    "institution": "Divulgación dinámica",
+    "startDate": "2015",
+    "endDate": "2016",
+    "description": "Valoración de herramientas para la resolución de conflictos, comunicación efectiva y negociación en diferentes etapas del proceso. Base sólida en facilitación, escucha activa y co-creación de soluciones."
+  },
+  {
+    "degree": "Grado en Psicología",
+    "institution": "Universidad de Málaga",
+    "startDate": "2010",
+    "endDate": "2016",
+    "description": "Mención en Psicología Clínica. Formación integral en las principales corrientes psicológicas junto con bases sólidas en psicometría, neuropsicología y metodología de la investigación. Competencias en: evaluación, análisis cualitativo y cuantitativo, comprensión profunda de contextos y necesidades."
   }
 ]

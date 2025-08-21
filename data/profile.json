@@ -1,35 +1,47 @@
 {
-  "name": "Jane Doe",
-  "role": "UX Designer crafting meaningful digital experiences",
-  "description": "I specialize in creating user-centered designs that solve complex problems and deliver exceptional digital experiences.",
-  "aboutDescription": "With over 5 years of experience in UX design, I'm passionate about creating intuitive and accessible digital experiences. I believe in the power of user research and data-driven design decisions to create products that truly serve their users.",
-  "profileImage": "assets/images/profile.jpg",
+  "name": "Bárbara M",
+  "role": "Diseñadora UX/UI / Psicóloga",
+  "description": "De la Psicología al Diseño UX/UI: tras años de experiencia con personas en contextos sociales, descubrí en lo digital un poder que iba más allá de las barreras tradicionales.",
+  "aboutDescription": "Mi experiencia en investigación y gestión de proyectos me permite crear soluciones centradas en usuarios desde las fases tempranas hasta su implementación. De mi recorrido como psicóloga me llevo la capacidad de iterar constantemente, porque al trabajar con personas nada ocurre como se planea. Hoy mi objetivo es diseñar entornos digitales más humanos, accesibles y significativos.",
+  "profileImage": "assets/images/profile.jpeg",
   "skills": [
-    "User Research",
-    "UI/UX Design",
-    "Prototyping",
-    "Wireframing",
-    "Design Systems",
     "Figma",
-    "Sketch",
-    "Adobe XD",
-    "InVision",
-    "Principle",
-    "HTML/CSS",
-    "JavaScript",
-    "Accessibility",
-    "Usability Testing",
-    "Information Architecture",
-    "Interaction Design"
+    "Google Forms",
+    "Notion",
+    "Miro",
+    "Investigación de Usuarios",
+    "Diseño UX/UI",
+    "Prototipado",
+    "Wireframing",
+    "Sistemas de Diseño",
+    "Análisis de Datos",
+    "Gestión de Proyectos",
+    "Metodología de Investigación",
+    "Psicometría",
+    "Comunicación Efectiva",
+    "Resolución de Conflictos",
+    "HTML/CSS"
   ],
   "stats": {
-    "yearsExperience": "5+",
-    "projectsCompleted": "50+",
-    "happyClients": "25+"
+    "yearsExperience": "3+",
+    "projectsCompleted": "100+",
+    "happyClients": "250+"
   },
   "contact": {
-    "email": "hello@janedoe.com",
-    "linkedin": "linkedin.com/in/janedoe",
-    "location": "San Francisco, CA"
+    "email": "barbara@ejemplo.com",
+    "linkedin": "linkedin.com/in/barbara-m",
+    "location": "España"
+  },
+  "languages": {
+    "spanish": {
+      "name": "Español",
+      "level": "Nativo",
+      "percentage": 100
+    },
+    "english": {
+      "name": "Inglés", 
+      "level": "C2",
+      "percentage": 90
+    }
   }
 }
