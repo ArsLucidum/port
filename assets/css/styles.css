@@ -1,21 +1,21 @@
 /* ===== MODERN DESIGN SYSTEM ===== */
 :root {
   /* Colors - New Brand Identity */
-  --primary-color: #158c7f;
-  --secondary-gradient-start: #1fa99a;
-  --secondary-gradient-end: #164e63;
-  --accent-color: #158c7f;
+  --primary-color: #fff8e1;
+  --secondary-gradient-start: #fff8e1;
+  --secondary-gradient-end: #fff8e1;
+  --accent-color: #fff8e1;
   --rose-variant: #c55d7a;
   --blue-variant: #1fa9d6;
-  --deep-teal: #164e63;
+  --deep-mustard: #cc9900;
   
   /* Neutral palette */
   --background-primary: #ffffff;
   --background-secondary: #fafafa;
-  --background-subtle: #e8f5f0;
-  --text-primary: #1a1a1a;
-  --text-secondary: #4a5568;
-  --text-muted: #718096;
+  --background-subtle: #e6b800;
+  --text-primary: #2c1810;
+  --text-secondary: #3d2817;
+  --text-muted: #4a3220;
   --border-subtle: #e2e8f0;
   --border-light: #f1f5f9;
   
@@ -167,6 +167,11 @@ a:focus {
   transition: all var(--transition-normal);
 }
 
+.navbar .nav-logo,
+.navbar .nav-link {
+  color: var(--text-primary) !important;
+}
+
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -243,6 +248,13 @@ a:focus {
 .hero {
   padding: var(--section-padding-desktop) 0;
   background: var(--background-subtle);
+}
+
+.hero h1,
+.hero .hero-greeting,
+.hero .hero-subtitle,
+.hero .hero-description {
+  color: var(--text-primary) !important;
 }
 
 .hero-container {
@@ -329,8 +341,8 @@ a:focus {
 }
 
 .btn-primary:hover {
-  color: var(--deep-teal);
-  border-bottom-color: var(--deep-teal);
+  color: var(--deep-mustard);
+  border-bottom-color: var(--deep-mustard);
   text-decoration: none;
 }
 
@@ -743,6 +755,10 @@ section {
     transition: left var(--transition-normal);
     padding: var(--space-8) 0;
     gap: var(--space-6);
+  }
+  
+  .nav-menu .nav-link {
+    color: var(--text-primary) !important;
   }
   
   .nav-menu.active {
