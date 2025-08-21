@@ -10,7 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
+    <a href="#main" class="skip-to-content">Saltar al contenido principal</a>
+    
+    <header>
+        <nav class="navbar">
         <div class="nav-container">
             <a href="#home" class="nav-logo">Portfolio</a>
             <ul class="nav-menu">
@@ -27,9 +30,10 @@
                 <span class="bar"></span>
             </div>
         </div>
-    </nav>
+        </nav>
+    </header>
 
-    <main>
+    <main id="main">
         <section id="home" class="hero">
             <div class="hero-container">
                 <div class="hero-content">
@@ -42,13 +46,9 @@
                         I specialize in creating user-centered designs that solve complex problems 
                         and deliver exceptional digital experiences.
                     </p>
-                    <div class="hero-actions">
-                        <a href="projects/index.html" class="btn btn-primary">Ver mi trabajo</a>
-                        <a href="#contact" class="btn btn-secondary">Contactar</a>
-                    </div>
                 </div>
                 <div class="hero-image">
-                    <img src="assets/images/profile.jpeg" alt="Bárbara M Profile Photo" id="profile-image">
+                    <img src="assets/images/new_profile.png" alt="Bárbara M Profile Photo" id="profile-image">
                 </div>
             </div>
         </section>
@@ -117,25 +117,8 @@
             <div class="container">
                 <h2 class="section-title">Proyectos Destacados</h2>
                 <p class="section-subtitle">Una selección de mi trabajo reciente</p>
-                <div class="projects-carousel" id="featured-projects-carousel">
-                    <div class="carousel-container">
-                        <div class="carousel-track" id="carousel-track">
-                            <!-- Featured projects will be loaded dynamically -->
-                        </div>
-                    </div>
-                    <button class="carousel-nav prev" id="carousel-prev">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                    <button class="carousel-nav next" id="carousel-next">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                    <div class="carousel-indicators" id="carousel-indicators">
-                        <!-- Indicators will be generated dynamically -->
-                    </div>
+                <div class="projects-grid" id="featured-projects-grid">
+                    <!-- Featured projects will be loaded dynamically -->
                 </div>
                 <div class="section-actions">
                     <a href="projects/index.html" class="btn btn-primary">Ver todos los proyectos</a>
@@ -147,20 +130,18 @@
             <div class="container">
                 <h2 class="section-title">Trabajemos juntos</h2>
                 <p class="section-subtitle">Siempre estoy interesada en nuevas oportunidades y colaboraciones</p>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <h3>Email</h3>
-                            <a href="mailto:hello@example.com" id="contact-email">hello@example.com</a>
-                        </div>
-                        <div class="contact-item">
-                            <h3>LinkedIn</h3>
-                            <a href="#" target="_blank" id="contact-linkedin">linkedin.com/in/designer</a>
-                        </div>
-                        <div class="contact-item">
-                            <h3>Ubicación</h3>
-                            <span id="contact-location">España</span>
-                        </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Email</h3>
+                        <a href="mailto:hello@example.com" id="contact-email">hello@example.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <h3>LinkedIn</h3>
+                        <a href="#" target="_blank" id="contact-linkedin">linkedin.com/in/designer</a>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Ubicación</h3>
+                        <span id="contact-location">España</span>
                     </div>
                 </div>
             </div>

@@ -8,101 +8,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        /* Additional styles for projects page */
-        .projects-header {
-            background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
-            padding: calc(70px + var(--space-16)) 0 var(--space-16) 0;
-            text-align: center;
-        }
-        
-        .projects-filter {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: var(--space-4);
-            margin: var(--space-12) 0;
-        }
-        
-        .filter-btn {
-            padding: var(--space-3) var(--space-6);
-            border: 2px solid var(--gray-300);
-            background: var(--white);
-            color: var(--gray-600);
-            border-radius: var(--radius-lg);
-            cursor: pointer;
-            transition: all var(--transition-fast);
-            font-weight: 500;
-        }
-        
-        .filter-btn:hover,
-        .filter-btn.active {
-            border-color: var(--primary-color);
-            background: var(--primary-color);
-            color: var(--white);
-        }
-        
-        .projects-grid {
-            margin-bottom: var(--space-20);
-        }
-        
-        .project-card {
-            opacity: 1;
-            transform: scale(1);
-            transition: all var(--transition-normal);
-        }
-        
-        .project-card.hidden {
-            opacity: 0;
-            transform: scale(0.8);
-            pointer-events: none;
-        }
-        
-        .back-to-home {
-            position: fixed;
-            top: 50%;
-            left: var(--space-6);
-            transform: translateY(-50%);
-            background: var(--white);
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            box-shadow: var(--shadow-lg);
-            transition: all var(--transition-fast);
-            z-index: 100;
-        }
-        
-        .back-to-home:hover {
-            background: var(--primary-color);
-            color: var(--white);
-            transform: translateY(-50%) scale(1.1);
-        }
-        
-        @media (max-width: 768px) {
-            .back-to-home {
-                display: none;
-            }
-            
-            .projects-filter {
-                justify-content: flex-start;
-                overflow-x: auto;
-                padding-bottom: var(--space-2);
-            }
-            
-            .filter-btn {
-                flex-shrink: 0;
-            }
-        }
-    </style>
 </head>
 <body>
-    <nav class="navbar">
+    <a href="#main" class="skip-to-content">Saltar al contenido principal</a>
+    
+    <header>
+        <nav class="navbar">
         <div class="nav-container">
             <a href="../" class="nav-logo">Portfolio</a>
             <ul class="nav-menu">
@@ -119,7 +30,8 @@
                 <span class="bar"></span>
             </div>
         </div>
-    </nav>
+        </nav>
+    </header>
 
     <a href="../index.html" class="back-to-home" title="Volver al inicio">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -127,7 +39,7 @@
         </svg>
     </a>
 
-    <main>
+    <main id="main">
         <section class="projects-header">
             <div class="container">
                 <h1>Mis Proyectos</h1>

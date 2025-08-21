@@ -37,17 +37,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===== NAVBAR SCROLL EFFECT =====
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = 'none';
-    }
-});
 
 // ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
 const observerOptions = {
@@ -94,7 +83,7 @@ function getFallbackData(filename) {
             role: "Diseñadora UX/UI / Psicóloga",
             description: "De la Psicología al Diseño UX/UI: tras años de experiencia con personas en contextos sociales, descubrí en lo digital un poder que iba más allá de las barreras tradicionales.",
             aboutDescription: "Mi experiencia en investigación y gestión de proyectos me permite crear soluciones centradas en usuarios desde las fases tempranas hasta su implementación. De mi recorrido como psicóloga me llevo la capacidad de iterar constantemente, porque al trabajar con personas nada ocurre como se planea. Hoy mi objetivo es diseñar entornos digitales más humanos, accesibles y significativos.",
-            profileImage: "assets/images/profile.jpeg",
+            profileImage: "assets/images/new_profile.png",
             skills: ["Figma", "Google Forms", "Notion", "Miro", "Investigación de Usuarios", "Diseño UX/UI", "Prototipado", "Wireframing", "Sistemas de Diseño", "Análisis de Datos", "Gestión de Proyectos", "Metodología de Investigación", "Psicometría", "Comunicación Efectiva", "Resolución de Conflictos", "HTML/CSS"],
             stats: { yearsExperience: "3+", projectsCompleted: "100+", happyClients: "250+" },
             contact: { email: "barbara@ejemplo.com", linkedin: "linkedin.com/in/barbara-m", location: "España" },
@@ -325,108 +314,27 @@ async function loadFeaturedProjects() {
     if (!projectsData) return;
 
     const featuredProjects = projectsData.filter(project => project.featured);
-    const carouselTrack = document.getElementById('carousel-track');
-    if (!carouselTrack) return;
+    const projectsGrid = document.getElementById('featured-projects-grid');
+    if (!projectsGrid) return;
 
-    carouselTrack.innerHTML = featuredProjects.map(project => `
-        <div class="carousel-slide">
-            <div class="project-card" onclick="window.location.href='projects/${project.slug}/'">
-                <div class="project-image">
-                    <img src="${project.image || 'assets/images/project-placeholder.jpg'}" 
-                         alt="${project.title}" 
-                         loading="lazy">
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">${project.title}</h3>
-                    <p class="project-description">${project.shortDescription}</p>
-                    <div class="project-tags">
-                        ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
-                    </div>
+    projectsGrid.innerHTML = featuredProjects.map(project => `
+        <div class="project-card" onclick="window.location.href='projects/${project.slug}/'">
+            <div class="project-image">
+                <img src="${project.image || 'assets/images/project-placeholder.jpg'}" 
+                     alt="${project.title}" 
+                     loading="lazy">
+            </div>
+            <div class="project-content">
+                <h3 class="project-title">${project.title}</h3>
+                <p class="project-description">${project.shortDescription}</p>
+                <div class="project-tags">
+                    ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
                 </div>
             </div>
         </div>
     `).join('');
-
-    // Initialize carousel
-    initializeCarousel(featuredProjects.length);
 }
 
-// ===== CAROUSEL FUNCTIONALITY =====
-let currentSlide = 0;
-let totalSlides = 0;
-
-function initializeCarousel(slideCount) {
-    totalSlides = slideCount;
-    if (totalSlides <= 1) {
-        // Hide navigation if only one slide
-        const prevBtn = document.getElementById('carousel-prev');
-        const nextBtn = document.getElementById('carousel-next');
-        if (prevBtn) prevBtn.style.display = 'none';
-        if (nextBtn) nextBtn.style.display = 'none';
-        return;
-    }
-
-    // Create indicators
-    const indicatorsContainer = document.getElementById('carousel-indicators');
-    if (indicatorsContainer) {
-        indicatorsContainer.innerHTML = Array.from({length: totalSlides}, (_, i) => 
-            `<div class="carousel-indicator ${i === 0 ? 'active' : ''}" data-slide="${i}"></div>`
-        ).join('');
-
-        // Add indicator click handlers
-        indicatorsContainer.addEventListener('click', (e) => {
-            if (e.target.classList.contains('carousel-indicator')) {
-                const slideIndex = parseInt(e.target.dataset.slide);
-                goToSlide(slideIndex);
-            }
-        });
-    }
-
-    // Add navigation button handlers
-    const prevBtn = document.getElementById('carousel-prev');
-    const nextBtn = document.getElementById('carousel-next');
-    
-    if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-            currentSlide = currentSlide > 0 ? currentSlide - 1 : totalSlides - 1;
-            updateCarousel();
-        });
-    }
-
-    if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-            currentSlide = currentSlide < totalSlides - 1 ? currentSlide + 1 : 0;
-            updateCarousel();
-        });
-    }
-
-    // Auto-advance carousel
-    setInterval(() => {
-        currentSlide = currentSlide < totalSlides - 1 ? currentSlide + 1 : 0;
-        updateCarousel();
-    }, 5000); // Auto-advance every 5 seconds
-}
-
-function goToSlide(slideIndex) {
-    currentSlide = slideIndex;
-    updateCarousel();
-}
-
-function updateCarousel() {
-    const track = document.getElementById('carousel-track');
-    const indicators = document.querySelectorAll('.carousel-indicator');
-    
-    if (track) {
-        // Calculate slide width: 350px slide + 24px gap (1.5rem)
-        const slideWidth = 374;
-        track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-    }
-
-    // Update indicators
-    indicators.forEach((indicator, index) => {
-        indicator.classList.toggle('active', index === currentSlide);
-    });
-}
 
 // ===== TYPING ANIMATION =====
 function createTypingAnimation(element, text, speed = 100) {
