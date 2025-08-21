@@ -833,11 +833,16 @@ section {
     top: auto;
     right: auto;
     transform: none;
-    bottom: calc(-1 * var(--section-padding-tablet));
+    bottom: auto;
   }
   
   .hero-content {
     padding: 0 var(--space-6);
+  }
+  
+  .about {
+    background: var(--background-primary);
+    z-index: 2;
   }
   
   .about-content {
@@ -913,7 +918,7 @@ section {
     top: auto;
     right: auto;
     transform: none;
-    bottom: calc(-1 * var(--section-padding-mobile));
+    bottom: auto;
   }
   
   .hero-content {
@@ -923,7 +928,7 @@ section {
   .nav-menu {
     position: fixed;
     left: -100%;
-    top: 100%;
+    top: 60px;
     flex-direction: column;
     background: var(--background-subtle);
     width: 100%;
@@ -931,6 +936,7 @@ section {
     transition: left var(--transition-normal);
     padding: var(--space-8) 0;
     gap: var(--space-6);
+    z-index: 200;
   }
   
   .nav-menu .nav-link {

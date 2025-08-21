@@ -364,23 +364,35 @@ function handleParallax() {
     if (!heroImage || !aboutSection || !experienceSection) return;
     
     const scrollY = window.pageYOffset;
-    const aboutRect = aboutSection.getBoundingClientRect();
-    const aboutBottom = aboutRect.bottom + scrollY - window.innerHeight;
+    const isMobile = window.innerWidth <= 968; // Match CSS breakpoint
     
-    // Start parallax when the about section is almost done scrolling
-    if (scrollY > aboutBottom) {
-        // Parallax mode: image moves up slowly as we scroll down
-        const parallaxAmount = (scrollY - aboutBottom) * 0.5;
-        heroImage.style.position = 'fixed';
-        heroImage.style.bottom = `${parallaxAmount}px`;
-        heroImage.style.right = '8%';
-        heroImage.style.transform = 'none';
+    if (isMobile) {
+        // Mobile: Proper parallax - image moves slower than scroll, behind content
+        heroImage.style.position = 'relative';
+        heroImage.style.transform = `translateY(${scrollY * 0.3}px)`;
+        heroImage.style.zIndex = '-1';
+        heroImage.style.bottom = '';
+        heroImage.style.right = '';
     } else {
-        // Window effect mode: image stays completely fixed
-        heroImage.style.position = 'fixed';
-        heroImage.style.bottom = '0';
-        heroImage.style.right = '8%';
-        heroImage.style.transform = 'none';
+        // Desktop: Window effect + parallax
+        const aboutRect = aboutSection.getBoundingClientRect();
+        const aboutBottom = aboutRect.bottom + scrollY - window.innerHeight;
+        
+        // Start parallax when the about section is almost done scrolling
+        if (scrollY > aboutBottom) {
+            // Parallax mode: image moves up slowly as we scroll down
+            const parallaxAmount = (scrollY - aboutBottom) * 0.5;
+            heroImage.style.position = 'fixed';
+            heroImage.style.bottom = `${parallaxAmount}px`;
+            heroImage.style.right = '8%';
+            heroImage.style.transform = 'none';
+        } else {
+            // Window effect mode: image stays completely fixed
+            heroImage.style.position = 'fixed';
+            heroImage.style.bottom = '0';
+            heroImage.style.right = '8%';
+            heroImage.style.transform = 'none';
+        }
     }
 }
 
@@ -437,6 +449,12 @@ document.addEventListener('DOMContentLoaded', async function() {
     
     // Add parallax effect on scroll
     window.addEventListener('scroll', handleParallax, { passive: true });
+    
+    // Handle window resize to reset parallax on orientation change
+    window.addEventListener('resize', function() {
+        // Reset styles and reapply based on new window size
+        setTimeout(handleParallax, 100);
+    });
     
     console.log('Portfolio website initialized successfully!');
 });
