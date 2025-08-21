@@ -38,28 +38,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-// ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Apply animation to sections
-document.querySelectorAll('section:not(.hero)').forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(30px)';
-    section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-    observer.observe(section);
-});
 
 // ===== DATA LOADING FUNCTIONS =====
 async function loadData(filename) {
@@ -379,13 +357,43 @@ function animateCounters() {
 
 // ===== PARALLAX EFFECT =====
 function handleParallax() {
-    const scrolled = window.pageYOffset;
-    const parallaxElements = document.querySelectorAll('.hero-image');
+    const heroImage = document.getElementById('profile-image');
+    const aboutSection = document.getElementById('about');
+    const experienceSection = document.getElementById('experience');
     
-    parallaxElements.forEach(element => {
-        const speed = 0.5;
-        element.style.transform = `translateY(${scrolled * speed}px)`;
-    });
+    if (!heroImage || !aboutSection || !experienceSection) return;
+    
+    const scrollY = window.pageYOffset;
+    const isMobile = window.innerWidth <= 968; // Match CSS breakpoint
+    
+    if (isMobile) {
+        // Mobile: Proper parallax - image moves slower than scroll, behind content
+        heroImage.style.position = 'relative';
+        heroImage.style.transform = `translateY(${scrollY * 0.3}px)`;
+        heroImage.style.zIndex = '-1';
+        heroImage.style.bottom = '';
+        heroImage.style.right = '';
+    } else {
+        // Desktop: Window effect + parallax
+        const aboutRect = aboutSection.getBoundingClientRect();
+        const aboutBottom = aboutRect.bottom + scrollY - window.innerHeight;
+        
+        // Start parallax when the about section is almost done scrolling
+        if (scrollY > aboutBottom) {
+            // Parallax mode: image moves up slowly as we scroll down
+            const parallaxAmount = (scrollY - aboutBottom) * 0.5;
+            heroImage.style.position = 'fixed';
+            heroImage.style.bottom = `${parallaxAmount}px`;
+            heroImage.style.right = '8%';
+            heroImage.style.transform = 'none';
+        } else {
+            // Window effect mode: image stays completely fixed
+            heroImage.style.position = 'fixed';
+            heroImage.style.bottom = '0';
+            heroImage.style.right = '8%';
+            heroImage.style.transform = 'none';
+        }
+    }
 }
 
 // ===== PROJECT CARD HOVER EFFECTS =====
@@ -441,6 +449,12 @@ document.addEventListener('DOMContentLoaded', async function() {
     
     // Add parallax effect on scroll
     window.addEventListener('scroll', handleParallax, { passive: true });
+    
+    // Handle window resize to reset parallax on orientation change
+    window.addEventListener('resize', function() {
+        // Reset styles and reapply based on new window size
+        setTimeout(handleParallax, 100);
+    });
     
     console.log('Portfolio website initialized successfully!');
 });
