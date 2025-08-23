@@ -1,0 +1,39 @@
+{
+  "title": "E-learning Platform Redesign",
+  "screenshot": "./img/example-screenshot.jpg",
+  "summary": "Improving the digital learning experience for students and educators through user-centered design",
+  "meta": {
+    "Duration": "4 months",
+    "Role": "UX/UI Designer", 
+    "Tools": "Figma, Miro, Surveys",
+    "Client": "EduTech Inc",
+    "Team": "2 designers, 3 developers"
+  },
+  "phases": [
+    {
+      "id": "investigar",
+      "title": "User Research",
+      "summary": "During the research phase, I focused on understanding the real needs of educational platform users. This phase was crucial for establishing solid foundations for the complete system redesign."
+    },
+    {
+      "id": "definir", 
+      "title": "Problem Definition",
+      "summary": "Based on insights obtained during research, I clearly defined the problem to solve and established specific objectives for the redesign."
+    },
+    {
+      "id": "idear",
+      "title": "Solution Ideation", 
+      "summary": "The ideation phase focused on generating multiple creative solutions for identified problems, using various brainstorming and co-creation techniques with key project stakeholders."
+    },
+    {
+      "id": "disenar",
+      "title": "Solution Design",
+      "summary": "I transformed selected concepts into tangible and functional solutions, creating detailed wireframes, interactive prototypes and the complete design system for the new educational platform."
+    },
+    {
+      "id": "testear",
+      "title": "Validation and Testing",
+      "summary": "The final phase was dedicated to validating designed solutions through exhaustive testing with real users, iterating and refining based on results and feedback obtained in each session."
+    }
+  ]
+}

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project - Portfolio</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/project.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="../" class="nav-logo">Portfolio</a>
+                <ul class="nav-menu">
+                    <li><a href="../index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#about" class="nav-link">About</a></li>
+                    <li><a href="../index.html#experience" class="nav-link">Experience</a></li>
+                    <li><a href="../index.html#education" class="nav-link">Education</a></li>
+                    <li><a href="../projects/" class="nav-link">Projects</a></li>
+                    <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Parallax Hero Section -->
+    <section class="pv-hero" data-parallax="hero">
+        <div class="pv-hero-bg" data-parallax="media"></div>
+        <div class="pv-hero-container">
+            <div class="pv-hero-content">
+                <h1 class="pv-hero-title" id="project-title">E-learning Platform Redesign</h1>
+                <p class="pv-hero-subtitle" id="project-subtitle">Improving the digital learning experience for students and educators</p>
+                <div class="pv-hero-meta">
+                    <div class="pv-meta-item">
+                        <span class="pv-meta-label">Duration</span>
+                        <span class="pv-meta-value" id="project-duration">4 months</span>
+                    </div>
+                    <div class="pv-meta-item">
+                        <span class="pv-meta-label">Role</span>
+                        <span class="pv-meta-value" id="project-role">UX/UI Designer</span>
+                    </div>
+                    <div class="pv-meta-item">
+                        <span class="pv-meta-label">Tools</span>
+                        <span class="pv-meta-value" id="project-tools">Figma, Miro, Surveys</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pv-hero-phone" data-parallax="phone">
+                <div class="pv-phone-mockup">
+                    <svg class="pv-phone-frame" viewBox="0 0 280 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M40 0H240C262.091 0 280 17.9086 280 40V520C280 542.091 262.091 560 240 560H40C17.9086 560 0 542.091 0 520V40C0 17.9086 17.9086 0 40 0Z" fill="var(--text-primary)"/>
+                        <rect x="20" y="60" width="240" height="420" rx="12" fill="var(--bg)"/>
+                        <circle cx="140" cy="30" r="6" fill="var(--muted)"/>
+                        <rect x="120" y="510" width="40" height="4" rx="2" fill="var(--muted)"/>
+                    </svg>
+                    <img class="pv-phone-screen" src="./img/placeholder-screen.svg" alt="Project screenshot" id="project-screen">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Spacer -->
+    <div class="pv-hero-spacer"></div>
+
+    <!-- Phase Menu -->
+    <section class="pv-menu">
+        <div class="pv-menu-container">
+            <a href="#investigar" class="pv-menu-link active" data-phase="investigar">Investigar</a>
+            <a href="#definir" class="pv-menu-link" data-phase="definir">Definir</a>
+            <a href="#idear" class="pv-menu-link" data-phase="idear">Idear</a>
+            <a href="#disenar" class="pv-menu-link" data-phase="disenar">Diseñar</a>
+            <a href="#testear" class="pv-menu-link" data-phase="testear">Testear</a>
+        </div>
+    </section>
+
+    <!-- Main Content Layout -->
+    <main class="pv-container">
+        <!-- Left Timeline Rail -->
+        <aside class="pv-timeline" id="pv-timeline">
+            <div class="pv-rail"></div>
+            <div class="pv-cards-container" id="pv-cards-container">
+                <div class="pv-card active" data-phase="investigar">
+                    <span class="pv-card-number">1</span>
+                    <h3 class="pv-card-title">Investigar</h3>
+                    <p class="pv-card-desc">Investigación de usuarios y análisis</p>
+                </div>
+                <div class="pv-card" data-phase="definir">
+                    <span class="pv-card-number">2</span>
+                    <h3 class="pv-card-title">Definir</h3>
+                    <p class="pv-card-desc">Definición del problema y objetivos</p>
+                </div>
+                <div class="pv-card" data-phase="idear">
+                    <span class="pv-card-number">3</span>
+                    <h3 class="pv-card-title">Idear</h3>
+                    <p class="pv-card-desc">Generación de ideas y conceptos</p>
+                </div>
+                <div class="pv-card" data-phase="disenar">
+                    <span class="pv-card-number">4</span>
+                    <h3 class="pv-card-title">Diseñar</h3>
+                    <p class="pv-card-desc">Diseño de interfaces y prototipado</p>
+                </div>
+                <div class="pv-card" data-phase="testear">
+                    <span class="pv-card-number">5</span>
+                    <h3 class="pv-card-title">Testear</h3>
+                    <p class="pv-card-desc">Validación y testing con usuarios</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Right Content Area -->
+        <div class="pv-content">
+            <!-- Research Phase -->
+            <section class="pv-section" id="investigar">
+                <h2 class="pv-section-title">Investigar</h2>
+                <h2>User Research</h2>
+                <p class="lead">During the research phase, I focused on understanding the real needs of educational platform users. This phase was crucial for establishing solid foundations for the complete system redesign.</p>
+                
+                <h3>Research Objectives</h3>
+                <ul>
+                    <li>Identify main friction points in current user experience</li>
+                    <li>Understand behaviors, motivations and contexts of students and educators</li>
+                    <li>Analyze direct and indirect competition and best practices in education sector</li>
+                    <li>Establish clear and measurable success metrics for the redesign</li>
+                    <li>Map complete user journeys in different usage scenarios</li>
+                </ul>
+
+                <h3>Research Methodology</h3>
+                <p>I developed a mixed approach combining qualitative and quantitative methods to get a 360° view of the problem:</p>
+                
+                <div class="pv-card-grid">
+                    <div class="pv-content-card">
+                        <h4>In-depth Interviews</h4>
+                        <p>12 individual 45-minute sessions with students and 8 with educators to capture emotions, motivations and usage contexts.</p>
+                    </div>
+                    <div class="pv-content-card">
+                        <h4>Quantitative Surveys</h4>
+                        <p>Online survey to 156 active users to obtain statistical data on usage patterns and preferences.</p>
+                    </div>
+                    <div class="pv-content-card">
+                        <h4>Data Analysis</h4>
+                        <p>Review of analytics, heatmaps and support data to identify behavioral patterns.</p>
+                    </div>
+                    <div class="pv-content-card">
+                        <h4>Competitive Analysis</h4>
+                        <p>Detailed analysis of 8 similar platforms to identify industry standards.</p>
+                    </div>
+                </div>
+
+                <h3>Key Findings and Critical Insights</h3>
+                <div class="pv-insights">
+                    <div class="pv-insight critical">
+                        <div class="pv-insight-number">78%</div>
+                        <p>of students abandoned tasks due to excessive interface complexity</p>
+                    </div>
+                    <div class="pv-insight warning">
+                        <div class="pv-insight-number">15 min</div>
+                        <p>average time educators needed to upload basic material to the system</p>
+                    </div>
+                    <div class="pv-insight info">
+                        <div class="pv-insight-number">89%</div>
+                        <p>reported frustration with current search and navigation system</p>
+                    </div>
+                </div>
+
+                <div class="pv-highlight">
+                    <h3>Research Impact on Project</h3>
+                    <p>The insights obtained were fundamental for guiding all subsequent design decisions. The research revealed that the problem was not only visual, but structural and conceptual, which defined the complete scope of the redesign.</p>
+                    <p>This solid evidence base allowed justifying each design decision with real user data, ensuring that proposed solutions actually solved identified problems rather than team assumptions.</p>
+                </div>
+            </section>
+
+            <!-- Define Phase -->
+            <section class="pv-section" id="definir">
+                <h2 class="pv-section-title">Definir</h2>
+                <h2>Problem Definition</h2>
+                <p class="lead">Based on insights obtained during research, I clearly defined the problem to solve and established specific objectives for the redesign.</p>
+
+                <h3>Problem Statement</h3>
+                <p>E-learning platform users experience frustration and abandonment due to complex navigation, confusing information architecture and inefficient workflows that don't align with their mental models and learning objectives.</p>
+
+                <h3>User Personas</h3>
+                <p>I developed three main personas based on patterns identified during research:</p>
+                <ul>
+                    <li><strong>Ana, the committed student:</strong> Seeks efficiency to balance studies with work</li>
+                    <li><strong>Carlos, the experienced teacher:</strong> Needs intuitive tools to create content</li>
+                    <li><strong>María, the academic administrator:</strong> Requires progress visibility and metrics</li>
+                </ul>
+
+                <h3>Redesign Objectives</h3>
+                <p>I established measurable and specific objectives: reduce content search time by 60%, decrease task abandonment rate to 15%, and simplify course creation process to take less than 5 minutes.</p>
+                <p>I also defined design principles that would guide all decisions: simplicity, consistency, accessibility and orientation toward learning objectives.</p>
+            </section>
+
+            <!-- Ideate Phase -->
+            <section class="pv-section" id="idear">
+                <h2 class="pv-section-title">Idear</h2>
+                <h2>Solution Ideation</h2>
+                <p class="lead">The ideation phase focused on generating multiple creative solutions for identified problems, using various brainstorming and co-creation techniques with key project stakeholders.</p>
+
+                <h3>Brainstorming Sessions</h3>
+                <p>I organized collaborative sessions with stakeholders, including educators and students. We used techniques like "Crazy 8s" and "How Might We" to generate innovative ideas without initial restrictions.</p>
+
+                <h3>Explored Concepts</h3>
+                <ul>
+                    <li>Navigation system with tags and intelligent filters</li>
+                    <li>Customizable dashboard according to user role</li>
+                    <li>Guided step-by-step course creation flow</li>
+                    <li>Recommendation system based on learning progress</li>
+                    <li>Integrated collaboration tools for group projects</li>
+                </ul>
+
+                <h3>Idea Selection</h3>
+                <p>I evaluated each concept using an impact vs effort matrix, considering technical, temporal and resource factors. Selected ideas balanced innovation with implementation feasibility.</p>
+                <p>The final concept combined simplified navigation with adaptive dashboards and an intuitive content creation system, always maintaining focus on reducing user cognitive load.</p>
+            </section>
+
+            <!-- Design Phase -->
+            <section class="pv-section" id="disenar">
+                <h2 class="pv-section-title">Diseñar</h2>
+                <h2>Solution Design</h2>
+                <p class="lead">I transformed selected concepts into tangible and functional solutions, creating detailed wireframes, interactive prototypes and the complete design system for the new educational platform.</p>
+
+                <h3>Information Architecture</h3>
+                <p>I completely redesigned the information structure, organizing content according to mental models identified in research. I implemented a hybrid navigation that combines topic categories with activity type filters.</p>
+
+                <h3>Design System</h3>
+                <p>I developed a reusable component system that ensures visual and functional consistency throughout the platform. Includes accessible color palette, scalable typography and interactive components optimized for different devices.</p>
+
+                <h3>Interactive Prototypes</h3>
+                <ul>
+                    <li>Main navigation and content search flow</li>
+                    <li>Complete course creation and editing process</li>
+                    <li>Adaptive dashboard for each user type</li>
+                    <li>Notification system and progress tracking</li>
+                </ul>
+
+                <h3>Accessibility Considerations</h3>
+                <p>I designed following WCAG 2.1 guidelines, ensuring adequate contrast, keyboard navigation, screen reader compatibility and personalization options for users with different abilities.</p>
+            </section>
+
+            <!-- Test Phase -->
+            <section class="pv-section" id="testear">
+                <h2 class="pv-section-title">Testear</h2>
+                <h2>Validation and Testing</h2>
+                <p class="lead">The final phase was dedicated to validating designed solutions through exhaustive testing with real users, iterating and refining based on results and feedback obtained in each session.</p>
+
+                <h3>Testing Methodology</h3>
+                <p>I conducted usability testing sessions with 15 users representative of our personas. I used a combination of directed tasks and free exploration to evaluate both efficiency and user satisfaction.</p>
+
+                <h3>Evaluated Metrics</h3>
+                <ul>
+                    <li>Critical task completion time</li>
+                    <li>Success rate in navigation and search</li>
+                    <li>Satisfaction level (SUS Score)</li>
+                    <li>Number of errors and confusion points</li>
+                    <li>Perceived ease of learning the system</li>
+                </ul>
+
+                <h3>Results Obtained</h3>
+                <p>Tests showed a 65% improvement in content search time and a 70% reduction in navigation errors. Average SUS Score was 78, indicating good overall usability.</p>
+
+                <h3>Iterations Made</h3>
+                <p>Based on received feedback, I implemented adjustments in dashboard visual hierarchy, simplified evaluation creation flow and improved system status clarity.</p>
+
+                <div class="pv-highlight">
+                    <h3>Project Impact</h3>
+                    <p>The redesign resulted in a 45% increase in user retention and a 60% reduction in usability-related support tickets. Educators reported significant improvement in their productivity for creating content.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/project.js"></script>
+</body>
+</html>
