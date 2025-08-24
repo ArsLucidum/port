@@ -89,22 +89,25 @@ function initTimeline() {
       
       let cardY;
       
+      const arrivalBuffer = 150; // Buffer for arriving card (stays same)
+      const departureBuffer = window.innerHeight / 2; // Half viewport for early departure
+      
       // Check if section is in viewport and determine card behavior
-      if (sectionTop <= timelineCenter && sectionBottom >= timelineCenter) {
+      if (sectionTop <= (timelineCenter - arrivalBuffer) && sectionBottom >= (timelineCenter + departureBuffer)) {
         // Section is active - STICK card to center
         cardY = timelineCenter;
-      } else if (sectionBottom < timelineCenter) {
-        // Section has scrolled past - card should scroll UP naturally
-        // Position card based on section bottom, allowing it to scroll out
-        const distancePastCenter = timelineCenter - sectionBottom;
-        cardY = timelineCenter - distancePastCenter;
+      } else if (sectionBottom < (timelineCenter + departureBuffer)) {
+        // Section has scrolled past (with early departure) - card should scroll UP naturally
+        // Start leaving much earlier - half viewport before reaching bottom
+        const distancePastBuffer = (timelineCenter + departureBuffer) - sectionBottom;
+        cardY = timelineCenter - distancePastBuffer;
         // Allow card to scroll completely out of view
         if (cardY < -200) cardY = -200;
       } else {
         // Section hasn't reached center yet - card should scroll IN from below
-        // Position card based on section top
-        const distanceBeforeCenter = sectionTop - timelineCenter;
-        cardY = timelineCenter + distanceBeforeCenter;
+        // Start arriving after previous card has left
+        const distanceBeforeBuffer = sectionTop - (timelineCenter - arrivalBuffer);
+        cardY = timelineCenter + distanceBeforeBuffer;
         // Allow card to start from below viewport
         if (cardY > timelineHeight + 200) cardY = timelineHeight + 200;
       }

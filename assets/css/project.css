@@ -16,7 +16,7 @@
   --pv-marker-size: 12px;
   --pv-transition: 200ms ease-out;
   --pv-hero-height: 65vh;
-  --pv-header-height: 80px;
+  --pv-header-height: calc(48px + 2rem); /* Content height + padding top/bottom */
   
   /* Timeline positioning (updated dynamically) */
   --pv-y: 0px;
@@ -133,7 +133,7 @@
 
 /* ===== HERO SPACER ===== */
 .pv-hero-spacer {
-  height: calc(var(--pv-hero-height) + var(--pv-header-height));
+  height: var(--pv-hero-height);
   pointer-events: none;
 }
 
