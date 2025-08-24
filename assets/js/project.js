@@ -110,7 +110,18 @@ function initTimeline() {
         // Section hasn't reached center yet - card should scroll IN from below
         // Card waits longer before arriving - reaches center when content is more prominent
         const distanceBeforeBuffer = sectionTop - (timelineCenter - arrivalBuffer);
-        cardY = timelineCenter + distanceBeforeBuffer;
+        
+        // Special handling for first card to prevent double-speed appearance
+        const isFirstCard = card === cards[0];
+        if (isFirstCard && scrollTop < window.innerHeight) {
+          // During hero-covering phase, slow down first card movement significantly
+          const heroScrollProgress = Math.min(scrollTop / window.innerHeight, 1);
+          const dampingFactor = 0.3 + (heroScrollProgress * 0.7); // Start at 30%, increase to 100%
+          cardY = timelineCenter + (distanceBeforeBuffer * dampingFactor);
+        } else {
+          cardY = timelineCenter + distanceBeforeBuffer;
+        }
+        
         // Allow card to start from below viewport
         if (cardY > timelineHeight + 200) cardY = timelineHeight + 200;
       }
