@@ -169,11 +169,15 @@ a:focus {
 
 /* ===== NAVIGATION ===== */
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   background: var(--background-subtle);
-  z-index: 100;
+  z-index: 300;
   transition: all var(--transition-normal);
+  margin: 0;
+  border: none;
 }
 
 .navbar .nav-logo,
@@ -1029,6 +1033,7 @@ button:focus-visible,
 a:focus-visible {
   border-radius: var(--radius-sm);
 }
+
 
 /* ===== PROJECTS PAGE SPECIFIC STYLES ===== */
 .projects-header {
