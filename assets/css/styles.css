@@ -71,6 +71,13 @@
   --transition-fast: 0.15s ease-out;
   --transition-normal: 0.25s ease-out;
   --transition-slow: 0.4s ease-out;
+  
+  /* === Derived brand tokens (mono) === */
+  /* Treat existing mustard as the brand */
+  --brand: var(--background-subtle);                 /* e.g., #e6b800 */
+  /* Subtle tints for hairlines/rails using the same hue */
+  --brand-10: color-mix(in srgb, var(--brand) 10%, white);
+  --brand-20: color-mix(in srgb, var(--brand) 20%, white);
 }
 
 /* ===== RESET & BASE ===== */
@@ -546,77 +553,82 @@ section {
   transition: width var(--transition-normal);
 }
 
-/* ===== TIMELINE ===== */
+/* ===== TIMELINE (single-column, minimal) ===== */
 .timeline {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-8);
+  display: grid;
+  gap: var(--space-6); /* tighter rhythm than before */
 }
 
+/* Thin vertical rail in a brand tint */
 .timeline::before {
   content: '';
   position: absolute;
-  left: 24px;
-  top: 0;
-  bottom: 0;
+  left: 16px; top: 0; bottom: 0;
   width: 2px;
-  background: #e6b800;
+  background: var(--brand-10, var(--brand)); /* fallback to brand if color-mix unsupported */
 }
 
+/* Each item sits to the right of the rail */
 .timeline-item {
   position: relative;
-  display: flex;
-  gap: var(--space-6);
   padding-left: var(--space-16);
 }
 
+/* Small brand dot anchored to first text line */
 .timeline-marker {
   position: absolute;
-  left: 16px;
-  top: var(--space-2);
-  width: 16px;
-  height: 16px;
-  background: #e6b800;
-  border: 4px solid var(--background-primary);
+  left: 12px;
+  top: calc(var(--space-2) + 2px);
+  width: 10px; height: 10px;
+  background: var(--brand);
+  border: 3px solid var(--background-primary);
+  border-radius: 50%;
 }
 
+/* Content card: subtle border, no heavy fills; minimalist radii already 0 */
 .timeline-content {
-  flex: 1;
-  background: transparent;
-  padding: var(--space-6) 0;
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  padding: var(--space-4) var(--space-6);
 }
 
+/* Typography: let text be the hero; keep color accents on the rail/dot */
 .timeline-date {
   font-size: var(--text-sm);
   color: var(--text-muted);
   font-weight: var(--font-weight-medium);
   margin-bottom: var(--space-2);
+  font-variant-numeric: tabular-nums; /* tidy dates */
 }
-
 .timeline-title {
   font-size: var(--text-xl);
+  color: var(--text-primary);          /* was brand; now text for calmer hierarchy */
   margin-bottom: var(--space-2);
-  color: #e6b800;
+  font-weight: var(--font-weight-semibold);
 }
-
 .timeline-company {
   font-size: var(--text-lg);
-  color: #e6b800;
-  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
   margin-bottom: var(--space-3);
 }
-
 .timeline-description {
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 0;
 }
 
+/* Mobile tidy-up */
+@media (max-width: 768px){
+  .timeline::before { left: 12px; }
+  .timeline-item { padding-left: var(--space-12); }
+  .timeline-marker { left: 8px; top: calc(var(--space-2) + 2px); }
+}
+
 /* ===== SECTIONS WITH PALE BACKGROUND ===== */
 .experience,
 .education {
-  background: #fff8e1;
+  background: var(--background-primary);
 }
 
 .featured-projects {
@@ -698,6 +710,22 @@ section {
   left: auto;
   right: 16px;
 }
+
+/* ===== NEUTRALIZE CONTRAPOSED LAYOUT (OVERRIDE) ===== */
+/* Kill the big side backgrounds */
+.experience::after,
+.education::after { display: none !important; }
+
+/* Use the full width for both timelines */
+.experience .timeline,
+.education .timeline { max-width: 100% !important; margin-left: 0; }
+
+/* Undo the mirrored/right-aligned layout for Education */
+.education .section-title { text-align: initial !important; }
+.education .timeline::before { left: 24px !important; right: auto !important; }
+.education .timeline-item { padding-right: 0 !important; padding-left: var(--space-16) !important; direction: ltr !important; }
+.education .timeline-content { text-align: initial !important; }
+.education .timeline-marker { right: auto !important; left: 16px !important; }
 
 .projects-grid {
   display: grid;
