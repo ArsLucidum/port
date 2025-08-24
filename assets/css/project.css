@@ -214,8 +214,7 @@
   position: sticky;
   top: calc(var(--pv-header-height) + 60px);
   height: calc(100vh - var(--pv-header-height) - 60px);
-  background: var(--surface);
-  border-right: 1px solid var(--border);
+  background: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -248,21 +247,16 @@
   position: absolute;
   width: 240px;
   background: var(--bg);
-  border: 1px solid var(--border);
   padding: var(--space-6);
   text-align: center;
   left: 0;
   cursor: pointer;
   z-index: 2;
-  box-shadow: var(--shadow-soft);
   pointer-events: auto;
   transform: translateY(-50%);
   transition: none;
 }
 
-.pv-card:hover {
-  box-shadow: var(--shadow-card);
-}
 
 .pv-card-number {
   display: inline-flex;
