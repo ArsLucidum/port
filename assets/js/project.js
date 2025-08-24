@@ -4,6 +4,9 @@ let projectData = null;
 let activePhaseId = null;
 
 document.addEventListener('DOMContentLoaded', async () => {
+  // Ensure page starts at the top to show hero fully
+  window.scrollTo(0, 0);
+  
   await loadProjectData();
   initTimeline();
 });
@@ -89,7 +92,7 @@ function initTimeline() {
       
       let cardY;
       
-      const arrivalBuffer = 150; // Buffer for arriving card (stays same)
+      const arrivalBuffer = window.innerHeight * 0.3; // Larger buffer for later arrival
       const departureBuffer = window.innerHeight / 2; // Half viewport for early departure
       
       // Check if section is in viewport and determine card behavior
@@ -105,7 +108,7 @@ function initTimeline() {
         if (cardY < -200) cardY = -200;
       } else {
         // Section hasn't reached center yet - card should scroll IN from below
-        // Start arriving after previous card has left
+        // Card waits longer before arriving - reaches center when content is more prominent
         const distanceBeforeBuffer = sectionTop - (timelineCenter - arrivalBuffer);
         cardY = timelineCenter + distanceBeforeBuffer;
         // Allow card to start from below viewport

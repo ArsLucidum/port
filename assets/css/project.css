@@ -15,8 +15,8 @@
   --pv-rail-width: 280px;
   --pv-marker-size: 12px;
   --pv-transition: 200ms ease-out;
-  --pv-hero-height: 65vh;
-  --pv-header-height: calc(48px + 2rem); /* Content height + padding top/bottom */
+  --pv-hero-height: calc(100vh - 140px);
+  --pv-header-height: 56px; /* Padding + content height */
   
   /* Timeline positioning (updated dynamically) */
   --pv-y: 0px;
@@ -30,7 +30,7 @@
   top: var(--pv-header-height);
   left: 0;
   width: 100%;
-  height: calc(var(--pv-hero-height) - var(--pv-header-height));
+  height: var(--pv-hero-height);
   z-index: 1;
   display: flex;
   align-items: center;
@@ -49,7 +49,7 @@
   z-index: 2;
   max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: 0 var(--content-padding);
+  padding: var(--space-6) var(--content-padding);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-16);
@@ -104,7 +104,7 @@
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .pv-phone-mockup {
@@ -133,7 +133,7 @@
 
 /* ===== HERO SPACER ===== */
 .pv-hero-spacer {
-  height: var(--pv-hero-height);
+  height: calc(var(--pv-hero-height) + var(--pv-header-height));
   pointer-events: none;
 }
 
@@ -144,8 +144,21 @@
   position: sticky;
   top: var(--pv-header-height);
   z-index: 200;
-  padding: var(--space-4) 0;
+  padding: var(--space-3) 0 var(--space-4) 0;
 }
+
+.pv-hero::after {
+  content: '↓';
+  position: absolute;
+  bottom: var(--space-4);
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--muted);
+  font-size: var(--text-4xl);
+  opacity: 0.7;
+  z-index: 10;
+}
+
 
 .pv-menu-container {
   max-width: var(--container-max-width);
@@ -162,7 +175,7 @@
   text-decoration: none;
   font-weight: var(--font-weight-medium);
   font-size: var(--text-base);
-  padding: var(--space-2) var(--space-4);
+  padding: var(--space-4) var(--space-4);
   position: relative;
   transition: color var(--transition-fast);
 }
@@ -284,12 +297,12 @@
 }
 
 .pv-section {
-  padding: var(--space-16) var(--space-8);
+  padding: var(--space-8) var(--space-8);
   max-width: 800px;
 }
 
 .pv-section:first-child {
-  padding-top: var(--space-24);
+  padding-top: var(--space-12);
 }
 
 .pv-section-title {
@@ -505,7 +518,7 @@
 
 @media (max-width: 768px) {
   .pv-hero {
-    height: 50vh;
+    height: calc(100vh - 120px);
   }
   
   .pv-phone-mockup {

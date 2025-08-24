@@ -176,6 +176,8 @@ a:focus {
   background: var(--background-subtle);
   z-index: 300;
   transition: all var(--transition-normal);
+  margin: 0;
+  border: none;
 }
 
 .navbar .nav-logo,
