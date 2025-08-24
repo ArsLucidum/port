@@ -16,6 +16,7 @@
   --pv-marker-size: 12px;
   --pv-transition: 200ms ease-out;
   --pv-hero-height: 65vh;
+  --pv-header-height: 80px;
   
   /* Timeline positioning (updated dynamically) */
   --pv-y: 0px;
@@ -26,21 +27,21 @@
 /* ===== FIXED HERO SECTION ===== */
 .pv-hero {
   position: fixed;
-  top: 0;
+  top: var(--pv-header-height);
   left: 0;
   width: 100%;
-  height: var(--pv-hero-height);
+  height: calc(var(--pv-hero-height) - var(--pv-header-height));
   z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--accent);
+  background: var(--background-subtle);
 }
 
 .pv-hero-bg {
   position: absolute;
   inset: 0;
-  background: var(--accent);
+  background: var(--background-subtle);
 }
 
 .pv-hero-container {
@@ -132,7 +133,7 @@
 
 /* ===== HERO SPACER ===== */
 .pv-hero-spacer {
-  height: var(--pv-hero-height);
+  height: calc(var(--pv-hero-height) + var(--pv-header-height));
   pointer-events: none;
 }
 
@@ -141,7 +142,7 @@
   background: var(--bg);
   border-bottom: 1px solid var(--border);
   position: sticky;
-  top: 0;
+  top: var(--pv-header-height);
   z-index: 200;
   padding: var(--space-4) 0;
 }
@@ -198,8 +199,8 @@
 /* ===== LEFT STICKY TIMELINE ===== */
 .pv-timeline {
   position: sticky;
-  top: 120px;
-  height: calc(100vh - 120px);
+  top: calc(var(--pv-header-height) + 60px);
+  height: calc(100vh - var(--pv-header-height) - 60px);
   background: var(--surface);
   border-right: 1px solid var(--border);
   display: flex;
@@ -212,21 +213,22 @@
 .pv-rail {
   position: absolute;
   left: 50%;
-  top: 10%;
-  bottom: 10%;
+  top: 0;
+  bottom: 0;
   width: 2px;
   background: var(--accent);
   transform: translateX(-50%);
 }
 
-/* Multiple cards positioned along the rail */
+/* Natural scrolling cards */
 .pv-cards-container {
   position: absolute;
-  top: 10%;
+  top: 0;
   left: 50%;
   width: 240px;
-  height: 80%;
+  height: 100%;
   transform: translateX(-50%);
+  pointer-events: none;
 }
 
 .pv-card {
@@ -237,25 +239,13 @@
   padding: var(--space-6);
   text-align: center;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
   cursor: pointer;
   z-index: 2;
   box-shadow: var(--shadow-soft);
-  opacity: 0;
-  transition: all var(--pv-transition);
+  pointer-events: auto;
+  transform: translateY(-50%);
+  transition: none;
 }
-
-.pv-card.active {
-  opacity: 1;
-}
-
-/* Position cards along the rail height - centered in viewport */
-.pv-card[data-phase="investigar"] { top: 50%; }
-.pv-card[data-phase="definir"] { top: 50%; }
-.pv-card[data-phase="idear"] { top: 50%; }
-.pv-card[data-phase="disenar"] { top: 50%; }
-.pv-card[data-phase="testear"] { top: 50%; }
 
 .pv-card:hover {
   box-shadow: var(--shadow-card);
@@ -466,7 +456,7 @@
   
   .pv-cards-container {
     position: relative;
-    transform: none;
+    transform: none !important;
     width: 100%;
     height: auto;
   }
@@ -481,7 +471,7 @@
     margin: 0 auto var(--space-4);
   }
   
-  .pv-card:not(.active) {
+  .pv-card:not(:first-child) {
     display: none;
   }
   

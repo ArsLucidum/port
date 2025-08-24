@@ -1,4 +1,4 @@
-// ===== PROJECT SINGLE PAGE - SCROLL-BASED TIMELINE =====
+// ===== PROJECT SINGLE PAGE - STICKY CARDS WITH NATURAL SCROLL =====
 
 let projectData = null;
 let activePhaseId = null;
@@ -51,20 +51,71 @@ function populateProjectContent() {
   }
 }
 
-// ===== SCROLL-BASED TIMELINE =====
+// ===== STICKY CARDS WITH NATURAL SCROLLING =====
 function initTimeline() {
   const menuLinks = document.querySelectorAll('.pv-menu-link');
   const sections = document.querySelectorAll('.pv-section[id]');
   const cards = document.querySelectorAll('.pv-card[data-phase]');
+  const cardsContainer = document.getElementById('pv-cards-container');
+  const timeline = document.getElementById('pv-timeline');
   
-  if (!sections.length || !cards.length) {
+  if (!sections.length || !cards.length || !cardsContainer || !timeline) {
     console.warn('[project] Timeline elements not found');
     return;
   }
   
   const sectionArray = Array.from(sections);
+  let ticking = false;
   
-  // Update active phase and show/hide cards
+  // Calculate card positions with sticky behavior
+  function updateCardPositions() {
+    if (window.innerWidth <= 968) return; // Skip on mobile
+    
+    const timelineRect = timeline.getBoundingClientRect();
+    const timelineTop = timelineRect.top;
+    const timelineHeight = timelineRect.height;
+    const timelineCenter = timelineHeight / 2;
+    const scrollTop = window.pageYOffset;
+    
+    cards.forEach(card => {
+      const phaseId = card.dataset.phase;
+      const section = document.getElementById(phaseId);
+      if (!section) return;
+      
+      const sectionRect = section.getBoundingClientRect();
+      const sectionTop = sectionRect.top;
+      const sectionBottom = sectionRect.bottom;
+      const sectionHeight = sectionRect.height;
+      
+      let cardY;
+      
+      // Check if section is in viewport and determine card behavior
+      if (sectionTop <= timelineCenter && sectionBottom >= timelineCenter) {
+        // Section is active - STICK card to center
+        cardY = timelineCenter;
+      } else if (sectionBottom < timelineCenter) {
+        // Section has scrolled past - card should scroll UP naturally
+        // Position card based on section bottom, allowing it to scroll out
+        const distancePastCenter = timelineCenter - sectionBottom;
+        cardY = timelineCenter - distancePastCenter;
+        // Allow card to scroll completely out of view
+        if (cardY < -200) cardY = -200;
+      } else {
+        // Section hasn't reached center yet - card should scroll IN from below
+        // Position card based on section top
+        const distanceBeforeCenter = sectionTop - timelineCenter;
+        cardY = timelineCenter + distanceBeforeCenter;
+        // Allow card to start from below viewport
+        if (cardY > timelineHeight + 200) cardY = timelineHeight + 200;
+      }
+      
+      // Position the card
+      card.style.top = `${cardY}px`;
+      card.style.transform = 'translateY(-50%)';
+    });
+  }
+  
+  // Update active phase based on which section is at timeline center
   function setActivePhase(phaseId) {
     if (!phaseId || phaseId === activePhaseId) return;
     
@@ -75,14 +126,38 @@ function initTimeline() {
       link.classList.toggle('active', link.dataset.phase === phaseId);
     });
     
-    // Show/hide cards - only active card is visible
-    cards.forEach(card => {
-      card.classList.toggle('active', card.dataset.phase === phaseId);
-    });
-    
     // Update URL hash without jumping
     if (history.replaceState && window.location.hash !== `#${phaseId}`) {
       history.replaceState(null, '', `#${phaseId}`);
+    }
+  }
+  
+  // Determine active section based on timeline center
+  function updateActiveSection() {
+    if (window.innerWidth <= 968) return;
+    
+    const timelineRect = timeline.getBoundingClientRect();
+    const timelineCenter = timelineRect.top + (timelineRect.height / 2);
+    
+    let activeSection = null;
+    let minDistance = Infinity;
+    
+    sectionArray.forEach(section => {
+      const sectionRect = section.getBoundingClientRect();
+      const sectionCenter = sectionRect.top + (sectionRect.height / 2);
+      const distance = Math.abs(sectionCenter - timelineCenter);
+      
+      // Check if section overlaps with timeline center
+      if (sectionRect.top <= timelineCenter && sectionRect.bottom >= timelineCenter) {
+        if (distance < minDistance) {
+          minDistance = distance;
+          activeSection = section;
+        }
+      }
+    });
+    
+    if (activeSection && activeSection.id) {
+      setActivePhase(activeSection.id);
     }
   }
   
@@ -91,11 +166,22 @@ function initTimeline() {
     const section = document.getElementById(phaseId);
     if (!section) return;
     
-    const navbar = document.querySelector('.navbar');
-    const headerOffset = navbar ? navbar.offsetHeight + 40 : 120;
-    const y = section.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+    const headerHeight = 80; // --pv-header-height
+    const y = section.getBoundingClientRect().top + window.pageYOffset - headerHeight - 40;
     
     window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+  
+  // Scroll handler for card positioning and active section detection
+  function handleScroll() {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        updateCardPositions();
+        updateActiveSection();
+        ticking = false;
+      });
+      ticking = true;
+    }
   }
   
   // Menu link handlers
@@ -115,39 +201,17 @@ function initTimeline() {
     });
   });
   
-  // Intersection Observer for section detection
-  // Observe section headers at 50% viewport (center)
-  const observer = new IntersectionObserver((entries) => {
-    let bestEntry = null;
-    let bestRatio = 0;
-    
-    // Find the section with the highest intersection ratio
-    for (const entry of entries) {
-      if (entry.intersectionRatio > bestRatio) {
-        bestRatio = entry.intersectionRatio;
-        bestEntry = entry;
-      }
-    }
-    
-    if (bestEntry && bestRatio > 0) {
-      const section = bestEntry.target.closest('.pv-section');
-      if (section && section.id) {
-        setActivePhase(section.id);
-      }
-    }
-  }, {
-    root: null,
-    rootMargin: '-40% 0px -40% 0px', // Trigger when section is in center 20% of viewport
-    threshold: [0, 0.1, 0.25, 0.5, 0.75, 1]
-  });
+  // Handle resize
+  function handleResize() {
+    updateCardPositions();
+    updateActiveSection();
+  }
   
-  // Observe section headers (h2)
-  sectionArray.forEach(section => {
-    const header = section.querySelector('h2') || section.querySelector('h1') || section;
-    observer.observe(header);
-  });
+  // Event listeners
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('resize', debounce(handleResize, 150));
   
-  // Initialize from URL hash or first section
+  // Initialize
   const initialHash = window.location.hash.slice(1);
   const initialPhaseId = (initialHash && document.getElementById(initialHash)) 
     ? initialHash 
@@ -156,6 +220,10 @@ function initTimeline() {
   if (initialPhaseId) {
     setActivePhase(initialPhaseId);
   }
+  
+  // Initial positioning
+  updateCardPositions();
+  updateActiveSection();
 }
 
 // ===== UTILITY FUNCTIONS =====
