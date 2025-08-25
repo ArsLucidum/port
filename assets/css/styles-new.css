@@ -1,0 +1,413 @@
+/* ===== PORTFOLIO MAIN STYLES ===== */
+
+/* Import base styles */
+@import url('./base/tokens.css');
+@import url('./base/reset.css');
+
+/* Import components */
+@import url('./components/typography.css');
+@import url('./components/layout.css');
+@import url('./components/navigation.css');
+@import url('./components/cards.css');
+@import url('./components/buttons.css');
+@import url('./components/animations.css');
+@import url('./components/notifications.css');
+
+/* ===== PAGE-SPECIFIC STYLES ===== */
+
+/* Hero section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--brand);
+}
+
+.hero h1,
+.hero .hero-greeting,
+.hero .hero-subtitle,
+.hero .hero-description {
+  color: var(--background-primary);
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  position: fixed;
+  bottom: 0;
+  right: 8%;
+  z-index: 1;
+}
+
+/* Hero container with grid layout */
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.hero-greeting {
+  display: block;
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-medium);
+  color: var(--background-primary);
+  opacity: 0.9;
+  margin-bottom: var(--space-2);
+}
+
+.hero-title {
+  margin-bottom: 0;
+}
+
+.hero-subtitle {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--space-8);
+  opacity: 0.95;
+}
+
+.hero-description {
+  font-size: var(--text-lg);
+  line-height: 1.7;
+  margin-bottom: var(--space-12);
+  opacity: 0.9;
+}
+
+/* Timeline styles */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 24px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border-light);
+}
+
+/* Languages section */
+.languages {
+  background: var(--background-secondary);
+}
+
+.language-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-4);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.language-item {
+  background: var(--background-primary);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  border: 1px solid var(--border-light);
+}
+
+.language-name {
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.language-level {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+
+/* Skills section */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-6);
+}
+
+/* ===== CONTRAPOSED TIMELINE LAYOUT ===== */
+.experience {
+  position: relative;
+}
+
+.experience::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  background: var(--background-subtle);
+  z-index: 1;
+}
+
+.experience .timeline {
+  max-width: 70%;
+  position: relative;
+  z-index: 2;
+}
+
+.education {
+  position: relative;
+}
+
+.education::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  background: var(--background-subtle);
+  z-index: 1;
+}
+
+.education .section-title {
+  text-align: right;
+  position: relative;
+  z-index: 2;
+}
+
+.education .timeline {
+  max-width: 70%;
+  margin-left: 30%;
+  position: relative;
+  z-index: 2;
+  direction: rtl;
+}
+
+.education .timeline::before {
+  right: 24px;
+  left: auto;
+}
+
+.education .timeline-item {
+  padding-right: var(--space-16);
+  padding-left: 0;
+  direction: ltr;
+}
+
+.education .timeline-content {
+  text-align: left;
+}
+
+.education .timeline-marker {
+  right: 16px;
+  left: auto;
+}
+
+/* Projects section */
+.projects {
+  background: var(--background-secondary);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-8);
+}
+
+.projects-header {
+  text-align: center;
+  padding: var(--space-24) 0 var(--space-12);
+  background: var(--background-primary);
+}
+
+.projects-content {
+  padding: var(--space-16) 0;
+}
+
+.projects-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-12);
+}
+
+/* Footer */
+.footer {
+  background: var(--text-primary);
+  color: var(--background-primary);
+  padding: var(--space-8) 0;
+  text-align: center;
+}
+
+/* Print styles */
+@media print {
+  * {
+    background: white;
+    color: black;
+    box-shadow: none;
+  }
+  
+  .navbar, .hamburger, .btn {
+    display: none;
+  }
+  
+  .hero {
+    background: white;
+    color: black;
+    page-break-after: avoid;
+  }
+  
+  .section-title::after {
+    background: black;
+  }
+  
+  .timeline-marker {
+    background: black;
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 900px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: var(--space-8);
+  }
+}
+
+@media (max-width: 968px) {
+  .hero-image img {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    bottom: auto;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: calc(100vh - 60px);
+    padding-top: 60px;
+  }
+  
+  .hero-image img {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    bottom: auto;
+    max-width: 100%;
+  }
+  
+  .timeline::before { 
+    left: 12px; 
+  }
+  
+  .timeline-item { 
+    padding-left: var(--space-12); 
+    padding-right: 0; 
+  }
+  
+  .timeline-marker { 
+    left: 8px; 
+    top: calc(var(--space-2) + 2px); 
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+  
+  .projects-filter {
+    gap: var(--space-2);
+  }
+  
+  .language-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== NEUTRALIZE CONTRAPOSED LAYOUT (OVERRIDE) ===== */
+/* Kill the big side backgrounds */
+.experience::after,
+.education::after { 
+  display: none; 
+}
+
+/* Use the full width for both timelines */
+.experience .timeline,
+.education .timeline { 
+  max-width: 100%; 
+  margin-left: 0; 
+}
+
+/* Undo the mirrored/right-aligned layout for Education */
+.education .section-title { 
+  text-align: initial; 
+}
+
+.education .timeline::before { 
+  left: 24px; 
+  right: auto; 
+}
+
+.education .timeline-item { 
+  padding-right: 0; 
+  padding-left: var(--space-16); 
+  direction: ltr; 
+}
+
+.education .timeline-content { 
+  text-align: initial; 
+}
+
+.education .timeline-marker { 
+  right: auto; 
+  left: 16px; 
+}
+
+/* ===== HERO PARALLAX ANIMATIONS ===== */
+.hero-parallax-mobile {
+  position: relative;
+  transform: translateY(var(--parallax-y, 0));
+  z-index: -1;
+}
+
+.hero-window-effect {
+  position: fixed;
+  bottom: var(--window-bottom, 0);
+  right: 8%;
+  transform: none;
+}
+
+.hero-fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  right: 8%;
+  transform: none;
+}
+
+.project-card-hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Tablet optimizations */
+@media (max-width: 1024px) {
+  /* Styles already neutralized above for all screens */
+}

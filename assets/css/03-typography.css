@@ -1,0 +1,125 @@
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+  margin-bottom: calc(var(--spacing-md) * var(--spacing-ratio));
+  color: var(--text-primary);
+  letter-spacing: -0.025em;
+}
+
+/* Advanced Typography Scale with Optical Sizing */
+h1 { 
+  font-size: var(--text-5xl); 
+  font-weight: var(--font-weight-bold);
+  line-height: 1.1;
+  font-optical-sizing: auto;
+  font-variation-settings: "wght" 700, "opsz" 60;
+  letter-spacing: -0.04em;
+}
+
+h2 { 
+  font-size: var(--text-4xl); 
+  font-weight: var(--font-weight-bold);
+  line-height: 1.15;
+  font-optical-sizing: auto;
+  font-variation-settings: "wght" 700, "opsz" 48;
+  letter-spacing: -0.035em;
+}
+
+h3 { 
+  font-size: var(--text-3xl); 
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+  font-optical-sizing: auto;
+  font-variation-settings: "wght" 600, "opsz" 36;
+  letter-spacing: -0.03em;
+}
+
+h4 { 
+  font-size: var(--text-2xl); 
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.25;
+  font-optical-sizing: auto;
+  font-variation-settings: "wght" 600, "opsz" 28;
+  letter-spacing: -0.025em;
+}
+
+h5 { 
+  font-size: var(--text-xl); 
+  font-weight: var(--font-weight-medium);
+  line-height: 1.3;
+  font-optical-sizing: auto;
+  font-variation-settings: "wght" 500, "opsz" 22;
+  letter-spacing: -0.02em;
+}
+
+h6 { 
+  font-size: var(--text-lg); 
+  font-weight: var(--font-weight-medium);
+  line-height: 1.4;
+  font-optical-sizing: auto;
+  font-variation-settings: "wght" 500, "opsz" 18;
+  letter-spacing: -0.015em;
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-secondary);
+  line-height: calc(1.5 * var(--spacing-ratio) - 1); /* ~1.118 for better readability */
+  font-weight: var(--font-weight-regular);
+  font-optical-sizing: auto;
+  font-variation-settings: "wght" 400, "opsz" 16;
+  text-rendering: optimizeLegibility;
+  hanging-punctuation: first last;
+}
+
+a {
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: all var(--transition-fast);
+}
+
+a:hover {
+  color: var(--text-secondary);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+/* Contact section links should be more prominent */
+#contact-email,
+#contact-linkedin {
+  color: var(--accent-color);
+  font-weight: var(--font-weight-medium);
+}
+
+.section-title {
+  font-size: var(--text-3xl);
+  text-align: left;
+  margin-bottom: calc(var(--spacing-2xl) / var(--spacing-ratio));
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.1;
+}
+
+.section-subtitle {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-muted);
+  margin-bottom: calc(var(--spacing-2xl) / var(--spacing-ratio));
+  line-height: calc(1.5 * var(--spacing-ratio) - 1);
+  font-optical-sizing: auto;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 96px;
+  height: 2px;
+  margin-top: calc(var(--spacing-sm) * var(--spacing-ratio));
+  background: linear-gradient(to right, var(--mustard-500), var(--mustard-300));
+}

@@ -1,0 +1,115 @@
+/* ===== TIMELINE (single-column, minimal) ===== */
+.timeline {
+  position: relative;
+  display: grid;
+  gap: var(--space-8);
+  grid-template-columns: 1fr;
+  grid-auto-rows: min-content;
+}
+
+/* Advanced subgrid timeline alignment */
+@supports (grid-template-rows: subgrid) {
+  .timeline {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: var(--spacing-xl) var(--spacing-md);
+    align-items: start;
+  }
+  
+  .timeline-item {
+    display: subgrid;
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+    padding-left: 0;
+  }
+  
+  .timeline-marker {
+    position: relative;
+    left: 0;
+    top: var(--spacing-xs);
+    grid-column: 1;
+    align-self: start;
+    justify-self: center;
+  }
+  
+  .timeline-content {
+    grid-column: 2;
+  }
+}
+
+/* Thin vertical rail in a brand tint */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: var(--space-4); top: 0; bottom: 0;
+  width: var(--timeline-rail-width);
+  background: var(--border-subtle);
+}
+
+/* Each item sits to the right of the rail */
+.timeline-item {
+  position: relative;
+  padding-left: var(--space-16);
+  padding-inline-start: var(--space-16);
+  opacity: 0;
+  animation: slideIn 0.5s ease-out 0.3s both;
+  contain: layout style;
+  content-visibility: auto;
+  contain-intrinsic-size: 100% 120px;
+}
+
+/* Small brand dot anchored to first text line */
+.timeline-marker {
+  position: absolute;
+  left: calc(var(--space-4) - var(--timeline-marker-size) / 2);
+  top: calc(var(--space-2) + 2px);
+  width: var(--timeline-marker-size);
+  height: var(--timeline-marker-size);
+  background: var(--mustard-500);
+  border: 3px solid var(--surface-primary);
+  border-radius: 50%;
+}
+
+/* Content card: subtle border, no heavy fills; minimalist radii already 0 */
+.timeline-content {
+  background: var(--surface-secondary);
+  border: 1px solid var(--border-light);
+  border-inline-start: 3px solid var(--mustard-300);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  padding-inline: var(--spacing-lg);
+  padding-block: var(--spacing-md);
+  box-shadow: var(--shadow-subtle);
+}
+
+/* Typography: let text be the hero; keep color accents on the rail/dot */
+.timeline-date {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.025em;
+  margin-bottom: var(--spacing-xs);
+  margin-block-end: var(--spacing-xs);
+  font-variant-numeric: tabular-nums; /* tidy dates */
+}
+
+.timeline-title {
+  font-size: var(--text-xl);
+  color: var(--text-primary);          /* was brand; now text for calmer hierarchy */
+  margin-bottom: var(--spacing-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: -0.01em;
+}
+
+.timeline-company {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.timeline-description {
+  color: var(--text-secondary);
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 0;
+}

@@ -1,0 +1,165 @@
+/* ===== FLUID GRID SYSTEM ===== */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--content-padding);
+  display: grid;
+  grid-template-columns: 
+    [full-start] minmax(var(--content-padding), 1fr) 
+    [content-start] minmax(0, var(--container-max-width)) 
+    [content-end] minmax(var(--content-padding), 1fr) 
+    [full-end];
+}
+
+/* CSS Logical Properties for Better Internationalization */
+.container {
+  padding-inline: var(--content-padding);
+  margin-inline: auto;
+}
+
+.container > * {
+  grid-column: content;
+}
+
+/* Breakout utilities for full-width elements */
+.breakout {
+  grid-column: full;
+  display: grid;
+  grid-template-columns: inherit;
+}
+
+.breakout > * {
+  grid-column: content;
+}
+
+/* Grid relationship system */
+.grid-auto-fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: var(--spacing-lg);
+}
+
+.grid-auto-fill {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: var(--spacing-lg);
+}
+
+/* Proportional grid relationships */
+.grid-golden {
+  display: grid;
+  grid-template-columns: 1fr calc(1fr * var(--spacing-ratio));
+  gap: var(--spacing-xl);
+}
+
+.grid-reverse-golden {
+  display: grid;
+  grid-template-columns: calc(1fr * var(--spacing-ratio)) 1fr;
+  gap: var(--spacing-xl);
+}
+
+/* ===== SECTIONS ===== */
+section {
+  padding: var(--section-padding-desktop) 0;
+  opacity: 1;
+  transform: none;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== ABOUT SECTION ===== */
+.about {
+  background: transparent;
+  position: relative;
+  z-index: 0;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(var(--space-16) * var(--spacing-ratio));
+  align-items: start;
+  grid-template-areas: "content spacer";
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-12) / var(--spacing-ratio));
+  background: var(--surface-primary);
+  padding: var(--spacing-2xl) var(--spacing-xl) var(--spacing-2xl) 0;
+  position: relative;
+  z-index: 3;
+  grid-area: content;
+}
+
+.about-spacer {
+  background: transparent;
+  position: relative;
+  z-index: 0;
+  grid-area: spacer;
+}
+
+.stats-section {
+  background: var(--surface-primary);
+  padding: var(--section-padding-desktop) 0;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  gap: calc(var(--space-8) * var(--spacing-ratio));
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--content-padding);
+  place-items: center;
+  contain: layout;
+}
+
+.stat {
+  text-align: center;
+  padding: var(--spacing-md);
+  transition: transform var(--transition-fast);
+  cursor: default;
+}
+
+.stat:hover {
+  transform: scale(1.02);
+  animation: gentleBounce 0.5s ease-out;
+  box-shadow: var(--shadow-soft);
+}
+
+.stat:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+  border-radius: var(--radius-sm);
+  animation: focusRingExpand 0.2s ease-out;
+}
+
+/* Staggered reveal animations for stats */
+.stat:nth-child(1) {
+  animation: cardReveal 0.6s ease-out 0.2s both;
+}
+
+.stat:nth-child(2) {
+  animation: cardReveal 0.6s ease-out 0.4s both;
+}
+
+.stat:nth-child(3) {
+  animation: cardReveal 0.6s ease-out 0.6s both;
+}
+
+.stat-number {
+  display: block;
+  font-size: var(--text-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--accent-color);
+  margin-bottom: calc(var(--spacing-sm) / var(--spacing-ratio));
+}
+
+.stat-label {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.025em;
+}

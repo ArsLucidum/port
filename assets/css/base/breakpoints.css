@@ -1,0 +1,77 @@
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+
+/* Breakpoint variables for consistent usage */
+:root {
+  --bp-xs: 480px;   /* Small phones */
+  --bp-sm: 768px;   /* Tablets */
+  --bp-md: 968px;   /* Small desktops */
+  --bp-lg: 1024px;  /* Large desktops */
+  --bp-xl: 1200px;  /* Extra large screens */
+}
+
+/* Standard breakpoint mixins as CSS custom media queries would be used if supported */
+/* For now, we'll standardize to these specific breakpoints across all components:
+
+   Mobile:     max-width: 480px  (--bp-xs)
+   Tablet:     max-width: 768px  (--bp-sm) 
+   Desktop-S:  max-width: 968px  (--bp-md)
+   Desktop-L:  max-width: 1024px (--bp-lg)
+   
+*/
+
+/* Consolidated responsive utility classes */
+@media (max-width: 480px) {
+  .xs-hidden { display: none; }
+  .xs-full-width { width: 100%; }
+  .xs-text-center { text-align: center; }
+  .xs-no-padding { padding: 0; }
+}
+
+@media (max-width: 768px) {
+  .sm-hidden { display: none; }
+  .sm-full-width { width: 100%; }
+  .sm-text-center { text-align: center; }
+  .sm-stack { flex-direction: column; }
+  .sm-no-gap { gap: 0; }
+}
+
+@media (max-width: 968px) {
+  .md-hidden { display: none; }
+  .md-full-width { width: 100%; }
+  .md-stack { flex-direction: column; }
+}
+
+@media (max-width: 1024px) {
+  .lg-hidden { display: none; }
+  .lg-center { margin: 0 auto; }
+}
+
+/* Responsive spacing utilities */
+@media (max-width: 768px) {
+  .responsive-padding {
+    padding: var(--space-4);
+  }
+  
+  .responsive-margin {
+    margin: var(--space-4) 0;
+  }
+  
+  .responsive-gap {
+    gap: var(--space-4);
+  }
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  .responsive-title {
+    font-size: var(--text-2xl);
+  }
+  
+  .responsive-subtitle {
+    font-size: var(--text-lg);
+  }
+  
+  .responsive-text {
+    font-size: var(--text-sm);
+  }
+}

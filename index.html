@@ -4,50 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bárbara M - Diseñadora UX/UI Portfolio</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <meta name="description" content="Diseñadora UX/UI especializada en crear experiencias digitales centradas en el usuario. Portfolio con proyectos de investigación, prototipado y diseño de interfaces.">
+    <meta name="keywords" content="UX, UI, diseñador, portfolio, experiencia usuario, investigación usuarios, prototipado, Figma">
+    <meta name="author" content="Bárbara M">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="Bárbara M - Diseñadora UX/UI Portfolio">
+    <meta property="og:description" content="Diseñadora UX/UI especializada en crear experiencias digitales centradas en el usuario.">
+    <meta property="og:image" content="assets/images/new_profile.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Bárbara M - Diseñadora UX/UI Portfolio">
+    <meta property="twitter:description" content="Diseñadora UX/UI especializada en crear experiencias digitales centradas en el usuario.">
+    <meta property="twitter:image" content="assets/images/new_profile.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    
+    <link rel="stylesheet" href="assets/css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
+    <a href="#main" class="skip-to-content">Saltar al contenido principal</a>
+    <header role="banner">
+        <nav class="navbar" role="navigation" aria-label="Navegación principal">
         <div class="nav-container">
-            <a href="#home" class="nav-logo">Portfolio</a>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Inicio</a></li>
-                <li><a href="#about" class="nav-link">Sobre mí</a></li>
-                <li><a href="#experience" class="nav-link">Experiencia</a></li>
-                <li><a href="#education" class="nav-link">Formación</a></li>
-                <li><a href="projects/index.html" class="nav-link">Proyectos</a></li>
-                <li><a href="#contact" class="nav-link">Contacto</a></li>
+            <a href="#home" class="nav-logo" aria-label="Ir al inicio del portfolio">Portfolio</a>
+            <ul class="nav-menu" role="menubar" aria-label="Menú de navegación">
+                <li role="none"><a href="#home" class="nav-link" role="menuitem">Inicio</a></li>
+                <li role="none"><a href="#about" class="nav-link" role="menuitem">Sobre mí</a></li>
+                <li role="none"><a href="#experience" class="nav-link" role="menuitem">Experiencia</a></li>
+                <li role="none"><a href="#education" class="nav-link" role="menuitem">Formación</a></li>
+                <li role="none"><a href="projects/index.html" class="nav-link" role="menuitem">Proyectos</a></li>
+                <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contacto</a></li>
             </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+            <button class="hamburger" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-menu" type="button">
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+            </button>
         </div>
         </nav>
     </header>
 
-    <main id="main">
-        <section id="home" class="hero">
+    <main id="main" role="main">
+        <section id="home" class="hero" role="banner" aria-labelledby="hero-title">
             <div class="container">
                 <div class="hero-container">
                 <div class="hero-content">
-                    <h1 class="hero-title">
+                    <h1 class="hero-title" id="hero-title">
                         <span class="hero-greeting">¡Hola! me llamo</span>
                         <span class="hero-name" id="designer-name">Bárbara M</span>
                     </h1>
-                    <p class="hero-subtitle" id="designer-role">UX Designer crafting meaningful digital experiences</p>
-                    <p class="hero-description" id="designer-description">
+                    <p class="hero-subtitle" id="designer-role" role="text">UX Designer crafting meaningful digital experiences</p>
+                    <p class="hero-description" id="designer-description" role="text">
                         I specialize in creating user-centered designs that solve complex problems 
                         and deliver exceptional digital experiences.
                     </p>
                 </div>
-                <div class="hero-image">
-                    <img src="assets/images/new_profile.png" alt="Bárbara M Profile Photo" id="profile-image">
+                <div class="hero-image" role="img" aria-labelledby="profile-alt">
+                    <img src="assets/images/new_profile.png" alt="Foto de perfil profesional de Bárbara M, diseñadora UX/UI" id="profile-image" class="portrait" loading="eager">
+                    <span id="profile-alt" class="visually-hidden">Fotografía profesional de Bárbara M en su espacio de trabajo</span>
                 </div>
                 </div>
             </div>
@@ -66,14 +91,14 @@
                         <div class="languages">
                             <h3>Idiomas</h3>
                             <div class="languages-grid" id="languages-container">
-                                <!-- Languages will be loaded dynamically -->
+                                <div class="loading-placeholder">Cargando idiomas...</div>
                             </div>
                         </div>
                         
                         <div class="skills">
                             <h3>Habilidades y herramientas</h3>
                             <div class="skills-grid" id="skills-container">
-                                <!-- Skills will be loaded dynamically -->
+                                <div class="loading-placeholder">Cargando habilidades...</div>
                             </div>
                         </div>
                     </div>

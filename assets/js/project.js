@@ -1,4 +1,20 @@
+(function() {
+'use strict';
+
 // ===== PROJECT SINGLE PAGE - STICKY CARDS WITH NATURAL SCROLL =====
+
+// Performance utilities
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func.apply(this, args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
 
 let projectData = null;
 let activePhaseId = null;
@@ -126,9 +142,8 @@ function initTimeline() {
         if (cardY > timelineHeight + 200) cardY = timelineHeight + 200;
       }
       
-      // Position the card
-      card.style.top = `${cardY}px`;
-      card.style.transform = 'translateY(-50%)';
+      // Position the card using CSS custom property
+      card.style.setProperty('--timeline-y', `${cardY}px`);
     });
   }
   
@@ -224,7 +239,7 @@ function initTimeline() {
     updateActiveSection();
   }
   
-  // Event listeners
+  // Event listeners with performance optimization
   window.addEventListener('scroll', handleScroll, { passive: true });
   window.addEventListener('resize', debounce(handleResize, 150));
   
@@ -255,3 +270,5 @@ function debounce(func, wait) {
     timeout = setTimeout(later, wait);
   };
 }
+
+})(); // End of IIFE

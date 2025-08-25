@@ -1,0 +1,119 @@
+/* ===== MODULAR CSS ARCHITECTURE ===== */
+/* Import order is important for cascade */
+
+@import url('./01-tokens.css');
+@import url('./02-reset.css');
+@import url('./03-typography.css');
+@import url('./04-layout.css');
+@import url('./05-navigation.css');
+@import url('./06-hero.css');
+@import url('./07-components.css');
+@import url('./08-timeline.css');
+@import url('./09-contact.css');
+@import url('./10-responsive.css');
+@import url('./11-accessibility.css');
+@import url('./12-animations.css');
+
+/* ===== SECTIONS WITH SOPHISTICATED BACKGROUNDS ===== */
+.experience,
+.education {
+  background: var(--surface-primary);
+}
+
+.featured-projects {
+  background: var(--surface-secondary);
+}
+
+/* ===== CONTRAPOSED TIMELINE LAYOUT ===== */
+/* Kill the big side backgrounds */
+.experience::after,
+.education::after { display: none; }
+
+/* Use the full width for both timelines */
+.experience .timeline,
+.education .timeline { max-width: 100%; margin-left: 0; }
+
+/* Undo the mirrored/right-aligned layout for Education */
+.education .section-title { text-align: initial; }
+.education .timeline::before { left: var(--space-6); right: auto; }
+.education .timeline-item { padding-right: 0; padding-left: var(--space-16); direction: ltr; }
+.education .timeline-content { text-align: initial; }
+.education .timeline-marker { right: auto; left: var(--space-4); }
+
+/* ===== PROJECTS PAGE SPECIFIC STYLES ===== */
+.projects-header {
+  background: var(--surface-subtle);
+  padding: var(--section-padding-desktop) 0;
+  text-align: center;
+}
+
+.projects-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin: var(--space-12) 0;
+}
+
+.filter-btn {
+  padding: var(--space-3) var(--space-6);
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--background-subtle);
+  color: var(--accent-color);
+}
+
+.filter-btn:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.back-to-home {
+  position: fixed;
+  top: 50%;
+  left: var(--space-6);
+  transform: translateY(-50%);
+  background: var(--background-subtle);
+  color: var(--accent-color);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  z-index: 100;
+}
+
+.back-to-home:hover {
+  background: var(--accent-color);
+  color: var(--background-primary);
+  transform: translateY(-50%) scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .back-to-home {
+    display: none;
+  }
+  
+  .projects-filter {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: var(--space-2);
+  }
+  
+  .filter-btn {
+    flex-shrink: 0;
+  }
+}

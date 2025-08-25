@@ -1,0 +1,202 @@
+/* ===== DESIGN SYSTEM TOKENS ===== */
+:root {
+  /* Core Brand Identity */
+  --brand-primary: #e6b800;
+  --brand: var(--brand-primary); /* Legacy alias */
+  --accent-color: var(--brand-primary);
+  
+  /* Sophisticated Mustard Tonal System */
+  --mustard-50: #fefdf7;
+  --mustard-100: #fdf9e7;
+  --mustard-200: #fbf4d3;
+  --mustard-300: #f8eab3;
+  --mustard-400: #f4dc85;
+  --mustard-500: #e6b800; /* Brand primary */
+  --mustard-600: #cc9d00;
+  --mustard-700: #a67f0d;
+  --mustard-800: #886612;
+  --mustard-900: #6b4f0f;
+  --mustard-950: #3e2c08;
+  
+  /* Calculated Brand Variants */
+  --brand-light: var(--mustard-200);
+  --brand-muted: var(--mustard-300);
+  --brand-deeper: var(--mustard-700);
+  --brand-darkest: var(--mustard-800);
+  
+  /* Supporting Accent Colors (minimal use) */
+  --rose-variant: #c55d7a;
+  --blue-variant: #1fa9d6;
+  
+  /* Harmonic Color Relationships */
+  --mustard-compliment: #0058e6; /* Opposite on color wheel */
+  --mustard-triadic-1: #00e668; /* 120° rotation */
+  --mustard-triadic-2: #e60088; /* 240° rotation */
+  --mustard-analogous-1: #e6a200; /* Adjacent warm */
+  --mustard-analogous-2: #e6ce00; /* Adjacent cool */
+  
+  /* Tonal Color Relationships for Sophisticated Palettes */
+  --warm-neutral-100: #fdf8f0;
+  --warm-neutral-200: #f9f0e3;
+  --warm-neutral-300: #f0e4c7;
+  --warm-neutral-800: #6b5a3d;
+  --warm-neutral-900: #4a3d28;
+  
+  /* Semantic colors (minimal, harmonious use) */
+  --success-subtle: color-mix(in srgb, var(--mustard-triadic-1) 15%, var(--warm-neutral-100));
+  --warning-subtle: color-mix(in srgb, var(--mustard-500) 12%, var(--warm-neutral-100));
+  --error-subtle: color-mix(in srgb, var(--mustard-triadic-2) 8%, var(--warm-neutral-100));
+  
+  /* Semantic Surface System with Tonal Harmony */
+  --surface-primary: color-mix(in srgb, var(--mustard-50) 30%, #ffffff);
+  --surface-secondary: color-mix(in srgb, var(--warm-neutral-100) 60%, #fafafa);
+  --surface-subtle: var(--mustard-200);
+  --surface-accent: var(--mustard-100);
+  --surface-emphasis: var(--mustard-500);
+  --surface-muted: var(--mustard-50);
+  --surface-warm: var(--warm-neutral-100);
+  
+  /* Semantic Text System with Enhanced Contrast */
+  --text-primary: color-mix(in srgb, var(--mustard-950) 85%, var(--warm-neutral-900));
+  --text-secondary: var(--mustard-900);
+  --text-muted: var(--mustard-800);
+  --text-accent: var(--mustard-700);
+  --text-on-accent: #ffffff;
+  --text-inverse: #ffffff;
+  --text-warm: var(--warm-neutral-800);
+  
+  /* Semantic Border System with Tonal Refinement */
+  --border-subtle: color-mix(in srgb, var(--mustard-300) 70%, var(--warm-neutral-300));
+  --border-light: color-mix(in srgb, var(--mustard-200) 80%, var(--warm-neutral-200));
+  --border-accent: var(--mustard-400);
+  --border-emphasis: var(--mustard-600);
+  --border-warm: var(--warm-neutral-300);
+  
+  /* Legacy Aliases (for backwards compatibility) */
+  --background-primary: var(--surface-primary);
+  --background-secondary: var(--surface-secondary);
+  --background-subtle: var(--surface-subtle);
+  
+  /* Typography */
+  --font-primary: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Fluid Typography Scale */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.2vw, 0.8rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.3vw, 0.9rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+  --text-xl: clamp(1.375rem, 1.2rem + 0.7vw, 1.75rem);
+  --text-2xl: clamp(1.75rem, 1.5rem + 1vw, 2.25rem);
+  --text-3xl: clamp(2.25rem, 1.8rem + 1.5vw, 3rem);
+  --text-4xl: clamp(3rem, 2.5rem + 2vw, 4rem);
+  --text-5xl: clamp(4rem, 3rem + 3vw, 5rem);
+  
+  /* Mathematical Spacing Scale (Golden Ratio + 8px Baseline) */
+  --spacing-ratio: 1.618; /* Golden ratio for harmonious scaling */
+  
+  /* Base Spacing Units (8px rhythm with fluid scaling) */
+  --space-0: 0;
+  --space-1: 0.25rem;  /* 4px - fixed for precision */
+  --space-2: 0.5rem;   /* 8px - baseline unit */
+  --space-3: clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem);    /* 12px-14px */
+  --space-4: clamp(1rem, 0.9rem + 0.4vw, 1.25rem);        /* 16px-20px */
+  --space-5: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);      /* 20px-24px */
+  --space-6: clamp(1.5rem, 1.2rem + 1vw, 2rem);           /* 24px-32px */
+  --space-8: clamp(2rem, 1.5rem + 1.5vw, 2.5rem);         /* 32px-40px */
+  --space-10: clamp(2.5rem, 1.8rem + 1.8vw, 3rem);        /* 40px-48px */
+  --space-12: clamp(3rem, 2rem + 2vw, 4rem);               /* 48px-64px */
+  --space-16: clamp(4rem, 3rem + 2.5vw, 5rem);             /* 64px-80px */
+  --space-20: clamp(5rem, 3.5rem + 3vw, 6rem);             /* 80px-96px */
+  --space-24: clamp(6rem, 4rem + 3vw, 8rem);               /* 96px-128px */
+  --space-32: clamp(8rem, 5rem + 4vw, 10rem);              /* 128px-160px */
+  
+  /* Semantic Spacing Tokens */
+  --spacing-xs: var(--space-1);
+  --spacing-sm: var(--space-2);
+  --spacing-md: var(--space-4);
+  --spacing-lg: var(--space-6);
+  --spacing-xl: var(--space-8);
+  --spacing-2xl: var(--space-12);
+  --spacing-3xl: var(--space-16);
+  
+  /* Layout */
+  --container-max-width: 1120px;
+  --section-padding-desktop: var(--space-24);
+  --section-padding-tablet: var(--space-16);
+  --section-padding-mobile: var(--space-12);
+  --content-padding: var(--space-8);
+  
+  /* Timeline Design Tokens */
+  --timeline-rail-width: 2px;
+  --timeline-marker-size: 12px;
+  
+  /* Advanced Shadow System with Mustard Tinting */
+  --shadow-color: 230 184 0; /* Mustard RGB for tinted shadows */
+  --shadow-subtle: 0 1px 3px 0 rgb(var(--shadow-color) / 0.08), 0 1px 2px 0 rgb(0 0 0 / 0.02);
+  --shadow-soft: 0 4px 6px -1px rgb(var(--shadow-color) / 0.08), 0 2px 4px -1px rgb(0 0 0 / 0.03);
+  --shadow-card: 0 10px 15px -3px rgb(var(--shadow-color) / 0.08), 0 4px 6px -2px rgb(0 0 0 / 0.03);
+  --shadow-emphasis: 0 20px 25px -5px rgb(var(--shadow-color) / 0.12), 0 10px 10px -5px rgb(0 0 0 / 0.04);
+  --shadow-intense: 0 25px 50px -12px rgb(var(--shadow-color) / 0.25), 0 12px 20px -8px rgb(0 0 0 / 0.08);
+  
+  /* Interactive Shadow States */
+  --shadow-hover: 0 10px 25px -5px rgb(var(--shadow-color) / 0.12), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+  --shadow-active: 0 3px 8px -2px rgb(var(--shadow-color) / 0.15), 0 2px 4px -1px rgb(0 0 0 / 0.06);
+  --shadow-focus: 0 0 0 3px rgb(var(--shadow-color) / 0.12);
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease-out;
+  --transition-normal: 0.25s ease-out;
+  --transition-slow: 0.4s ease-out;
+  
+  /* Animations */
+  --animation-duration: 0.6s;
+  
+  /* Radius System */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  
+  /* Color Mixing System for Dynamic Variants */
+  --mix-10: color-mix(in srgb, var(--brand-primary) 10%, white);
+  --mix-20: color-mix(in srgb, var(--brand-primary) 20%, white);
+  --mix-30: color-mix(in srgb, var(--brand-primary) 30%, white);
+  --mix-40: color-mix(in srgb, var(--brand-primary) 40%, white);
+  --mix-60: color-mix(in srgb, var(--brand-primary) 60%, white);
+  --mix-80: color-mix(in srgb, var(--brand-primary) 80%, white);
+  
+  /* Interactive State Colors */
+  --state-hover: var(--mustard-400);
+  --state-active: var(--mustard-600);
+  --state-focus: var(--mustard-500);
+  --state-disabled: var(--mustard-200);
+  
+  /* Theme Tokens for Future Dark Mode */
+  --theme-surface: light-dark(var(--surface-primary), var(--mustard-950));
+  --theme-text: light-dark(var(--text-primary), var(--mustard-100));
+  --theme-accent: light-dark(var(--mustard-500), var(--mustard-400));
+}
+
+/* Accessibility Preferences */
+@media (prefers-contrast: high) {
+  :root {
+    --text-primary: #000000;
+    --text-secondary: #222222;
+    --text-muted: #333333;
+    --border-subtle: #B8A058;
+    --border-light: #D4B866;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    transition-delay: 0ms;
+  }
+}

@@ -107,7 +107,7 @@ portfolio/
 
 ### Colors
 The color scheme uses CSS custom properties. Update these in `:root`:
-- `--primary-color`: Main brand color
+- `--brand`: Main brand color
 - `--secondary-color`: Secondary text color
 - `--accent-color`: Accent color for highlights
 
