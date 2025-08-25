@@ -1,0 +1,34 @@
+<svg width="640" height="360" viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FEFDF7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FBF4D3;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#bg3)"/>
+  <!-- Design tokens representation -->
+  <!-- Color palette -->
+  <rect x="80" y="80" width="40" height="40" fill="#e6b800" rx="6"/>
+  <rect x="130" y="80" width="40" height="40" fill="#f4dc85" rx="6"/>
+  <rect x="180" y="80" width="40" height="40" fill="#fbf4d3" rx="6"/>
+  <rect x="230" y="80" width="40" height="40" fill="#cc9d00" rx="6"/>
+  
+  <!-- Typography scale -->
+  <rect x="80" y="140" width="120" height="8" fill="#e6b800" opacity="0.7" rx="4"/>
+  <rect x="80" y="160" width="140" height="12" fill="#e6b800" opacity="0.6" rx="6"/>
+  <rect x="80" y="185" width="160" height="16" fill="#e6b800" opacity="0.5" rx="8"/>
+  <rect x="80" y="215" width="180" height="20" fill="#e6b800" opacity="0.4" rx="10"/>
+  
+  <!-- Spacing tokens -->
+  <rect x="320" y="80" width="20" height="20" fill="#e6b800" opacity="0.5" rx="2"/>
+  <rect x="350" y="80" width="30" height="30" fill="#e6b800" opacity="0.4" rx="3"/>
+  <rect x="390" y="80" width="40" height="40" fill="#e6b800" opacity="0.35" rx="4"/>
+  <rect x="440" y="80" width="50" height="50" fill="#e6b800" opacity="0.3" rx="5"/>
+  
+  <!-- Component tokens -->
+  <rect x="320" y="160" width="200" height="60" fill="#ffffff" opacity="0.9" stroke="#e6b800" stroke-width="2" rx="8"/>
+  <rect x="340" y="180" width="60" height="20" fill="#e6b800" opacity="0.6" rx="4"/>
+  <rect x="410" y="180" width="80" height="20" fill="#e6b800" opacity="0.3" rx="4"/>
+  
+  <text x="320" y="325" font-family="Arial, sans-serif" font-size="16" font-weight="500" text-anchor="middle" fill="#3a2715">Design Token System</text>
+</svg>

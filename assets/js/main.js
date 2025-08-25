@@ -124,7 +124,7 @@ function getFallbackData(filename) {
                 title: "Rediseño de Plataforma E-learning",
                 slug: "plataforma-elearning",
                 shortDescription: "Rediseño completo de una plataforma de aprendizaje digital centrada en la experiencia del usuario y la accesibilidad.",
-                image: "assets/images/project-1.jpg",
+                image: "assets/images/project-placeholder-1.svg",
                 tags: ["Investigación UX", "Diseño UI", "Prototipado", "Accesibilidad"],
                 categories: ["web", "research"],
                 featured: true
@@ -133,7 +133,7 @@ function getFallbackData(filename) {
                 title: "App Móvil para Gestión Social",
                 slug: "app-gestion-social",
                 shortDescription: "Aplicación móvil para la gestión de casos sociales y seguimiento de usuarios en organizaciones del tercer sector.",
-                image: "assets/images/project-2.jpg",
+                image: "assets/images/project-2.svg",
                 tags: ["Diseño Móvil", "UX Research", "Gestión de Datos", "Trabajo Social"],
                 categories: ["mobile", "research"],
                 featured: true
@@ -142,7 +142,7 @@ function getFallbackData(filename) {
                 title: "Sistema de Design Tokens",
                 slug: "design-tokens-system",
                 shortDescription: "Creación de un sistema completo de design tokens para garantizar consistencia visual en múltiples productos digitales.",
-                image: "assets/images/project-3.jpg",
+                image: "assets/images/project-3.svg",
                 tags: ["Sistema de Diseño", "Design Tokens", "Figma", "Documentación"],
                 categories: ["design-system", "web"],
                 featured: true
@@ -292,11 +292,15 @@ async function loadEducationData() {
 // ===== FEATURED PROJECTS LOADING =====
 async function loadFeaturedProjects() {
     const projectsData = await loadData('projects.json');
-    if (!projectsData) return;
-
-    const featuredProjects = projectsData.filter(project => project.featured);
     const projectsGrid = document.getElementById('featured-projects-grid');
     if (!projectsGrid) return;
+
+    if (!projectsData) {
+        console.warn('Could not load projects data - no fallback available');
+        return;
+    }
+
+    const featuredProjects = projectsData.filter(project => project.featured);
 
     projectsGrid.innerHTML = featuredProjects.map(project => `
         <div class="project-card" onclick="window.location.href='projects/${project.slug}/'">

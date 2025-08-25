@@ -1,0 +1,76 @@
+/* ===== TIMELINE (single-column, minimal) ===== */
+.timeline {
+  position: relative;
+  display: grid;
+  gap: var(--space-8);
+}
+
+/* Thin vertical rail in a brand tint */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: var(--space-4); top: 0; bottom: 0;
+  width: var(--timeline-rail-width);
+  background: var(--border-subtle);
+}
+
+/* Each item sits to the right of the rail */
+.timeline-item {
+  position: relative;
+  padding-left: var(--space-16);
+  opacity: 0;
+  animation: slideIn 0.5s ease-out 0.3s both;
+}
+
+/* Small brand dot anchored to first text line */
+.timeline-marker {
+  position: absolute;
+  left: calc(var(--space-4) - var(--timeline-marker-size) / 2);
+  top: calc(var(--space-2) + 2px);
+  width: var(--timeline-marker-size);
+  height: var(--timeline-marker-size);
+  background: var(--brand);
+  border: 3px solid var(--background-primary);
+  border-radius: 50%;
+}
+
+/* Content card: subtle border, no heavy fills; minimalist radii already 0 */
+.timeline-content {
+  background: var(--background-secondary);
+  border: 1px solid var(--border-light);
+  border-left: 3px solid var(--brand-muted);
+  border-radius: var(--radius-sm);
+  padding: var(--space-4) var(--space-6);
+  box-shadow: var(--shadow-subtle);
+}
+
+/* Typography: let text be the hero; keep color accents on the rail/dot */
+.timeline-date {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.025em;
+  margin-bottom: var(--space-2);
+  font-variant-numeric: tabular-nums; /* tidy dates */
+}
+
+.timeline-title {
+  font-size: var(--text-xl);
+  color: var(--text-primary);          /* was brand; now text for calmer hierarchy */
+  margin-bottom: var(--space-2);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: -0.01em;
+}
+
+.timeline-company {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-3);
+}
+
+.timeline-description {
+  color: var(--text-secondary);
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
