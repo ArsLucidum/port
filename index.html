@@ -4,7 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bárbara M - Diseñadora UX/UI Portfolio</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <meta name="description" content="Diseñadora UX/UI especializada en crear experiencias digitales centradas en el usuario. Portfolio con proyectos de investigación, prototipado y diseño de interfaces.">
+    <meta name="keywords" content="UX, UI, diseñador, portfolio, experiencia usuario, investigación usuarios, prototipado, Figma">
+    <meta name="author" content="Bárbara M">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="Bárbara M - Diseñadora UX/UI Portfolio">
+    <meta property="og:description" content="Diseñadora UX/UI especializada en crear experiencias digitales centradas en el usuario.">
+    <meta property="og:image" content="assets/images/new_profile.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Bárbara M - Diseñadora UX/UI Portfolio">
+    <meta property="twitter:description" content="Diseñadora UX/UI especializada en crear experiencias digitales centradas en el usuario.">
+    <meta property="twitter:image" content="assets/images/new_profile.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    
+    <link rel="stylesheet" href="assets/css/styles.css?v=mustard5">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -47,7 +70,7 @@
                     </p>
                 </div>
                 <div class="hero-image">
-                    <img src="assets/images/new_profile.png" alt="Bárbara M Profile Photo" id="profile-image">
+                    <img src="assets/images/new_profile.png" alt="Bárbara M Profile Photo" id="profile-image" class="portrait" loading="eager">
                 </div>
                 </div>
             </div>
@@ -66,14 +89,14 @@
                         <div class="languages">
                             <h3>Idiomas</h3>
                             <div class="languages-grid" id="languages-container">
-                                <!-- Languages will be loaded dynamically -->
+                                <div class="loading-placeholder">Cargando idiomas...</div>
                             </div>
                         </div>
                         
                         <div class="skills">
                             <h3>Habilidades y herramientas</h3>
                             <div class="skills-grid" id="skills-container">
-                                <!-- Skills will be loaded dynamically -->
+                                <div class="loading-placeholder">Cargando habilidades...</div>
                             </div>
                         </div>
                     </div>

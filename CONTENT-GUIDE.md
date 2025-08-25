@@ -53,7 +53,7 @@ Edit `data/projects.json`:
 
 ### Changing Colors
 In `assets/css/styles.css`, find the `:root` section and update:
-- `--primary-color`: Main brand color
+- `--brand`: Main brand color
 - `--accent-color`: Secondary highlight color
 
 ### Updating Skills

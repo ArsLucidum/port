@@ -1,0 +1,87 @@
+/* ===== DESIGN SYSTEM TOKENS ===== */
+:root {
+  /* Brand Colors */
+  --brand: #e6b800;
+  --accent-color: var(--brand);
+  --rose-variant: #c55d7a;
+  --blue-variant: #1fa9d6;
+  
+  /* Neutral Palette */
+  --background-primary: #ffffff;
+  --background-secondary: #fafafa;
+  --background-subtle: #FBF4D3;
+  --text-primary: #2c1810;
+  --text-secondary: #3d2817;
+  --text-muted: #4a3220;
+  --border-subtle: #E6D89C;
+  --border-light: #EFE7C6;
+  
+  /* Typography */
+  --font-primary: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Fluid Typography Scale */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.2vw, 0.8rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.3vw, 0.9rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.5vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.3rem + 0.8vw, 2rem);
+  --text-3xl: clamp(2rem, 1.7rem + 1.2vw, 2.5rem);
+  --text-4xl: clamp(2.5rem, 2rem + 2vw, 3.5rem);
+  
+  /* Spacing Scale (8px rhythm) */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+  --space-24: 6rem;    /* 96px */
+  
+  /* Layout */
+  --max-width: 1200px;
+  --content-padding: var(--space-6);
+  --section-padding: var(--space-24);
+  
+  /* Border Radius */
+  --radius-sm: 0.25rem;    /* 4px */
+  --radius-md: 0.5rem;     /* 8px */
+  --radius-lg: 0.75rem;    /* 12px */
+  --radius-xl: 1rem;       /* 16px */
+  --radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  
+  /* Transitions */
+  --transition-fast: 150ms ease-out;
+  --transition-normal: 250ms ease-out;
+  --transition-slow: 350ms ease-out;
+  
+  /* Brand Tints */
+  --brand-10: color-mix(in srgb, var(--brand) 10%, white);
+  --brand-20: color-mix(in srgb, var(--brand) 20%, white);
+}
+
+/* Dark theme support (optional) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-primary: #1a1a1a;
+    --background-secondary: #2d2d2d;
+    --background-subtle: #2a2419;
+    --text-primary: #f5f5f5;
+    --text-secondary: #d1d1d1;
+    --text-muted: #a1a1a1;
+    --border-subtle: #404040;
+    --border-light: #D4B866;
+  }
+}

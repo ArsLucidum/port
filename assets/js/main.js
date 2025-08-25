@@ -1,5 +1,8 @@
+(function() {
+'use strict';
+
 // ===== MOBILE NAVIGATION =====
-document.addEventListener('DOMContentLoaded', function() {
+function initMobileNavigation() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     
@@ -17,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-});
+}
 
 // ===== SMOOTH SCROLLING =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -355,43 +358,44 @@ function animateCounters() {
     });
 }
 
+// ===== DOM CACHE =====
+const domCache = {
+    heroImage: null,
+    aboutSection: null,
+    experienceSection: null,
+    init() {
+        this.heroImage = document.getElementById('profile-image');
+        this.aboutSection = document.getElementById('about');
+        this.experienceSection = document.getElementById('experience');
+    }
+};
+
 // ===== PARALLAX EFFECT =====
 function handleParallax() {
-    const heroImage = document.getElementById('profile-image');
-    const aboutSection = document.getElementById('about');
-    const experienceSection = document.getElementById('experience');
-    
-    if (!heroImage || !aboutSection || !experienceSection) return;
+    if (!domCache.heroImage || !domCache.aboutSection || !domCache.experienceSection) return;
     
     const scrollY = window.pageYOffset;
     const isMobile = window.innerWidth <= 968; // Match CSS breakpoint
     
     if (isMobile) {
-        // Mobile: Proper parallax - image moves slower than scroll, behind content
-        heroImage.style.position = 'relative';
-        heroImage.style.transform = `translateY(${scrollY * 0.3}px)`;
-        heroImage.style.zIndex = '-1';
-        heroImage.style.bottom = '';
-        heroImage.style.right = '';
+        // Mobile: Proper parallax - use CSS custom properties
+        domCache.heroImage.classList.add('hero-parallax-mobile');
+        domCache.heroImage.style.setProperty('--parallax-y', `${scrollY * 0.3}px`);
     } else {
         // Desktop: Window effect + parallax
-        const aboutRect = aboutSection.getBoundingClientRect();
+        const aboutRect = domCache.aboutSection.getBoundingClientRect();
         const aboutBottom = aboutRect.bottom + scrollY - window.innerHeight;
         
         // Start parallax when the about section is almost done scrolling
         if (scrollY > aboutBottom) {
             // Parallax mode: image moves up slowly as we scroll down
             const parallaxAmount = (scrollY - aboutBottom) * 0.5;
-            heroImage.style.position = 'fixed';
-            heroImage.style.bottom = `${parallaxAmount}px`;
-            heroImage.style.right = '8%';
-            heroImage.style.transform = 'none';
+            domCache.heroImage.classList.add('hero-window-effect');
+            domCache.heroImage.style.setProperty('--window-bottom', `${parallaxAmount}px`);
         } else {
             // Window effect mode: image stays completely fixed
-            heroImage.style.position = 'fixed';
-            heroImage.style.bottom = '0';
-            heroImage.style.right = '8%';
-            heroImage.style.transform = 'none';
+            domCache.heroImage.classList.add('hero-fixed-bottom');
+            domCache.heroImage.classList.remove('hero-window-effect');
         }
     }
 }
@@ -402,13 +406,62 @@ function initProjectCards() {
     
     projectCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-8px) scale(1.02)';
+            this.classList.add('project-card-hover');
         });
         
         card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
+            this.classList.remove('project-card-hover');
         });
     });
+}
+
+// ===== PERFORMANCE UTILITIES =====
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func.apply(this, args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    }
+}
+
+// ===== ERROR HANDLING =====
+function showErrorMessage(message) {
+    // Create error notification
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error-notification';
+    errorDiv.innerHTML = `
+        <div class="error-content">
+            <strong>Error:</strong> ${message}
+            <button class="error-dismiss" onclick="this.parentElement.parentElement.remove()">×</button>
+        </div>
+    `;
+    
+    // Add to page
+    document.body.appendChild(errorDiv);
+    
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+        if (errorDiv.parentElement) {
+            errorDiv.remove();
+        }
+    }, 5000);
 }
 
 // ===== THEME TOGGLE (Optional for future enhancement) =====
@@ -421,16 +474,27 @@ function initThemeToggle() {
 
 // ===== INITIALIZATION =====
 document.addEventListener('DOMContentLoaded', async function() {
-    // Load all data
-    await Promise.all([
-        loadProfileData(),
-        loadExperienceData(),
-        loadEducationData(),
-        loadFeaturedProjects()
-    ]);
-    
-    // Initialize interactions
-    initProjectCards();
+    try {
+        // Initialize DOM cache and navigation first
+        domCache.init();
+        initMobileNavigation();
+        
+        // Load all data with error handling
+        await Promise.all([
+            loadProfileData(),
+            loadExperienceData(),
+            loadEducationData(),
+            loadFeaturedProjects()
+        ]);
+        
+        // Initialize interactions
+        initProjectCards();
+        
+        console.log('Portfolio initialized successfully!');
+    } catch (error) {
+        console.error('Failed to initialize portfolio:', error);
+        showErrorMessage('Failed to load portfolio data. Please refresh the page.');
+    }
     
     // Start counter animation when stats section is visible
     const statsObserver = new IntersectionObserver((entries) => {
@@ -451,15 +515,15 @@ document.addEventListener('DOMContentLoaded', async function() {
     window.addEventListener('scroll', handleParallax, { passive: true });
     
     // Handle window resize to reset parallax on orientation change
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', debounce(() => {
         // Reset styles and reapply based on new window size
-        setTimeout(handleParallax, 100);
-    });
+        handleParallax();
+    }, 250));
     
     console.log('Portfolio website initialized successfully!');
 });
 
-// ===== ERROR HANDLING =====
+// ===== GLOBAL ERROR HANDLING =====
 window.addEventListener('error', function(e) {
     console.error('JavaScript error:', e.error);
 });
@@ -467,17 +531,11 @@ window.addEventListener('error', function(e) {
 // ===== ACCESSIBILITY ENHANCEMENTS =====
 document.addEventListener('keydown', function(e) {
     // Enable keyboard navigation for project cards
-    if (e.key === 'Enter' && e.target.classList.contains('project-card')) {
-        e.target.click();
-    }
-    
-    // Close mobile menu with escape key
-    if (e.key === 'Escape') {
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
-        if (hamburger && navMenu) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
+    if (e.key === 'Enter' || e.key === ' ') {
+        const target = e.target;
+        if (target.classList.contains('project-card')) {
+            e.preventDefault();
+            target.click();
         }
     }
 });
@@ -499,3 +557,5 @@ if ('IntersectionObserver' in window) {
     
     lazyImages.forEach(img => imageObserver.observe(img));
 }
+
+})(); // End of IIFE
