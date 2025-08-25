@@ -10,65 +10,68 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
+    <a href="#main" class="skip-to-content">Saltar al contenido principal</a>
+    <header role="banner">
+        <nav class="navbar" role="navigation" aria-label="Navegación principal">
         <div class="nav-container">
-            <a href="../" class="nav-logo">Portfolio</a>
-            <ul class="nav-menu">
-                <li><a href="../index.html#home" class="nav-link">Inicio</a></li>
-                <li><a href="../index.html#about" class="nav-link">Sobre mí</a></li>
-                <li><a href="../index.html#experience" class="nav-link">Experiencia</a></li>
-                <li><a href="../index.html#education" class="nav-link">Formación</a></li>
-                <li><a href="./" class="nav-link active">Proyectos</a></li>
-                <li><a href="../index.html#contact" class="nav-link">Contacto</a></li>
+            <a href="../" class="nav-logo" aria-label="Ir al inicio del portfolio">Portfolio</a>
+            <ul class="nav-menu" role="menubar" aria-label="Menú de navegación">
+                <li role="none"><a href="../index.html#home" class="nav-link" role="menuitem">Inicio</a></li>
+                <li role="none"><a href="../index.html#about" class="nav-link" role="menuitem">Sobre mí</a></li>
+                <li role="none"><a href="../index.html#experience" class="nav-link" role="menuitem">Experiencia</a></li>
+                <li role="none"><a href="../index.html#education" class="nav-link" role="menuitem">Formación</a></li>
+                <li role="none"><a href="./" class="nav-link active" role="menuitem" aria-current="page">Proyectos</a></li>
+                <li role="none"><a href="../index.html#contact" class="nav-link" role="menuitem">Contacto</a></li>
             </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+            <button class="hamburger" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-menu" type="button">
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+            </button>
         </div>
         </nav>
     </header>
 
-    <a href="../index.html" class="back-to-home" title="Volver al inicio">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <a href="../index.html" class="back-to-home" aria-label="Volver al inicio del portfolio" role="button">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
+        <span class="visually-hidden">Volver al inicio</span>
     </a>
 
-    <main id="main">
-        <section class="projects-header">
+    <main id="main" role="main">
+        <section class="projects-header" role="banner" aria-labelledby="projects-title">
             <div class="container">
-                <h1>Mis Proyectos</h1>
-                <p class="section-subtitle">
+                <h1 id="projects-title">Mis Proyectos</h1>
+                <p class="section-subtitle" role="text">
                     Una colección completa de mi trabajo de diseño UX, con casos de estudio, 
                     sistemas de diseño y experiencias digitales que he creado.
                 </p>
             </div>
         </section>
 
-        <section class="projects-content">
+        <section class="projects-content" aria-labelledby="projects-filter-title">
             <div class="container">
-                <div class="projects-filter" id="projects-filter">
-                    <button class="filter-btn active" data-filter="all">Todos los proyectos</button>
-                    <button class="filter-btn" data-filter="web">Diseño Web</button>
-                    <button class="filter-btn" data-filter="mobile">Apps Móviles</button>
-                    <button class="filter-btn" data-filter="design-system">Sistemas de Diseño</button>
-                    <button class="filter-btn" data-filter="research">Investigación UX</button>
-                    <button class="filter-btn" data-filter="prototype">Prototipado</button>
+                <h2 id="projects-filter-title" class="visually-hidden">Filtros de proyectos</h2>
+                <div class="projects-filter" id="projects-filter" role="toolbar" aria-label="Filtros de categoría de proyectos">
+                    <button class="filter-btn active" data-filter="all" aria-pressed="true" type="button">Todos los proyectos</button>
+                    <button class="filter-btn" data-filter="web" aria-pressed="false" type="button">Diseño Web</button>
+                    <button class="filter-btn" data-filter="mobile" aria-pressed="false" type="button">Apps Móviles</button>
+                    <button class="filter-btn" data-filter="design-system" aria-pressed="false" type="button">Sistemas de Diseño</button>
+                    <button class="filter-btn" data-filter="research" aria-pressed="false" type="button">Investigación UX</button>
+                    <button class="filter-btn" data-filter="prototype" aria-pressed="false" type="button">Prototipado</button>
                 </div>
 
-                <div class="projects-grid" id="all-projects-grid">
+                <div class="projects-grid" id="all-projects-grid" role="grid" aria-label="Lista de proyectos">
                     <!-- Projects will be loaded dynamically -->
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
-            <p>&copy; 2024 <span id="footer-name">Bárbara M</span>. Todos los derechos reservados.</p>
+            <p role="text">&copy; 2024 <span id="footer-name">Bárbara M</span>. Todos los derechos reservados.</p>
         </div>
     </footer>
 
@@ -99,21 +102,27 @@
             const projectsGrid = document.getElementById('all-projects-grid');
             if (!projectsGrid) return;
 
-            projectsGrid.innerHTML = projects.map(project => `
-                <div class="project-card" data-categories="${project.categories?.join(' ') || ''}" onclick="window.location.href='${project.slug}/'">
-                    <div class="project-image">
+            projectsGrid.innerHTML = projects.map((project, index) => `
+                <article class="project-card" 
+                         data-categories="${project.categories?.join(' ') || ''}" 
+                         onclick="window.location.href='${project.slug}/'"
+                         role="gridcell"
+                         aria-labelledby="project-title-${index}"
+                         tabindex="0"
+                         onkeydown="if(event.key==='Enter'||event.key===' ')window.location.href='${project.slug}/'">
+                    <div class="project-image" role="img" aria-labelledby="project-title-${index}">
                         <img src="${project.image || '../assets/images/project-placeholder.jpg'}" 
-                             alt="${project.title}" 
+                             alt="Imagen del proyecto ${project.title}" 
                              loading="lazy">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">${project.title}</h3>
-                        <p class="project-description">${project.shortDescription}</p>
-                        <div class="project-tags">
-                            ${project.tags?.map(tag => `<span class="project-tag">${tag}</span>`).join('') || ''}
+                        <h3 class="project-title" id="project-title-${index}">${project.title}</h3>
+                        <p class="project-description" role="text">${project.shortDescription}</p>
+                        <div class="project-tags" role="list" aria-label="Tecnologías utilizadas">
+                            ${project.tags?.map(tag => `<span class="project-tag" role="listitem">${tag}</span>`).join('') || ''}
                         </div>
                     </div>
-                </div>
+                </article>
             `).join('');
         }
 
@@ -154,10 +163,14 @@
             
             filterButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    // Remove active class from all buttons
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    // Add active class to clicked button
+                    // Update ARIA states and active class
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.setAttribute('aria-pressed', 'false');
+                    });
+                    // Set active button
                     button.classList.add('active');
+                    button.setAttribute('aria-pressed', 'true');
                     // Filter projects
                     filterProjects(button.dataset.filter);
                 });

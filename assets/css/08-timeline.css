@@ -50,8 +50,12 @@
 .timeline-item {
   position: relative;
   padding-left: var(--space-16);
+  padding-inline-start: var(--space-16);
   opacity: 0;
   animation: slideIn 0.5s ease-out 0.3s both;
+  contain: layout style;
+  content-visibility: auto;
+  contain-intrinsic-size: 100% 120px;
 }
 
 /* Small brand dot anchored to first text line */
@@ -70,9 +74,11 @@
 .timeline-content {
   background: var(--surface-secondary);
   border: 1px solid var(--border-light);
-  border-left: 3px solid var(--mustard-300);
+  border-inline-start: 3px solid var(--mustard-300);
   border-radius: var(--radius-sm);
   padding: var(--spacing-md) var(--spacing-lg);
+  padding-inline: var(--spacing-lg);
+  padding-block: var(--spacing-md);
   box-shadow: var(--shadow-subtle);
 }
 
@@ -83,6 +89,7 @@
   font-weight: var(--font-weight-medium);
   letter-spacing: 0.025em;
   margin-bottom: var(--spacing-xs);
+  margin-block-end: var(--spacing-xs);
   font-variant-numeric: tabular-nums; /* tidy dates */
 }
 

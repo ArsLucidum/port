@@ -44,25 +44,73 @@ a:focus {
   border-radius: var(--radius-sm);
 }
 
-/* ===== FOCUS STATES ===== */
+/* ===== ADVANCED FOCUS MANAGEMENT ===== */
 *:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
 
 *:focus-visible {
-  outline: 2px solid var(--brand);
-  outline-offset: 2px;
+  outline: 2px solid var(--mustard-600);
+  outline-offset: 3px;
   box-shadow: var(--shadow-focus);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease-out;
+  animation: focusRingExpand 0.2s ease-out;
 }
 
+/* High-visibility focus states for interactive elements */
 button:focus-visible,
 a:focus-visible,
-.project-card:focus-visible {
-  border-radius: var(--radius-sm);
-  outline: 2px solid var(--brand);
+.project-card:focus-visible,
+.skill-tag:focus-visible,
+.stat:focus-visible {
+  outline: 3px solid var(--mustard-500);
+  outline-offset: 4px;
+  box-shadow: 
+    0 0 0 2px var(--surface-primary),
+    0 0 0 6px rgb(var(--shadow-color) / 0.2),
+    var(--shadow-soft);
+  border-radius: var(--radius-md);
+  z-index: 10;
+  position: relative;
+}
+
+/* Navigation focus states */
+.nav-link:focus-visible {
+  outline: 2px solid var(--surface-primary);
   outline-offset: 2px;
-  box-shadow: 0 0 0 4px rgb(var(--shadow-color) / 0.15);
+  background: rgb(var(--shadow-color) / 0.1);
+  box-shadow: inset 0 0 0 2px var(--surface-primary);
+  border-radius: var(--radius-sm);
+}
+
+/* Form and input focus states */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--mustard-400);
+  outline-offset: 2px;
+  border-color: var(--mustard-500);
+  box-shadow: 
+    0 0 0 1px var(--mustard-500),
+    0 0 0 4px rgb(var(--shadow-color) / 0.15);
+}
+
+/* Focus trap for modal/dialog management */
+.focus-trap {
+  contain: focus;
+}
+
+/* Skip link focus enhancement */
+.skip-to-content:focus-visible {
+  outline: 3px solid var(--surface-primary);
+  outline-offset: 2px;
+  box-shadow: 
+    0 0 0 2px var(--mustard-500),
+    0 0 0 6px rgb(var(--shadow-color) / 0.25);
+  transform: scale(1.05);
+  animation: focusRingExpand 0.3s ease-out;
 }
 
 /* ===== UTILITY CLASSES ===== */

@@ -11,6 +11,12 @@
     [full-end];
 }
 
+/* CSS Logical Properties for Better Internationalization */
+.container {
+  padding-inline: var(--content-padding);
+  margin-inline: auto;
+}
+
 .container > * {
   grid-column: content;
 }
@@ -107,6 +113,7 @@ section {
   margin: 0 auto;
   padding: 0 var(--content-padding);
   place-items: center;
+  contain: layout;
 }
 
 .stat {

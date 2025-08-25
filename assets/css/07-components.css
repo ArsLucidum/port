@@ -17,6 +17,8 @@
   border: none;
   border-radius: var(--radius-sm);
   padding: var(--space-3) var(--space-6);
+  padding-inline: var(--space-6);
+  padding-block: var(--space-3);
   box-shadow: var(--shadow-soft);
 }
 
@@ -199,6 +201,9 @@
   display: grid;
   grid-template-rows: auto 1fr;
   height: 100%;
+  contain: layout style paint;
+  content-visibility: auto;
+  contain-intrinsic-size: 320px 400px;
 }
 
 /* Subgrid support for aligned card content */
@@ -268,6 +273,8 @@
 
 .project-content {
   padding: var(--spacing-lg);
+  padding-inline: var(--spacing-lg);
+  padding-block: var(--spacing-lg);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);

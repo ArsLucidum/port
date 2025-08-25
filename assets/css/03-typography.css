@@ -8,41 +8,59 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.025em;
 }
 
-/* Visual Weight Hierarchy Based on Mathematical Ratios */
+/* Advanced Typography Scale with Optical Sizing */
 h1 { 
   font-size: var(--text-5xl); 
   font-weight: var(--font-weight-bold);
   line-height: 1.1;
+  font-optical-sizing: auto;
+  font-variation-settings: "wght" 700, "opsz" 60;
+  letter-spacing: -0.04em;
 }
 
 h2 { 
   font-size: var(--text-4xl); 
   font-weight: var(--font-weight-bold);
   line-height: 1.15;
+  font-optical-sizing: auto;
+  font-variation-settings: "wght" 700, "opsz" 48;
+  letter-spacing: -0.035em;
 }
 
 h3 { 
   font-size: var(--text-3xl); 
   font-weight: var(--font-weight-semibold);
   line-height: 1.2;
+  font-optical-sizing: auto;
+  font-variation-settings: "wght" 600, "opsz" 36;
+  letter-spacing: -0.03em;
 }
 
 h4 { 
   font-size: var(--text-2xl); 
   font-weight: var(--font-weight-semibold);
   line-height: 1.25;
+  font-optical-sizing: auto;
+  font-variation-settings: "wght" 600, "opsz" 28;
+  letter-spacing: -0.025em;
 }
 
 h5 { 
   font-size: var(--text-xl); 
   font-weight: var(--font-weight-medium);
   line-height: 1.3;
+  font-optical-sizing: auto;
+  font-variation-settings: "wght" 500, "opsz" 22;
+  letter-spacing: -0.02em;
 }
 
 h6 { 
   font-size: var(--text-lg); 
   font-weight: var(--font-weight-medium);
   line-height: 1.4;
+  font-optical-sizing: auto;
+  font-variation-settings: "wght" 500, "opsz" 18;
+  letter-spacing: -0.015em;
 }
 
 p {
@@ -50,6 +68,10 @@ p {
   color: var(--text-secondary);
   line-height: calc(1.5 * var(--spacing-ratio) - 1); /* ~1.118 for better readability */
   font-weight: var(--font-weight-regular);
+  font-optical-sizing: auto;
+  font-variation-settings: "wght" 400, "opsz" 16;
+  text-rendering: optimizeLegibility;
+  hanging-punctuation: first last;
 }
 
 a {
