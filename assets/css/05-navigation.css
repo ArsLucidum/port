@@ -37,10 +37,22 @@
   color: var(--background-primary);
   font-weight: var(--font-weight-medium);
   position: relative;
-  transition: color var(--transition-fast);
+  transition: all var(--transition-fast);
   padding-bottom: var(--space-2);
   text-decoration: none;
   display: inline-block;
+}
+
+.navbar .nav-link:hover {
+  transform: translateY(-1px);
+  animation: gentleBounce 0.4s ease-out;
+}
+
+.navbar .nav-link:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+  border-radius: var(--radius-sm);
+  animation: focusRingExpand 0.2s ease-out;
 }
 
 .nav-link::after {

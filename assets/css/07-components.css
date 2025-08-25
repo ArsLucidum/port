@@ -25,17 +25,25 @@
   transform: translateY(-1px);
   box-shadow: var(--shadow-hover);
   text-decoration: none;
+  animation: gentleBounce 0.4s ease-in-out;
 }
 
 .btn-primary:active {
   background: var(--state-active);
   transform: translateY(0);
   box-shadow: var(--shadow-active);
+  animation: none;
 }
 
 .btn-primary:focus-visible {
   outline: none;
   box-shadow: var(--shadow-focus), var(--shadow-soft);
+  animation: focusRingExpand 0.2s ease-out;
+}
+
+.btn-secondary:hover {
+  animation: subtleGlow 2s ease-in-out infinite;
+  border-color: var(--border-accent);
 }
 
 .btn-secondary {
@@ -55,20 +63,33 @@
 
 /* ===== SKILLS ===== */
 .skills {
-  margin-top: var(--space-8);
+  margin-top: var(--spacing-xl);
 }
 
 .skills h3 {
   font-size: var(--text-xl);
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--spacing-md);
 }
 
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: var(--space-4) var(--space-3);
+  gap: var(--spacing-md) var(--spacing-sm);
   align-items: start;
   justify-items: start;
+}
+
+/* Subgrid support for precise skill alignment */
+@supports (grid-template-rows: subgrid) {
+  .skills-grid {
+    grid-auto-rows: min-content;
+  }
+  
+  .skill-tag {
+    display: grid;
+    grid-template-rows: subgrid;
+    align-content: center;
+  }
 }
 
 .skill-tag {
@@ -84,6 +105,13 @@
 
 .skill-tag:hover {
   color: var(--text-primary);
+  transform: scale(1.05);
+  animation: gentleBounce 0.3s ease-out;
+}
+
+.skill-tag:hover::before {
+  background: var(--mustard-400);
+  transform: scale(1.2);
 }
 
 .skill-tag::before {
@@ -173,10 +201,48 @@
   height: 100%;
 }
 
+/* Subgrid support for aligned card content */
+@supports (grid-template-rows: subgrid) {
+  .projects-grid {
+    grid-template-rows: repeat(auto-fit, max-content);
+  }
+  
+  .project-card {
+    display: subgrid;
+    grid-row: span 2;
+  }
+  
+  .project-content {
+    display: subgrid;
+    grid-template-rows: subgrid;
+  }
+}
+
 .project-card:hover {
   background: var(--surface-secondary);
   transform: translateY(-4px);
   box-shadow: var(--shadow-emphasis);
+  animation: hoverScale 0.3s ease-out;
+}
+
+.project-card:hover .project-title {
+  color: var(--text-accent);
+  background: linear-gradient(90deg, transparent, var(--surface-accent), transparent);
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+  background-position: left;
+  animation: textHighlight 0.4s ease-out 0.1s both;
+}
+
+.project-card:active {
+  transform: translateY(-2px);
+  transition: transform 0.1s ease-out;
+}
+
+.project-card:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus), var(--shadow-emphasis);
+  animation: focusRingExpand 0.2s ease-out;
 }
 
 .project-image {
