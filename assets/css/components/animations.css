@@ -1,25 +1,6 @@
 /* ===== ANIMATIONS & TRANSITIONS ===== */
 
-/* Hero parallax animations */
-.hero-parallax-mobile {
-  position: relative;
-  transform: translateY(var(--parallax-y, 0));
-  z-index: -1;
-}
-
-.hero-window-effect {
-  position: fixed;
-  bottom: var(--window-bottom, 0);
-  right: 8%;
-  transform: none;
-}
-
-.hero-fixed-bottom {
-  position: fixed;
-  bottom: 0;
-  right: 8%;
-  transform: none;
-}
+/* Hero parallax animations (handled by JavaScript) */
 
 /* Project card animations */
 .project-card-hover {

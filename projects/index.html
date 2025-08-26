@@ -111,9 +111,16 @@
                          tabindex="0"
                          onkeydown="if(event.key==='Enter'||event.key===' ')window.location.href='${project.slug}/'">
                     <div class="project-image" role="img" aria-labelledby="project-title-${index}">
-                        <img src="${project.image || '../assets/images/project-placeholder.jpg'}" 
-                             alt="Imagen del proyecto ${project.title}" 
-                             loading="lazy">
+                        <picture>
+                            <source srcset="${project.image?.replace('.jpg', '.webp').replace('.png', '.webp') || '../assets/images/project-placeholder.webp'}" type="image/webp">
+                            <source srcset="${project.image?.replace('.jpg', '.avif').replace('.png', '.avif') || '../assets/images/project-placeholder.avif'}" type="image/avif">
+                            <img src="${project.image || '../assets/images/project-placeholder.jpg'}" 
+                                 alt="Imagen del proyecto ${project.title}" 
+                                 loading="lazy"
+                                 class="img-responsive"
+                                 onerror="this.parentElement.parentElement.classList.add('img-error')"
+                                 onload="this.parentElement.parentElement.classList.remove('img-loading')">
+                        </picture>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title" id="project-title-${index}">${project.title}</h3>
@@ -233,6 +240,21 @@
             }
         }
 
+        // Initialize masonry layout
+        function initializeMasonry() {
+            const projectsGrid = document.getElementById('all-projects-grid');
+            if (!projectsGrid) return;
+
+            // Check for native masonry support
+            if (!CSS.supports('grid-template-rows', 'masonry')) {
+                // Apply masonry fallback
+                projectsGrid.classList.add('masonry-fallback');
+                console.log('Using masonry fallback layout');
+            } else {
+                console.log('Using native CSS Grid masonry');
+            }
+        }
+
         // Initialize page
         document.addEventListener('DOMContentLoaded', async function() {
             await Promise.all([
@@ -241,15 +263,29 @@
             ]);
             
             initializeFilters();
+            initializeMasonry();
             
-            // Add stagger animation to project cards
+            // Add stagger animation to project cards with enhanced timing
             const projectCards = document.querySelectorAll('.project-card');
             projectCards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.1}s`;
+                // Staggered animations with masonry-aware timing
+                const delay = index * 0.08; // Slightly faster for masonry
+                card.style.animationDelay = `${delay}s`;
                 card.classList.add('fade-in-up');
+                
+                // Add intersection observer for enhanced animations
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.animationPlayState = 'running';
+                        }
+                    });
+                }, { threshold: 0.1 });
+                
+                observer.observe(card);
             });
             
-            console.log('Projects page initialized successfully!');
+            console.log('Projects page initialized with advanced masonry layout!');
         });
 
         // Add fade-in-up animation

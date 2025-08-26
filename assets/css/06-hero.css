@@ -18,8 +18,10 @@
 /* Portrait styling for large presence */
 .hero .portrait {
   display: block;
-  max-width: 42vw;
-  min-width: 360px;
+  width: min(42vw, 500px);
+  min-width: 280px;
+  max-width: 500px;
+  height: auto;
   margin-left: auto;
   filter: none;
   opacity: 1;
@@ -87,8 +89,10 @@
 }
 
 .hero-image img {
-  width: 100%;
+  width: min(42vw, 500px);
+  min-width: 280px;
   max-width: 500px;
+  max-height: calc(100vh - 120px);
   height: auto;
   position: fixed;
   bottom: 0;
@@ -97,4 +101,24 @@
   border-radius: var(--radius-lg);
   contain: layout style paint;
   content-visibility: auto;
+  object-fit: cover;
+  object-position: center top;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Advanced responsive hero image system */
+.hero-image picture {
+  z-index: 1;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+.hero-image source {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-lg);
 }

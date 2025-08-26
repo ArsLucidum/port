@@ -27,3 +27,146 @@ body {
   border: none;
   outline: none;
 }
+
+/* ===== SOPHISTICATED SCROLLBAR STYLING ===== */
+
+/* Modern WebKit Scrollbars (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--mix-05);
+  border-radius: 6px;
+  border: 1px solid var(--mix-10);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, var(--mix-30), var(--mix-40));
+  border-radius: 6px;
+  border: 2px solid var(--mix-05);
+  transition: all var(--transition-fast);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, var(--mix-50), var(--mix-60));
+  border-color: var(--mix-10);
+  transform: scale(1.05);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(45deg, var(--mix-70), var(--mix-80));
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--mix-05);
+}
+
+/* Firefox Scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--mix-40) var(--mix-05);
+}
+
+/* Thin scrollbars for smaller elements */
+.timeline,
+.projects-filter,
+.nav-menu {
+  scrollbar-width: thin;
+  scrollbar-color: var(--mix-25) var(--mix-05);
+}
+
+/* Custom scrollbar for projects filter (horizontal scroll on mobile) */
+.projects-filter::-webkit-scrollbar {
+  height: 4px;
+}
+
+.projects-filter::-webkit-scrollbar-track {
+  background: var(--mix-05);
+  border-radius: 2px;
+}
+
+.projects-filter::-webkit-scrollbar-thumb {
+  background: var(--mix-30);
+  border-radius: 2px;
+  border: none;
+}
+
+.projects-filter::-webkit-scrollbar-thumb:hover {
+  background: var(--mix-50);
+}
+
+/* ===== ADVANCED SELECTION STYLING ===== */
+
+/* Text selection with sophisticated mustard theming */
+::selection {
+  background: var(--mix-25);
+  color: var(--mix-dark-30);
+  text-shadow: none;
+}
+
+/* Firefox selection fallback */
+::-moz-selection {
+  background: var(--mix-25);
+  color: var(--mix-dark-30);
+  text-shadow: none;
+}
+
+/* Enhanced selection for headings */
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection,
+h5::selection,
+h6::selection {
+  background: var(--mix-30);
+  color: var(--mix-dark-40);
+}
+
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+h5::-moz-selection,
+h6::-moz-selection {
+  background: var(--mix-30);
+  color: var(--mix-dark-40);
+}
+
+/* Subtle selection for code elements */
+code::selection,
+pre::selection,
+.timeline-date::selection {
+  background: var(--mix-warm-20);
+  color: var(--desaturate-30);
+}
+
+code::-moz-selection,
+pre::-moz-selection,
+.timeline-date::-moz-selection {
+  background: var(--mix-warm-20);
+  color: var(--desaturate-30);
+}
+
+/* Special selection styling for project cards */
+.project-title::selection {
+  background: var(--mix-triadic-soft);
+  color: var(--text-primary);
+}
+
+.project-title::-moz-selection {
+  background: var(--mix-triadic-soft);
+  color: var(--text-primary);
+}
+
+/* Navigation selection styling */
+.nav-link::selection {
+  background: var(--mix-analogous-1);
+  color: var(--mustard-900);
+}
+
+.nav-link::-moz-selection {
+  background: var(--mix-analogous-1);
+  color: var(--mustard-900);
+}

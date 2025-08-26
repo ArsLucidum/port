@@ -13,6 +13,7 @@
 @import url('./10-responsive.css');
 @import url('./11-accessibility.css');
 @import url('./12-animations.css');
+@import url('./13-media-queries.css');
 
 /* ===== SECTIONS WITH SOPHISTICATED BACKGROUNDS ===== */
 .experience,
@@ -57,25 +58,69 @@
 
 .filter-btn {
   padding: var(--space-3) var(--space-6);
-  border: none;
-  background: transparent;
+  border: 1px solid transparent;
+  background: var(--mix-05);
   color: var(--text-secondary);
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: 
+    transform var(--transition-fast) cubic-bezier(0.4, 0.0, 0.2, 1),
+    background var(--transition-fast) ease-out,
+    color var(--transition-fast) ease-out,
+    border-color var(--transition-fast) ease-out;
   font-weight: var(--font-weight-medium);
   font-family: var(--font-primary);
   font-size: var(--text-sm);
+  border-radius: var(--radius-sm);
+  position: relative;
+  overflow: hidden;
 }
 
-.filter-btn:hover,
+.filter-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: var(--mix-15);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  z-index: -1;
+}
+
+.filter-btn:hover {
+  background: var(--mix-10);
+  color: var(--mix-dark-20);
+  border-color: var(--mix-20);
+  transform: translateY(-1px) scale(1.02);
+  animation: filterButtonElevate 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.filter-btn:hover::before {
+  width: 200px;
+  height: 200px;
+}
+
 .filter-btn.active {
-  background: var(--background-subtle);
-  color: var(--accent-color);
+  background: var(--mix-20);
+  color: var(--mix-dark-30);
+  border-color: var(--mix-30);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-subtle);
+}
+
+.filter-btn.active::before {
+  width: 200px;
+  height: 200px;
+  background: var(--mix-25);
 }
 
 .filter-btn:focus-visible {
-  outline: 2px solid var(--accent-color);
-  outline-offset: 2px;
+  outline: none;
+  box-shadow: 0 0 0 3px var(--mix-20);
+  border-color: var(--mix-40);
+  animation: filterFocusGlow 0.3s ease-out;
 }
 
 .back-to-home {
@@ -83,8 +128,8 @@
   top: 50%;
   left: var(--space-6);
   transform: translateY(-50%);
-  background: var(--background-subtle);
-  color: var(--accent-color);
+  background: var(--mix-10);
+  color: var(--mix-dark-20);
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -92,14 +137,22 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  transition: all var(--transition-fast);
+  transition: 
+    transform var(--transition-normal) cubic-bezier(0.4, 0.0, 0.2, 1),
+    background var(--transition-fast) ease-out,
+    box-shadow var(--transition-normal) ease-out;
   z-index: 100;
+  box-shadow: var(--shadow-subtle);
+  border: 2px solid var(--mix-20);
 }
 
 .back-to-home:hover {
-  background: var(--accent-color);
-  color: var(--background-primary);
-  transform: translateY(-50%) scale(1.1);
+  background: var(--mix-40);
+  color: var(--text-on-accent);
+  transform: translateY(-50%) scale(1.15) rotate(5deg);
+  box-shadow: var(--shadow-soft);
+  border-color: var(--mix-50);
+  animation: backHomeRotate 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 @media (max-width: 768px) {

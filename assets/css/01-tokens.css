@@ -95,8 +95,12 @@
   --text-4xl: clamp(3rem, 2.5rem + 2vw, 4rem);
   --text-5xl: clamp(4rem, 3rem + 3vw, 5rem);
   
-  /* Mathematical Spacing Scale (Golden Ratio + 8px Baseline) */
+  /* Advanced Mathematical Spacing System */
   --spacing-ratio: 1.618; /* Golden ratio for harmonious scaling */
+  --fibonacci-ratio: 1.618; /* φ (phi) - Fibonacci sequence ratio */
+  --minor-third: 1.2; /* 6:5 ratio - musical harmony */
+  --major-second: 1.125; /* 9:8 ratio - musical interval */
+  --perfect-fourth: 1.333; /* 4:3 ratio - musical consonance */
   
   /* Base Spacing Units (8px rhythm with fluid scaling) */
   --space-0: 0;
@@ -114,14 +118,40 @@
   --space-24: clamp(6rem, 4rem + 3vw, 8rem);               /* 96px-128px */
   --space-32: clamp(8rem, 5rem + 4vw, 10rem);              /* 128px-160px */
   
-  /* Semantic Spacing Tokens */
-  --spacing-xs: var(--space-1);
-  --spacing-sm: var(--space-2);
-  --spacing-md: var(--space-4);
-  --spacing-lg: var(--space-6);
-  --spacing-xl: var(--space-8);
-  --spacing-2xl: var(--space-12);
-  --spacing-3xl: var(--space-16);
+  /* Geometric Progression Spacing (Fibonacci-inspired) */
+  --fib-1: calc(var(--space-1) * 1); /* 4px */
+  --fib-2: calc(var(--space-1) * 2); /* 8px */
+  --fib-3: calc(var(--space-1) * 3); /* 12px */
+  --fib-5: calc(var(--space-1) * 5); /* 20px */
+  --fib-8: calc(var(--space-1) * 8); /* 32px */
+  --fib-13: calc(var(--space-1) * 13); /* 52px */
+  --fib-21: calc(var(--space-1) * 21); /* 84px */
+  --fib-34: calc(var(--space-1) * 34); /* 136px */
+  --fib-55: calc(var(--space-1) * 55); /* 220px */
+  
+  /* Musical Scale Spacing (harmonic ratios) */
+  --harmony-unison: var(--space-4); /* 1:1 base */
+  --harmony-minor-second: calc(var(--harmony-unison) * var(--major-second)); /* 9:8 */
+  --harmony-major-third: calc(var(--harmony-unison) * var(--minor-third) * var(--minor-third)); /* (6:5)² */
+  --harmony-perfect-fourth: calc(var(--harmony-unison) * var(--perfect-fourth)); /* 4:3 */
+  --harmony-perfect-fifth: calc(var(--harmony-unison) * 1.5); /* 3:2 */
+  --harmony-octave: calc(var(--harmony-unison) * 2); /* 2:1 */
+  
+  /* Semantic Spacing Tokens (updated with harmonic principles) */
+  --spacing-xs: var(--fib-1);
+  --spacing-sm: var(--fib-2);
+  --spacing-md: var(--fib-3);
+  --spacing-lg: var(--fib-5);
+  --spacing-xl: var(--fib-8);
+  --spacing-2xl: var(--fib-13);
+  --spacing-3xl: var(--fib-21);
+  --spacing-4xl: var(--fib-34);
+  
+  /* Component-Specific Harmonic Spacing */
+  --card-padding: var(--harmony-perfect-fourth);
+  --section-gap: var(--harmony-perfect-fifth);
+  --element-gap: var(--harmony-minor-second);
+  --micro-gap: var(--harmony-unison);
   
   /* Layout */
   --container-max-width: 1120px;
@@ -161,13 +191,51 @@
   --radius-lg: 12px;
   --radius-xl: 16px;
   
-  /* Color Mixing System for Dynamic Variants */
+  /* Advanced Color Mixing System for Dynamic Variants */
+  /* Mustard-White Lightness Scale */
+  --mix-05: color-mix(in srgb, var(--brand-primary) 5%, white);
   --mix-10: color-mix(in srgb, var(--brand-primary) 10%, white);
+  --mix-15: color-mix(in srgb, var(--brand-primary) 15%, white);
   --mix-20: color-mix(in srgb, var(--brand-primary) 20%, white);
+  --mix-25: color-mix(in srgb, var(--brand-primary) 25%, white);
   --mix-30: color-mix(in srgb, var(--brand-primary) 30%, white);
   --mix-40: color-mix(in srgb, var(--brand-primary) 40%, white);
+  --mix-50: color-mix(in srgb, var(--brand-primary) 50%, white);
   --mix-60: color-mix(in srgb, var(--brand-primary) 60%, white);
+  --mix-70: color-mix(in srgb, var(--brand-primary) 70%, white);
   --mix-80: color-mix(in srgb, var(--brand-primary) 80%, white);
+  --mix-90: color-mix(in srgb, var(--brand-primary) 90%, white);
+  
+  /* Mustard-Dark Deepness Scale */
+  --mix-dark-10: color-mix(in srgb, var(--brand-primary) 90%, var(--mustard-900));
+  --mix-dark-20: color-mix(in srgb, var(--brand-primary) 80%, var(--mustard-900));
+  --mix-dark-30: color-mix(in srgb, var(--brand-primary) 70%, var(--mustard-900));
+  --mix-dark-40: color-mix(in srgb, var(--brand-primary) 60%, var(--mustard-900));
+  --mix-dark-50: color-mix(in srgb, var(--brand-primary) 50%, var(--mustard-900));
+  
+  /* Warm Neutral Mixing */
+  --mix-warm-10: color-mix(in srgb, var(--brand-primary) 10%, var(--warm-neutral-100));
+  --mix-warm-20: color-mix(in srgb, var(--brand-primary) 20%, var(--warm-neutral-100));
+  --mix-warm-30: color-mix(in srgb, var(--brand-primary) 30%, var(--warm-neutral-100));
+  --mix-warm-40: color-mix(in srgb, var(--brand-primary) 40%, var(--warm-neutral-200));
+  
+  /* Triadic Color Mixing (sophisticated harmony) */
+  --mix-triadic-subtle: color-mix(in srgb, var(--mustard-triadic-1) 8%, var(--surface-primary));
+  --mix-triadic-soft: color-mix(in srgb, var(--mustard-triadic-1) 15%, var(--surface-primary));
+  --mix-triadic-medium: color-mix(in srgb, var(--mustard-triadic-1) 25%, var(--surface-primary));
+  
+  /* Analogous Color Mixing (adjacent harmony) */
+  --mix-analogous-1: color-mix(in srgb, var(--mustard-analogous-1) 12%, var(--surface-primary));
+  --mix-analogous-2: color-mix(in srgb, var(--mustard-analogous-2) 12%, var(--surface-primary));
+  
+  /* Dynamic Saturation Variants */
+  --desaturate-10: color-mix(in srgb, var(--brand-primary) 90%, var(--warm-neutral-300));
+  --desaturate-20: color-mix(in srgb, var(--brand-primary) 80%, var(--warm-neutral-300));
+  --desaturate-30: color-mix(in srgb, var(--brand-primary) 70%, var(--warm-neutral-300));
+  
+  /* Temperature Variants (warmer/cooler) */
+  --warm-variant: color-mix(in srgb, var(--brand-primary) 85%, var(--mustard-analogous-1));
+  --cool-variant: color-mix(in srgb, var(--brand-primary) 85%, var(--mustard-analogous-2));
   
   /* Interactive State Colors */
   --state-hover: var(--mustard-400);
@@ -179,6 +247,27 @@
   --theme-surface: light-dark(var(--surface-primary), var(--mustard-950));
   --theme-text: light-dark(var(--text-primary), var(--mustard-100));
   --theme-accent: light-dark(var(--mustard-500), var(--mustard-400));
+
+  /* Custom Media Query Breakpoints */
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  
+  /* Container Query Breakpoints */
+  --container-xs: 20rem;   /* 320px */
+  --container-sm: 24rem;   /* 384px */
+  --container-md: 28rem;   /* 448px */
+  --container-lg: 32rem;   /* 512px */
+  --container-xl: 36rem;   /* 576px */
+  --container-2xl: 42rem;  /* 672px */
+  --container-3xl: 48rem;  /* 768px */
+  --container-4xl: 56rem;  /* 896px */
+  --container-5xl: 64rem;  /* 1024px */
+  --container-6xl: 72rem;  /* 1152px */
+  --container-7xl: 80rem;  /* 1280px */
 }
 
 /* Accessibility Preferences */
