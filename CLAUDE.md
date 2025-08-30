@@ -120,7 +120,12 @@ Converts to:
 </div>
 ```
 
-**Note:** Callouts are visually distinct from quotes - they have a lightbulb icon, warning/info styling with colored borders and backgrounds, and are used for important questions, considerations, or key points that need attention.
+**Callout Variants:** You can specify different callout styles by adding a variant field:
+- Default (yellow): `type: "callout"` 
+- Info (blue): `type: "callout", variant: "info"`
+- Warning (red): `type: "callout", variant: "warning"`
+
+**Note:** Callouts are visually distinct from quotes - they have a lightbulb icon (💡), info icon (ℹ️), or warning icon (⚠️) with colored borders and backgrounds, and are used for important questions, considerations, or key points that need attention.
 
 ### Template Processing Instructions
 
