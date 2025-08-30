@@ -1,0 +1,22 @@
+## Test Project with Callout
+
+This is a test project to verify the callout component works correctly.
+
+### Sample Section
+
+Here's some regular text before the callout.
+
+{
+type: "callout",
+text: "Important consideration: How might we ensure this design works for users with accessibility needs?"
+}
+
+More text after the callout.
+
+{
+type: "data-point",
+data-text: "95%",
+subquote-text: "of users found the new design more accessible"
+}
+
+End of test content.

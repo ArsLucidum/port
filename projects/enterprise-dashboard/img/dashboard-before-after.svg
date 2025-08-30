@@ -1,0 +1,42 @@
+<svg width="1000" height="600" viewBox="0 0 1000 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1000" height="600" fill="#f8f9fa"/>
+  
+  <!-- Before Section -->
+  <rect x="50" y="50" width="400" height="300" fill="#ffffff" stroke="#e9ecef" stroke-width="2"/>
+  <text x="250" y="30" text-anchor="middle" fill="#dc2626" font-family="Arial, sans-serif" font-size="16" font-weight="bold">BEFORE - Cluttered Interface</text>
+  
+  <!-- Cluttered elements -->
+  <rect x="70" y="70" width="360" height="20" fill="#dc2626" opacity="0.3"/>
+  <rect x="70" y="100" width="100" height="40" fill="#ef4444" opacity="0.5"/>
+  <rect x="180" y="100" width="100" height="40" fill="#ef4444" opacity="0.5"/>
+  <rect x="290" y="100" width="100" height="40" fill="#ef4444" opacity="0.5"/>
+  <rect x="70" y="150" width="120" height="60" fill="#fca5a5" opacity="0.7"/>
+  <rect x="200" y="150" width="80" height="60" fill="#fca5a5" opacity="0.7"/>
+  <rect x="290" y="150" width="140" height="60" fill="#fca5a5" opacity="0.7"/>
+  <rect x="70" y="220" width="360" height="100" fill="#fed7d7"/>
+  
+  <!-- After Section -->
+  <rect x="550" y="50" width="400" height="300" fill="#ffffff" stroke="#e9ecef" stroke-width="2"/>
+  <text x="750" y="30" text-anchor="middle" fill="#059669" font-family="Arial, sans-serif" font-size="16" font-weight="bold">AFTER - Clean Design</text>
+  
+  <!-- Clean organized elements -->
+  <rect x="570" y="70" width="360" height="30" fill="#10b981" opacity="0.2"/>
+  <rect x="580" y="80" width="80" height="4" rx="2" fill="#059669"/>
+  <rect x="580" y="90" width="120" height="3" rx="1.5" fill="#34d399"/>
+  
+  <rect x="570" y="120" width="170" height="80" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+  <rect x="760" y="120" width="170" height="80" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+  
+  <rect x="570" y="220" width="360" height="60" rx="8" fill="#f0fdf4"/>
+  <rect x="580" y="235" width="200" height="6" rx="3" fill="#22c55e"/>
+  <rect x="580" y="250" width="150" height="4" rx="2" fill="#86efac"/>
+  
+  <!-- Arrow -->
+  <path d="M470 200 L530 200 M520 190 L530 200 L520 210" stroke="#6b7280" stroke-width="3" fill="none"/>
+  
+  <!-- Metrics -->
+  <text x="250" y="420" text-anchor="middle" fill="#dc2626" font-family="Arial, sans-serif" font-size="12">78% couldn't find metrics</text>
+  <text x="750" y="420" text-anchor="middle" fill="#059669" font-family="Arial, sans-serif" font-size="12">92% satisfaction score</text>
+  
+  <text x="500" y="550" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="16">Dashboard Transformation - Data Visualization Platform</text>
+</svg>

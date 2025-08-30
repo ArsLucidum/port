@@ -1,0 +1,235 @@
+## Healthcare Patient Portal Redesign - Improving Access to Medical Information
+
+This 6-month project involved redesigning a patient portal used by over 50,000 patients to access medical records, schedule appointments, and communicate with healthcare providers.
+
+### Problem Definition
+
+The existing portal had significant usability issues that affected patient care and satisfaction:
+
+{
+type: "data-point",
+data-text: "34%",
+subquote-text: "of patients couldn't complete basic tasks independently"
+}
+
+{
+type: "data-point",
+data-text: "127",
+subquote-text: "average support calls per day related to portal issues"
+}
+
+Initial user research revealed that the portal was particularly challenging for older adults and patients with limited digital literacy.
+
+{
+type: "quote",
+text: "Healthcare should be about healing, not struggling with technology."
+}
+
+### Research & User Understanding
+
+I conducted extensive research with diverse patient groups:
+
+- 25 in-depth interviews with patients aged 18-82
+- 12 interviews with healthcare staff
+- Analysis of 6 months of support ticket data
+- Accessibility audit with assistive technology users
+
+Key findings:
+
+{
+type: "icon-caption",
+icon: "👥",
+quote-text: "Diverse User Base",
+subquote-text: "Age range from 18 to 89 with varying tech comfort levels"
+}
+
+{
+type: "icon-caption",
+icon: "⚕️",
+quote-text: "Critical Information",
+subquote-text: "Users often accessed portal during stressful medical situations"
+}
+
+{
+type: "icon-caption",
+icon: "📱",
+quote-text: "Mobile Priority",
+subquote-text: "67% of users primarily accessed portal via mobile devices"
+}
+
+### Information Architecture Redesign
+
+The original portal was organized by administrative functions rather than patient needs. I restructured it around patient journeys:
+
+{
+type: "image",
+image-source: "patient-portal-sitemap.png",
+alt-text: "Site map showing the new patient-centered navigation structure",
+caption: "New information architecture organized around patient goals rather than administrative systems"
+}
+
+Priority tasks were surfaced prominently:
+- View upcoming appointments
+- Message healthcare team
+- Access recent test results
+- Prescription refills
+
+{
+type: "data-point",
+data-text: "3 clicks",
+subquote-text: "maximum to reach any critical information"
+}
+
+### Accessibility & Inclusive Design
+
+Healthcare portals must be accessible to users with various abilities and comfort levels with technology:
+
+{
+type: "icon-caption",
+icon: "♿",
+quote-text: "WCAG 2.1 AAA",
+subquote-text: "Exceeded standard accessibility requirements"
+}
+
+{
+type: "icon-caption",
+icon: "🔍",
+quote-text: "Readability",
+subquote-text: "Medical jargon translated to plain language"
+}
+
+{
+type: "icon-caption",
+icon: "🎯",
+quote-text: "Large Touch Targets",
+subquote-text: "Optimized for users with motor difficulties"
+}
+
+Design decisions included:
+- High contrast color scheme for visual impairments
+- Large, clear typography (minimum 16px)
+- Voice-to-text capability for messages
+- Multiple ways to complete each task
+
+### Prototyping & Testing
+
+I created progressive prototypes starting with low-fidelity wireframes and advancing to high-fidelity interactive prototypes.
+
+{
+type: "image",
+image-source: "usability-testing-healthcare.png",
+alt-text: "Elderly woman using tablet to navigate the new patient portal during usability testing",
+caption: "Usability testing with diverse age groups to ensure accessibility across user demographics"
+}
+
+Testing revealed significant improvements:
+
+{
+type: "quote-subtitle",
+quote-text: "I can actually understand what my doctor is telling me now",
+subquote-text: "Patient testing feedback"
+}
+
+{
+type: "data-point",
+data-text: "89%",
+subquote-text: "task completion rate (up from 34%)"
+}
+
+{
+type: "data-point",
+data-text: "4.2/5",
+subquote-text: "average usability rating (up from 1.8/5)"
+}
+
+### Implementation Challenges
+
+Working in healthcare meant navigating complex regulatory requirements:
+
+{
+type: "icon-caption",
+icon: "🔐",
+quote-text: "HIPAA Compliance",
+subquote-text: "Strict privacy requirements affected every design decision"
+}
+
+{
+type: "icon-caption",
+icon: "⚡",
+quote-text: "System Integration",
+subquote-text: "Multiple legacy systems required careful data mapping"
+}
+
+Close collaboration with IT, compliance, and medical staff ensured the design met both user needs and regulatory requirements.
+
+### Results & Impact
+
+The redesigned portal launched in phases over 4 months with careful monitoring and iteration:
+
+{
+type: "data-point",
+data-text: "78%",
+subquote-text: "reduction in support calls"
+}
+
+{
+type: "data-point",
+data-text: "156%",
+subquote-text: "increase in portal adoption"
+}
+
+{
+type: "data-point",
+data-text: "92%",
+subquote-text: "patient satisfaction score"
+}
+
+{
+type: "image",
+image-source: "patient-portal-dashboard.png",
+alt-text: "Clean, modern patient portal dashboard showing upcoming appointments and recent results",
+caption: "Final dashboard design prioritizing most important patient information with clear visual hierarchy"
+}
+
+Unexpected positive outcomes:
+
+{
+type: "quote-subtitle",
+quote-text: "Patients are more engaged in their care since the portal redesign",
+subquote-text: "Dr. Sarah Chen, Primary Care Physician"
+}
+
+### Long-term Impact & Lessons Learned
+
+This project reinforced several key principles for healthcare UX design:
+
+{
+type: "icon-caption",
+icon: "❤️",
+quote-text: "Empathy First",
+subquote-text: "Healthcare users are often stressed, anxious, or in pain"
+}
+
+{
+type: "icon-caption",
+icon: "🔬",
+quote-text: "Evidence-Based Design",
+subquote-text: "Every decision backed by user research and testing"
+}
+
+{
+type: "icon-caption",
+icon: "🌍",
+quote-text: "Universal Design",
+subquote-text: "Designing for accessibility benefits all users"
+}
+
+The project has become a template for other healthcare UX initiatives and contributed to improved health outcomes by making medical information more accessible and understandable for patients.
+
+{
+type: "data-point",
+data-text: "2 awards",
+subquote-text: "received healthcare UX design recognition"
+}
+
+This experience deepened my understanding of how thoughtful design can have real impact on people's health and wellbeing, making it one of the most meaningful projects of my career.

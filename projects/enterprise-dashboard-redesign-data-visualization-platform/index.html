@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Dashboard Redesign - Data Visualization Platform - Portfolio</title>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/project.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main" class="skip-to-content">Skip to main content</a>
+    <header role="banner">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <a href="../../" class="nav-logo" aria-label="Go to portfolio home">Portfolio</a>
+                <ul class="nav-menu" role="menubar" aria-label="Navigation menu">
+                    <li role="none"><a href="../../index.html#home" class="nav-link" role="menuitem">Home</a></li>
+                    <li role="none"><a href="../../index.html#about" class="nav-link" role="menuitem">About</a></li>
+                    <li role="none"><a href="../../index.html#experience" class="nav-link" role="menuitem">Experience</a></li>
+                    <li role="none"><a href="../../index.html#education" class="nav-link" role="menuitem">Education</a></li>
+                    <li role="none"><a href="../../projects/" class="nav-link" role="menuitem" aria-current="page">Projects</a></li>
+                    <li role="none"><a href="../../index.html#contact" class="nav-link" role="menuitem">Contact</a></li>
+                </ul>
+                <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu" type="button">
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Parallax Hero Section -->
+    <section class="pv-hero" data-parallax="hero">
+        <div class="pv-hero-bg" data-parallax="media"></div>
+        <div class="pv-hero-container">
+            <div class="pv-hero-content">
+                <h1 class="pv-hero-title" id="project-title">Enterprise Dashboard Redesign - Data Visualization Platform</h1>
+                <p class="pv-hero-subtitle" id="project-subtitle">Redesigning complex enterprise analytics dashboard for 500+ data analysts</p>
+                <div class="pv-hero-meta">
+                    <div class="pv-meta-item">
+                        <span class="pv-meta-label">Duration</span>
+                        <span class="pv-meta-value" id="project-duration">8 months</span>
+                    </div>
+                    <div class="pv-meta-item">
+                        <span class="pv-meta-label">Role</span>
+                        <span class="pv-meta-value" id="project-role">Senior UX Designer</span>
+                    </div>
+                    <div class="pv-meta-item">
+                        <span class="pv-meta-label">Tools</span>
+                        <span class="pv-meta-value" id="project-tools">Figma, Data Analysis, User Testing</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pv-hero-phone" data-parallax="phone">
+                <div class="pv-phone-mockup">
+                    <svg class="pv-phone-frame" viewBox="0 0 280 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M40 0H240C262.091 0 280 17.9086 280 40V520C280 542.091 262.091 560 240 560H40C17.9086 560 0 542.091 0 520V40C0 17.9086 17.9086 0 40 0Z" fill="var(--text-primary)"/>
+                        <rect x="20" y="60" width="240" height="420" rx="12" fill="var(--bg)"/>
+                        <circle cx="140" cy="30" r="6" fill="var(--muted)"/>
+                        <rect x="120" y="510" width="40" height="4" rx="2" fill="var(--muted)"/>
+                    </svg>
+                    <img class="pv-phone-screen" src="./img/placeholder-screen.svg" alt="Project screenshot" id="project-screen">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Spacer -->
+    <div class="pv-hero-spacer"></div>
+
+    <!-- Phase Menu -->
+    <section class="pv-menu">
+        <div class="pv-menu-container">
+            <a href="#investigar" class="pv-menu-link active" data-phase="investigar">Investigar</a>
+            <a href="#definir" class="pv-menu-link" data-phase="definir">Definir</a>
+            <a href="#idear" class="pv-menu-link" data-phase="idear">Idear</a>
+            <a href="#disenar" class="pv-menu-link" data-phase="disenar">Diseñar</a>
+            <a href="#testear" class="pv-menu-link" data-phase="testear">Testear</a>
+        </div>
+    </section>
+
+    <!-- Main Content Layout -->
+    <main class="pv-container">
+        <!-- Left Timeline Rail -->
+        <aside class="pv-timeline" id="pv-timeline">
+            <div class="pv-rail"></div>
+            <div class="pv-cards-container" id="pv-cards-container">
+                <div class="pv-card active" data-phase="investigar">
+                    <span class="pv-card-number">1</span>
+                    <h3 class="pv-card-title">Investigar</h3>
+                    <p class="pv-card-desc">Research and discovery</p>
+                </div>
+                <div class="pv-card" data-phase="definir">
+                    <span class="pv-card-number">2</span>
+                    <h3 class="pv-card-title">Definir</h3>
+                    <p class="pv-card-desc">Problem definition</p>
+                </div>
+                <div class="pv-card" data-phase="idear">
+                    <span class="pv-card-number">3</span>
+                    <h3 class="pv-card-title">Idear</h3>
+                    <p class="pv-card-desc">Solution ideation</p>
+                </div>
+                <div class="pv-card" data-phase="disenar">
+                    <span class="pv-card-number">4</span>
+                    <h3 class="pv-card-title">Diseñar</h3>
+                    <p class="pv-card-desc">Visual design and prototyping</p>
+                </div>
+                <div class="pv-card" data-phase="testear">
+                    <span class="pv-card-number">5</span>
+                    <h3 class="pv-card-title">Testear</h3>
+                    <p class="pv-card-desc">Implementation and results</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Right Content Area -->
+        <div class="pv-content">
+            <!-- Research Phase -->
+            <section class="pv-section" id="investigar">
+                <h2 class="pv-section-title">Investigar</h2>
+
+                <p>This comprehensive project involved redesigning a complex enterprise analytics dashboard used by over 500 data analysts across multiple departments.</p>
+
+                <h3>Project Overview</h3>
+
+                <div class="pv-quote">
+                    <p>Data is the new oil. It's valuable, but if unrefined it cannot really be used.</p>
+                </div>
+
+                <p>The existing dashboard suffered from poor information hierarchy, overwhelming data presentation, and lack of customization options.</p>
+
+                <div class="pv-image">
+                    <img src="./img/dashboard-before-after.svg" alt="Side by side comparison showing the cluttered old dashboard versus the clean new design">
+                    <div class="pv-image-caption">Before and after: Transforming data chaos into actionable insights</div>
+                </div>
+
+                <h3>Research & Discovery Phase</h3>
+
+                <p>Extensive stakeholder interviews revealed critical pain points:</p>
+
+                <div class="pv-insights">
+                    <div class="pv-insight warning">
+                        <div class="pv-insight-number">78%</div>
+                        <p>of users couldn't find key metrics quickly</p>
+                    </div>
+                    <div class="pv-insight critical">
+                        <div class="pv-insight-number">12 minutes</div>
+                        <p>average time to generate a simple report</p>
+                    </div>
+                    <div class="pv-insight info">
+                        <div class="pv-insight-number">43%</div>
+                        <p>of features were never used by any user</p>
+                    </div>
+                </div>
+
+                <p>User personas emerged from research:</p>
+
+                <div class="pv-icon-caption">
+                    <span class="pv-icon-caption-icon">👔</span>
+                    <h4 class="pv-icon-caption-title">Executive Users</h4>
+                    <p class="pv-icon-caption-subtitle">Need high-level KPIs and trend visualization</p>
+                </div>
+
+                <div class="pv-icon-caption">
+                    <span class="pv-icon-caption-icon">📊</span>
+                    <h4 class="pv-icon-caption-title">Data Analysts</h4>
+                    <p class="pv-icon-caption-subtitle">Require detailed drill-down capabilities and custom views</p>
+                </div>
+
+                <div class="pv-icon-caption">
+                    <span class="pv-icon-caption-icon">⚡</span>
+                    <h4 class="pv-icon-caption-title">Power Users</h4>
+                    <p class="pv-icon-caption-subtitle">Want advanced filtering and data manipulation tools</p>
+                </div>
+
+            </section>
+
+            <!-- Define Phase -->
+            <section class="pv-section" id="definir">
+                <h2 class="pv-section-title">Definir</h2>
+
+                <h3>Information Architecture Redesign</h3>
+
+                <p>I restructured the entire information architecture based on user mental models rather than technical system structure.</p>
+
+                <div class="pv-highlight">
+                    <h3>The best interface is no interface</h3>
+                    <p>But when interface is needed, make it invisible</p>
+                </div>
+
+                <p>The new architecture prioritized:</p>
+
+                <ul>
+                    <li>Progressive disclosure of information</li>
+                    <li>Role-based customizable dashboards</li>
+                    <li>Contextual help and guided workflows</li>
+                </ul>
+
+                <div class="pv-image">
+                    <img src="./img/information-architecture-diagram.svg" alt="Flow diagram showing the new simplified navigation structure and user paths">
+                    <div class="pv-image-caption">New information architecture focusing on user goals rather than system features</div>
+                </div>
+
+            </section>
+
+            <!-- Ideate Phase -->
+            <section class="pv-section" id="idear">
+                <h2 class="pv-section-title">Idear</h2>
+
+                <h3>Visual Design & Component System</h3>
+
+                <p>Created a comprehensive design system with 47 reusable components:</p>
+
+                <div class="pv-insights">
+                    <div class="pv-insight info">
+                        <div class="pv-insight-number">47</div>
+                        <p>reusable UI components created</p>
+                    </div>
+                    <div class="pv-insight info">
+                        <div class="pv-insight-number">85%</div>
+                        <p>reduction in design inconsistencies</p>
+                    </div>
+                </div>
+
+                <p>Key design principles:</p>
+
+                <div class="pv-icon-caption">
+                    <span class="pv-icon-caption-icon">🎨</span>
+                    <h4 class="pv-icon-caption-title">Visual Hierarchy</h4>
+                    <p class="pv-icon-caption-subtitle">Clear typography scales and color coding for data types</p>
+                </div>
+
+                <div class="pv-icon-caption">
+                    <span class="pv-icon-caption-icon">📱</span>
+                    <h4 class="pv-icon-caption-title">Responsive Design</h4>
+                    <p class="pv-icon-caption-subtitle">Optimized for desktop, tablet, and mobile viewing</p>
+                </div>
+
+                <div class="pv-icon-caption">
+                    <span class="pv-icon-caption-icon">♿</span>
+                    <h4 class="pv-icon-caption-title">Accessibility First</h4>
+                    <p class="pv-icon-caption-subtitle">WCAG 2.1 AA compliant with screen reader support</p>
+                </div>
+
+            </section>
+
+            <!-- Design Phase -->
+            <section class="pv-section" id="disenar">
+                <h2 class="pv-section-title">Diseñar</h2>
+
+                <h3>Prototyping & User Testing</h3>
+
+                <p>Built interactive prototypes with real data to test with actual users in their work environment.</p>
+
+                <div class="pv-image">
+                    <img src="./img/user-testing-session.svg" alt="Photo of user testing session with participant using the new dashboard while researcher takes notes">
+                    <div class="pv-image-caption">User testing sessions conducted in realistic work environments with actual data</div>
+                </div>
+
+                <p>Testing revealed significant improvements:</p>
+
+                <div class="pv-highlight">
+                    <h3>I can finally see what I need at a glance</h3>
+                    <p>Senior Data Analyst, Global Sales Team</p>
+                </div>
+
+                <div class="pv-insights">
+                    <div class="pv-insight info">
+                        <div class="pv-insight-number">67%</div>
+                        <p>faster task completion time</p>
+                    </div>
+                    <div class="pv-insight info">
+                        <div class="pv-insight-number">92%</div>
+                        <p>user satisfaction score (up from 34%)</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Test Phase -->
+            <section class="pv-section" id="testear">
+                <h2 class="pv-section-title">Testear</h2>
+
+                <h3>Implementation & Results</h3>
+
+                <p>Worked closely with development team over 8 months to ensure design fidelity and performance.</p>
+
+                <div class="pv-quote">
+                    <p>The measure of a good design is not how it looks, but how well it solves the problem.</p>
+                </div>
+
+                <p>Final metrics after 6 months post-launch:</p>
+
+                <div class="pv-insights">
+                    <div class="pv-insight info">
+                        <div class="pv-insight-number">45%</div>
+                        <p>increase in daily active users</p>
+                    </div>
+                    <div class="pv-insight info">
+                        <div class="pv-insight-number">73%</div>
+                        <p>reduction in support tickets</p>
+                    </div>
+                    <div class="pv-insight warning">
+                        <div class="pv-insight-number">$2.4M</div>
+                        <p>estimated annual savings from improved efficiency</p>
+                    </div>
+                </div>
+
+                <h3>Key Learnings & Impact</h3>
+
+                <p>This project reinforced the importance of understanding business context alongside user needs:</p>
+
+                <div class="pv-icon-caption">
+                    <span class="pv-icon-caption-icon">💡</span>
+                    <h4 class="pv-icon-caption-title">Business Impact</h4>
+                    <p class="pv-icon-caption-subtitle">Good UX design directly affects bottom line metrics</p>
+                </div>
+
+                <div class="pv-icon-caption">
+                    <span class="pv-icon-caption-icon">🔄</span>
+                    <h4 class="pv-icon-caption-title">Iterative Process</h4>
+                    <p class="pv-icon-caption-subtitle">Continuous user feedback led to better solutions</p>
+                </div>
+
+                <div class="pv-icon-caption">
+                    <span class="pv-icon-caption-icon">🤝</span>
+                    <h4 class="pv-icon-caption-title">Cross-functional Collaboration</h4>
+                    <p class="pv-icon-caption-subtitle">Close partnership with developers ensured successful implementation</p>
+                </div>
+
+                <div class="pv-image">
+                    <img src="./img/final-dashboard-overview.svg" alt="Screenshot of the final dashboard design showing clean layout with key metrics prominently displayed">
+                    <div class="pv-image-caption">Final dashboard design: Clean, focused, and user-centered approach to complex data visualization</div>
+                </div>
+
+                <p>The project has become a model for other enterprise UX initiatives within the organization and established new standards for data-driven design decisions.</p>
+
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/project.js"></script>
+</body>
+</html>

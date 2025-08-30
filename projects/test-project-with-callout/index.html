@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Project with Callout - Portfolio</title>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/project.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main" class="skip-to-content">Skip to main content</a>
+    <header role="banner">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <a href="../../" class="nav-logo" aria-label="Go to portfolio home">Portfolio</a>
+                <ul class="nav-menu" role="menubar" aria-label="Navigation menu">
+                    <li role="none"><a href="../../index.html#home" class="nav-link" role="menuitem">Home</a></li>
+                    <li role="none"><a href="../../index.html#about" class="nav-link" role="menuitem">About</a></li>
+                    <li role="none"><a href="../../index.html#experience" class="nav-link" role="menuitem">Experience</a></li>
+                    <li role="none"><a href="../../index.html#education" class="nav-link" role="menuitem">Education</a></li>
+                    <li role="none"><a href="../../projects/" class="nav-link" role="menuitem" aria-current="page">Projects</a></li>
+                    <li role="none"><a href="../../index.html#contact" class="nav-link" role="menuitem">Contact</a></li>
+                </ul>
+                <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu" type="button">
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Parallax Hero Section -->
+    <section class="pv-hero" data-parallax="hero">
+        <div class="pv-hero-bg" data-parallax="media"></div>
+        <div class="pv-hero-container">
+            <div class="pv-hero-content">
+                <h1 class="pv-hero-title" id="project-title">Test Project with Callout</h1>
+                <p class="pv-hero-subtitle" id="project-subtitle">Testing callout component functionality</p>
+                <div class="pv-hero-meta">
+                    <div class="pv-meta-item">
+                        <span class="pv-meta-label">Duration</span>
+                        <span class="pv-meta-value" id="project-duration">Test duration</span>
+                    </div>
+                    <div class="pv-meta-item">
+                        <span class="pv-meta-label">Role</span>
+                        <span class="pv-meta-value" id="project-role">UX Designer</span>
+                    </div>
+                    <div class="pv-meta-item">
+                        <span class="pv-meta-label">Tools</span>
+                        <span class="pv-meta-value" id="project-tools">Testing Tools</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pv-hero-phone" data-parallax="phone">
+                <div class="pv-phone-mockup">
+                    <svg class="pv-phone-frame" viewBox="0 0 280 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M40 0H240C262.091 0 280 17.9086 280 40V520C280 542.091 262.091 560 240 560H40C17.9086 560 0 542.091 0 520V40C0 17.9086 17.9086 0 40 0Z" fill="var(--text-primary)"/>
+                        <rect x="20" y="60" width="240" height="420" rx="12" fill="var(--bg)"/>
+                        <circle cx="140" cy="30" r="6" fill="var(--muted)"/>
+                        <rect x="120" y="510" width="40" height="4" rx="2" fill="var(--muted)"/>
+                    </svg>
+                    <img class="pv-phone-screen" src="./img/placeholder-screen.svg" alt="Project screenshot" id="project-screen">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Spacer -->
+    <div class="pv-hero-spacer"></div>
+
+    <!-- Phase Menu -->
+    <section class="pv-menu">
+        <div class="pv-menu-container">
+            <a href="#investigar" class="pv-menu-link active" data-phase="investigar">Investigar</a>
+            <a href="#definir" class="pv-menu-link" data-phase="definir">Definir</a>
+            <a href="#idear" class="pv-menu-link" data-phase="idear">Idear</a>
+            <a href="#disenar" class="pv-menu-link" data-phase="disenar">Diseñar</a>
+            <a href="#testear" class="pv-menu-link" data-phase="testear">Testear</a>
+        </div>
+    </section>
+
+    <!-- Main Content Layout -->
+    <main class="pv-container">
+        <!-- Left Timeline Rail -->
+        <aside class="pv-timeline" id="pv-timeline">
+            <div class="pv-rail"></div>
+            <div class="pv-cards-container" id="pv-cards-container">
+                <div class="pv-card active" data-phase="investigar">
+                    <span class="pv-card-number">1</span>
+                    <h3 class="pv-card-title">Investigar</h3>
+                    <p class="pv-card-desc">Research and analysis</p>
+                </div>
+                <div class="pv-card" data-phase="definir">
+                    <span class="pv-card-number">2</span>
+                    <h3 class="pv-card-title">Definir</h3>
+                    <p class="pv-card-desc">Problem definition</p>
+                </div>
+                <div class="pv-card" data-phase="idear">
+                    <span class="pv-card-number">3</span>
+                    <h3 class="pv-card-title">Idear</h3>
+                    <p class="pv-card-desc">Ideation</p>
+                </div>
+                <div class="pv-card" data-phase="disenar">
+                    <span class="pv-card-number">4</span>
+                    <h3 class="pv-card-title">Diseñar</h3>
+                    <p class="pv-card-desc">Design solutions</p>
+                </div>
+                <div class="pv-card" data-phase="testear">
+                    <span class="pv-card-number">5</span>
+                    <h3 class="pv-card-title">Testear</h3>
+                    <p class="pv-card-desc">Testing and results</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Right Content Area -->
+        <div class="pv-content">
+            <!-- Research Phase -->
+            <section class="pv-section" id="investigar">
+                <h2 class="pv-section-title">Investigar</h2>
+
+                <p>This is a test project to verify the callout component works correctly.</p>
+
+                <h3>Sample Section</h3>
+
+                <p>Here's some regular text before the callout.</p>
+
+                <div class="pv-callout">
+                    <p>Important consideration: How might we ensure this design works for users with accessibility needs?</p>
+                </div>
+
+                <p>More text after the callout.</p>
+
+                <div class="pv-insight info">
+                    <div class="pv-insight-number">95%</div>
+                    <p>of users found the new design more accessible</p>
+                </div>
+
+                <p>End of test content.</p>
+
+            </section>
+
+            <!-- Define Phase -->
+            <section class="pv-section" id="definir">
+                <h2 class="pv-section-title">Definir</h2>
+                <p>Content for this phase will be developed based on template structure.</p>
+            </section>
+
+            <!-- Ideate Phase -->
+            <section class="pv-section" id="idear">
+                <h2 class="pv-section-title">Idear</h2>
+                <p>Content for this phase will be developed based on template structure.</p>
+            </section>
+
+            <!-- Design Phase -->
+            <section class="pv-section" id="disenar">
+                <h2 class="pv-section-title">Diseñar</h2>
+                <p>Content for this phase will be developed based on template structure.</p>
+            </section>
+
+            <!-- Test Phase -->
+            <section class="pv-section" id="testear">
+                <h2 class="pv-section-title">Testear</h2>
+                <p>Content for this phase will be developed based on template structure.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/project.js"></script>
+</body>
+</html>
