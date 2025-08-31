@@ -74,6 +74,26 @@
     "team": "2 diseñadores, 3 desarrolladores, 1 pedagogo"
   },
   {
+    "title": "Rediseño Tarjeta Transporte Madrid",
+    "slug": "madrid-transport-app-redesign",
+    "shortDescription": "Rediseño de la app de recarga de abonos de transporte público para eliminar fricciones y mejorar la experiencia de usuario.",
+    "description": "Proyecto de rediseño de la aplicación oficial de EMT Madrid enfocado en resolver problemas de usabilidad, errores de recarga y falta de confianza del usuario. Incluye investigación exhaustiva, análisis competitivo y propuesta de solución centrada en el usuario.",
+    "image": "assets/images/project-transport.svg",
+    "tags": ["Investigación UX", "Diseño Móvil", "Transporte Público", "Usabilidad"],
+    "categories": ["mobile", "research"],
+    "featured": true,
+    "year": "2025",
+    "role": "UX Designer",
+    "duration": "4 meses",
+    "team": "1 diseñador, investigación independiente",
+    "results": {
+      "userSatisfaction": "Pendiente",
+      "errorReduction": "Objetivo: -80%",
+      "completionRate": "Objetivo: +60%",
+      "trustScore": "Objetivo: +70%"
+    }
+  },
+  {
     "title": "Prototipo Interactivo de App Educativa",
     "slug": "prototipo-app-educativa",
     "shortDescription": "Desarrollo de prototipo interactivo para aplicación educativa dirigida a estudiantes de secundaria.",
