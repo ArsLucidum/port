@@ -115,23 +115,6 @@
   }
 }
 
-/* Dark Mode Preparation */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --surface-primary: var(--mustard-950);
-    --surface-secondary: var(--mustard-900);
-    --surface-subtle: var(--mustard-800);
-    --text-primary: var(--mustard-100);
-    --text-secondary: var(--mustard-200);
-    --text-muted: var(--mustard-300);
-    --border-subtle: var(--mustard-700);
-    --border-light: var(--mustard-600);
-  }
-  
-  .hero {
-    background: var(--mustard-800);
-  }
-}
 
 /* Print Styles Enhancement */
 @media print {
