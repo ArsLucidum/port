@@ -92,7 +92,7 @@
                 renderProjects(allProjects);
                 updateProjectCount();
             } catch (error) {
-                console.warn('Could not load projects:', error);
+                console.warn('Could not load projects (likely CORS in local file://), using updated fallback:', error);
                 showFallbackProjects();
             }
         }
@@ -187,6 +187,14 @@
         // Show fallback projects if JSON loading fails
         function showFallbackProjects() {
             const fallbackProjects = [
+                {
+                    title: "Rediseño Tarjeta Transporte Madrid",
+                    shortDescription: "Rediseño de la app de recarga de abonos de transporte público para eliminar fricciones y mejorar la experiencia de usuario.",
+                    tags: ["Investigación UX", "Diseño Móvil", "Transporte Público", "Usabilidad"],
+                    categories: ["mobile", "research"],
+                    slug: "madrid-transport-app-redesign",
+                    image: "../assets/images/project-transport.svg"
+                },
                 {
                     title: "Rediseño de Plataforma E-learning",
                     shortDescription: "Rediseño completo de una plataforma de aprendizaje digital centrada en la experiencia del usuario y la accesibilidad.",

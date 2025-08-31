@@ -405,7 +405,7 @@
 .pv-insight.info { border-top-color: var(--blue-variant); }
 
 .pv-insight-number {
-  font-size: var(--text-3xl);
+  font-size: var(--text-xl);
   font-weight: var(--font-weight-bold);
   color: var(--accent);
   margin-bottom: var(--space-2);
@@ -535,12 +535,12 @@
 }
 
 .pv-callout p {
-  font-size: var(--text-base);
+  font-size: inherit;
   color: #92400e;
   margin: 0;
   padding-left: var(--space-8);
   line-height: 1.6;
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-regular);
 }
 
 /* Callout variants */
