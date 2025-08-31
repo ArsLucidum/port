@@ -243,10 +243,6 @@
   --state-focus: var(--mustard-500);
   --state-disabled: var(--mustard-200);
   
-  /* Theme Tokens for Future Dark Mode */
-  --theme-surface: light-dark(var(--surface-primary), var(--mustard-950));
-  --theme-text: light-dark(var(--text-primary), var(--mustard-100));
-  --theme-accent: light-dark(var(--mustard-500), var(--mustard-400));
 
   /* Custom Media Query Breakpoints */
   --breakpoint-xs: 480px;

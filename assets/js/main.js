@@ -475,13 +475,6 @@ function showErrorMessage(message) {
     }, 5000);
 }
 
-// ===== THEME TOGGLE (Optional for future enhancement) =====
-function initThemeToggle() {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-    
-    // You can implement dark mode here if needed
-    // For now, we'll stick with the light theme as requested
-}
 
 // ===== INITIALIZATION =====
 document.addEventListener('DOMContentLoaded', async function() {
