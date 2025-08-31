@@ -1,0 +1,29 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fef3c7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fed7aa;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  
+  <!-- Desk -->
+  <rect x="100" y="400" width="600" height="150" fill="#8b4513" rx="8"/>
+  
+  <!-- Computer screen -->
+  <rect x="200" y="200" width="300" height="200" fill="#1f2937" rx="8"/>
+  <rect x="220" y="220" width="260" height="160" fill="#3b82f6" rx="4"/>
+  
+  <!-- Person -->
+  <circle cx="450" cy="350" r="40" fill="#fbbf24"/>
+  <rect x="430" y="380" width="40" height="60" fill="#3b82f6" rx="4"/>
+  
+  <!-- Researcher -->
+  <circle cx="150" cy="300" r="30" fill="#f87171"/>
+  <rect x="135" y="320" width="30" height="50" fill="#059669" rx="4"/>
+  
+  <!-- Notebook -->
+  <rect x="120" y="380" width="60" height="40" fill="white" stroke="#d1d5db" rx="4"/>
+  
+  <text x="400" y="550" font-family="Arial, sans-serif" font-size="18" fill="#374151" text-anchor="middle">User Testing Session</text>
+</svg>

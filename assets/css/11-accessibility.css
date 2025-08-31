@@ -126,6 +126,56 @@ select:focus-visible {
   border: 0;
 }
 
+/* ===== RESPONSIVE IMAGE UTILITIES ===== */
+.img-responsive {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+.img-contain {
+  object-fit: contain;
+}
+
+.img-cover {
+  object-fit: cover;
+}
+
+.img-fill {
+  object-fit: fill;
+}
+
+.img-scale-down {
+  object-fit: scale-down;
+}
+
+/* Image loading states */
+.img-loading {
+  background: linear-gradient(90deg, 
+    var(--surface-muted) 25%, 
+    var(--surface-accent) 50%, 
+    var(--surface-muted) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+.img-error {
+  background: var(--surface-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  min-height: 120px;
+}
+
+.img-error::before {
+  content: "⚠ Image unavailable";
+}
+
 /* Print styles */
 @media print {
   *, *::before, *::after {

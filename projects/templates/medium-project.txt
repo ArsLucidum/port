@@ -1,0 +1,77 @@
+## Mental Health App Design - Complete UX Process
+
+This project involved designing a comprehensive mental health support application from concept to final prototype. The goal was to create a safe, accessible platform for users seeking mental health resources.
+
+### Discovery & Research
+
+I began with extensive user research to understand the sensitive nature of mental health apps and user expectations.
+
+{
+type: "quote",
+text: "Mental health is not a destination, but a process. It's about how you drive, not where you're going."
+}
+
+The research involved interviews with 15 potential users, 3 mental health professionals, and analysis of 12 existing apps in the market.
+
+Key insights from research:
+
+{
+type: "data-point",
+data-text: "89%",
+subquote-text: "of users wanted anonymity options"
+}
+
+{
+type: "data-point", 
+data-text: "67%",
+subquote-text: "preferred self-guided activities over direct counseling"
+}
+
+### Design Challenges
+
+The main challenges were balancing accessibility with privacy, creating trust through design, and handling crisis situations appropriately.
+
+{
+type: "icon-caption",
+icon: "🔒",
+quote-text: "Privacy First",
+subquote-text: "All user data encrypted and stored locally when possible"
+}
+
+{
+type: "icon-caption", 
+icon: "🎯",
+quote-text: "Focused Content",
+subquote-text: "Curated resources instead of overwhelming information"
+}
+
+### Prototype & Testing
+
+I created high-fidelity prototypes focusing on calming visual design and intuitive navigation.
+
+{
+type: "image",
+image-source: "mental-health-app-screens.png",
+alt-text: "Screenshots of the mental health app showing main dashboard, mood tracking, and resources screens",
+caption: "Key screens from the final prototype showing the clean, calming interface design"
+}
+
+User testing with 12 participants revealed positive feedback:
+
+{
+type: "quote-subtitle",
+quote-text: "This feels safe and non-judgmental",
+subquote-text: "User testing participant feedback"
+}
+
+### Impact & Learnings
+
+The prototype was well-received by stakeholders and users alike. The project highlighted the importance of inclusive design and the responsibility we have as designers when working with vulnerable populations.
+
+{
+type: "data-point",
+data-text: "94%",
+subquote-text: "of users felt comfortable using the app during testing"
+}
+
+This project strengthened my conviction that good UX design can genuinely improve people's lives and wellbeing.

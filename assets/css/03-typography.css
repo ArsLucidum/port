@@ -74,26 +74,124 @@ p {
   hanging-punctuation: first last;
 }
 
+/* ===== ADVANCED LINK STYLING SYSTEM ===== */
+
+/* Base link styles with sophisticated interaction */
 a {
-  color: var(--text-primary);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-  transition: all var(--transition-fast);
+  color: var(--mix-dark-20);
+  text-decoration: none;
+  position: relative;
+  transition: 
+    color var(--transition-fast) ease-out,
+    transform var(--transition-fast) cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
-a:hover {
-  color: var(--text-secondary);
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
+/* Content links with elegant underlines */
+p a,
+.timeline-description a,
+.about-text a {
+  color: var(--mix-dark-30);
+  text-decoration: none;
+  position: relative;
+  font-weight: var(--font-weight-medium);
+  background: linear-gradient(to right, var(--mix-20), var(--mix-30));
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  transition: 
+    background-size 0.3s cubic-bezier(0.4, 0.0, 0.2, 1),
+    color var(--transition-fast) ease-out,
+    transform var(--transition-fast) cubic-bezier(0.4, 0.0, 0.2, 1);
+  padding-bottom: 2px;
+}
+
+p a:hover,
+.timeline-description a:hover,
+.about-text a:hover {
+  color: var(--mix-dark-40);
+  background-size: 100% 2px;
+  transform: translateY(-1px);
+}
+
+/* External link indicators */
+a[href^="http"]::after,
+a[href^="https://"]::after {
+  content: "↗";
+  font-size: 0.8em;
+  margin-left: var(--micro-gap);
+  opacity: 0.7;
+  transition: 
+    opacity var(--transition-fast) ease-out,
+    transform var(--transition-fast) cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+a[href^="http"]:hover::after,
+a[href^="https://"]:hover::after {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+/* Email and telephone links */
+a[href^="mailto:"],
+a[href^="tel:"] {
+  color: var(--mix-triadic-medium);
+  background: var(--mix-triadic-subtle);
+  padding: var(--micro-gap) var(--element-gap);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--mix-triadic-soft);
+  transition: 
+    all var(--transition-fast) cubic-bezier(0.4, 0.0, 0.2, 1);
+  display: inline-block;
+}
+
+a[href^="mailto:"]:hover,
+a[href^="tel:"]:hover {
+  background: var(--mix-triadic-soft);
+  border-color: var(--mix-triadic-medium);
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: var(--shadow-subtle);
 }
 
 /* Contact section links should be more prominent */
 #contact-email,
 #contact-linkedin {
-  color: var(--accent-color);
-  font-weight: var(--font-weight-medium);
+  color: var(--mix-dark-30);
+  font-weight: var(--font-weight-semibold);
+  background: var(--mix-warm-10);
+  padding: var(--element-gap) var(--card-padding);
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--mix-20);
+  transition: all var(--transition-fast) cubic-bezier(0.4, 0.0, 0.2, 1);
+  display: inline-block;
+  text-decoration: none;
+}
+
+#contact-email:hover,
+#contact-linkedin:hover {
+  background: var(--mix-warm-20);
+  border-color: var(--mix-40);
+  color: var(--mix-dark-40);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Focus styles for all links */
+a:focus-visible {
+  outline: 2px solid var(--mix-40);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+  animation: linkFocusGlow 0.3s ease-out;
+}
+
+/* Visited link states with subtle differentiation */
+a:visited {
+  color: var(--desaturate-20);
+}
+
+p a:visited,
+.timeline-description a:visited,
+.about-text a:visited {
+  color: var(--desaturate-30);
 }
 
 .section-title {

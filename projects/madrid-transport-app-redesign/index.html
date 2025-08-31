@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rediseño Tarjeta Transporte Madrid - Portfolio</title>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/project.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main" class="skip-to-content">Skip to main content</a>
+    <header role="banner">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <a href="../../" class="nav-logo" aria-label="Go to portfolio home">Portfolio</a>
+                <ul class="nav-menu" role="menubar" aria-label="Navigation menu">
+                    <li role="none"><a href="../../index.html#home" class="nav-link" role="menuitem">Home</a></li>
+                    <li role="none"><a href="../../index.html#about" class="nav-link" role="menuitem">About</a></li>
+                    <li role="none"><a href="../../index.html#experience" class="nav-link" role="menuitem">Experience</a></li>
+                    <li role="none"><a href="../../index.html#education" class="nav-link" role="menuitem">Education</a></li>
+                    <li role="none"><a href="../../projects/" class="nav-link" role="menuitem" aria-current="page">Projects</a></li>
+                    <li role="none"><a href="../../index.html#contact" class="nav-link" role="menuitem">Contact</a></li>
+                </ul>
+                <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu" type="button">
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Parallax Hero Section -->
+    <section class="pv-hero" data-parallax="hero">
+        <div class="pv-hero-bg" data-parallax="media"></div>
+        <div class="pv-hero-container">
+            <div class="pv-hero-content">
+                <h1 class="pv-hero-title" id="project-title">Rediseño Tarjeta Transporte Madrid</h1>
+                <p class="pv-hero-subtitle" id="project-subtitle">Mejorando la experiencia de recarga de títulos de transporte público para usuarios de Madrid</p>
+                <div class="pv-hero-meta">
+                    <div class="pv-meta-item">
+                        <span class="pv-meta-label">Duración</span>
+                        <span class="pv-meta-value" id="project-duration">4 meses</span>
+                    </div>
+                    <div class="pv-meta-item">
+                        <span class="pv-meta-label">Rol</span>
+                        <span class="pv-meta-value" id="project-role">UX Designer</span>
+                    </div>
+                    <div class="pv-meta-item">
+                        <span class="pv-meta-label">Herramientas</span>
+                        <span class="pv-meta-value" id="project-tools">Figma, Google Forms, Zoom, Notion, Miro</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pv-hero-phone" data-parallax="phone">
+                <div class="pv-phone-mockup">
+                    <svg class="pv-phone-frame" viewBox="0 0 280 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M40 0H240C262.091 0 280 17.9086 280 40V520C280 542.091 262.091 560 240 560H40C17.9086 560 0 542.091 0 520V40C0 17.9086 17.9086 0 40 0Z" fill="var(--text-primary)"/>
+                        <rect x="20" y="60" width="240" height="420" rx="12" fill="var(--bg)"/>
+                        <circle cx="140" cy="30" r="6" fill="var(--muted)"/>
+                        <rect x="120" y="510" width="40" height="4" rx="2" fill="var(--muted)"/>
+                    </svg>
+                    <img class="pv-phone-screen" src="./img/app-mockup.png" alt="Mockup de la aplicación rediseñada" id="project-screen">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Spacer -->
+    <div class="pv-hero-spacer"></div>
+
+    <!-- Phase Menu -->
+    <section class="pv-menu">
+        <div class="pv-menu-container">
+            <a href="#investigar" class="pv-menu-link active" data-phase="investigar">Investigar</a>
+            <a href="#definir" class="pv-menu-link" data-phase="definir">Definir</a>
+            <a href="#idear" class="pv-menu-link" data-phase="idear">Idear</a>
+            <a href="#disenar" class="pv-menu-link" data-phase="disenar">Diseñar</a>
+            <a href="#testear" class="pv-menu-link" data-phase="testear">Testear</a>
+        </div>
+    </section>
+
+    <!-- Main Content Layout -->
+    <main class="pv-container">
+        <!-- Left Timeline Rail -->
+        <aside class="pv-timeline" id="pv-timeline">
+            <div class="pv-rail"></div>
+            <div class="pv-cards-container" id="pv-cards-container">
+                <div class="pv-card active" data-phase="investigar">
+                    <span class="pv-card-number">1</span>
+                    <h3 class="pv-card-title">Investigar</h3>
+                    <p class="pv-card-desc">Investigación de usuarios y análisis competitivo</p>
+                </div>
+                <div class="pv-card" data-phase="definir">
+                    <span class="pv-card-number">2</span>
+                    <h3 class="pv-card-title">Definir</h3>
+                    <p class="pv-card-desc">Personas y journey maps de usuarios</p>
+                </div>
+                <div class="pv-card" data-phase="idear">
+                    <span class="pv-card-number">3</span>
+                    <h3 class="pv-card-title">Idear</h3>
+                    <p class="pv-card-desc">User flows y wireframes iterativos</p>
+                </div>
+                <div class="pv-card" data-phase="disenar">
+                    <span class="pv-card-number">4</span>
+                    <h3 class="pv-card-title">Diseñar</h3>
+                    <p class="pv-card-desc">Mockups y sistema de diseño</p>
+                </div>
+                <div class="pv-card" data-phase="testear">
+                    <span class="pv-card-number">5</span>
+                    <h3 class="pv-card-title">Testear</h3>
+                    <p class="pv-card-desc">Validación y testing con usuarios</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Right Content Area -->
+        <div class="pv-content">
+            <!-- Research Phase -->
+            <section class="pv-section" id="investigar">
+                <h2 class="pv-section-title">Investigar</h2>
+                
+                <p>El rediseño de la app de la "Tarjeta de transporte de EMT Madrid" surge al detectar fricciones en la recarga de títulos. A través de investigación con distintos perfiles de usuario, identifiqué barreras en el uso de NFC, errores de recarga y falta de confianza en el sistema. Mi propuesta busca ofrecer una experiencia más rápida, clara y accesible que favorezca el uso del transporte público.</p>
+
+                <h3>Problema</h3>
+                <div class="pv-callout">
+                    <p>Los usuarios del transporte público en Madrid experimentan fricciones y errores frecuentes al recargar sus títulos en la app actual, lo que genera desconfianza y dificulta su uso. Necesitan una forma rápida, intuitiva y fiable de gestionar sus recargas y desplazamientos, que les brinde mayor control, optimice su tiempo y favorezca el uso del transporte público frente al privado</p>
+                </div>
+
+                <h3>Contexto del problema</h3>
+                <p>Recargar el abono de transporte en Madrid debería ser simple, pero la app oficial convierte este trámite cotidiano en una fuente de frustración: cobros duplicados (unas 200 reclamaciones al mes) y caídas constantes del sistema dejan a los usuarios atrapados sin acceso al transporte. Hasta 2022, la ciudad había logrado que más personas optaran por el transporte público, pero en el último año ese impulso se está frenando, justo cuando más usuarios dependen del servicio. Estos puntos de dolor afectan directamente la vida diaria: desde planes sociales frustrados hasta dificultades para fomentar un transporte más ecológico.</p>
+
+                <h3>Objetivos de investigación</h3>
+                <ul>
+                    <li>Entender cómo y cuándo los usuarios recargan sus títulos de transporte: tipo de abono, canal de recarga, frecuencia y errores habituales.</li>
+                    <li>Identificar barreras y puntos de fricción en la recarga digital, especialmente vía NFC: nivel de comodidad con la tecnología, compatibilidad del móvil y claridad del proceso.</li>
+                    <li>Explorar cómo los usuarios perciben el control y la seguridad al gestionar su abono: ¿Confían en el sistema? ¿Revisan su saldo con frecuencia?</li>
+                    <li>Observar cómo varían estas experiencias según tipo de usuario (habitual, turista, perfiles tecnológicos) para personalizar mejoras.</li>
+                    <li>Detectar necesidades y deseos de los usuarios que no están directamente relacionados con la recarga, pero impactan su experiencia general.</li>
+                    <li>Recoger opiniones sobre la app actual para guiar decisiones de rediseño y priorización de mejoras.</li>
+                </ul>
+
+                <h3>¿Cómo lo hacen en otras grandes ciudades?</h3>
+                <p>Al analizar cómo ciudades con alto flujo de usuarios gestionan las fricciones en transporte, observé que la mayoría apuestan por eliminar billetes físicos y conectar la movilidad con servicios cotidianos, como compras de última hora.</p>
+
+                <div class="pv-quote">
+                    <p>Mientras voy a coger el metro, me quiero comprar una botella de agua</p>
+                </div>
+
+                <p>Integrar estas necesidades en la app no solo simplifica la experiencia de usuario, sino que refuerza la marca como un servicio versátil y presente en la vida diaria, convirtiéndola en el método de recarga preferido por nuevos y recurrentes usuarios.</p>
+
+                <h3>Auditoría competitiva</h3>
+                <p>Llevé a cabo una auditoría de competidores centrada en seis grandes áreas metropolitanas internacionales: Madrid, París, Londres, Nueva York, Seúl y Tokio.</p>
+
+                <div class="pv-highlight">
+                    <h3>EMT Madrid</h3>
+                    <p>Ofrece una aplicación para distintos servicios de transporte, pero sigue anclada en un sistema multioperador arcaico</p>
+                </div>
+
+                <div class="pv-highlight">
+                    <h3>Île-de-France Mobilités</h3>
+                    <p>Dispone de un sistema postpago según el servicio utilizado, aunque con costes operativos elevados</p>
+                </div>
+
+                <div class="pv-highlight">
+                    <h3>TFL Oyster</h3>
+                    <p>Integra el pago a través de Wallet/Apple Pay, pero pierde visibilidad sobre sus usuarios</p>
+                </div>
+
+                <div class="pv-highlight">
+                    <h3>OMNY System</h3>
+                    <p>Permite establecer límites de uso para evitar cobros indebidos, pero no es accesible ya que no contempla todas las reducciones de tarifa</p>
+                </div>
+
+                <div class="pv-highlight">
+                    <h3>T-money</h3>
+                    <p>Permite usar una sola tarjeta para toda la ciudad, aunque enfrenta barreras culturales entre Oriente y Occidente</p>
+                </div>
+
+                <div class="pv-highlight">
+                    <h3>Suica / Pasmo</h3>
+                    <p>Ofrece una tarjeta digital válida en todos los transportes y algunos comercios, pero la fragmentación entre operadores privados dificulta la experiencia</p>
+                </div>
+
+                <div class="pv-image">
+                    <img src="./img/competitive-audit.jpg" alt="Auditoría competitiva mostrando análisis de sistemas de transporte de 6 ciudades internacionales">
+                    <div class="pv-image-caption">Auditoría competitiva de sistemas de transporte en 6 grandes ciudades</div>
+                </div>
+
+                <h3>Oportunidades clave</h3>
+                <p>Estos hallazgos nos permiten identificar los puntos críticos de fricción y oportunidades de mejora, sirviendo como base para el rediseño de la app y la priorización de funcionalidades:</p>
+
+                <div class="pv-insights">
+                    <div class="pv-insight info">
+                        <div class="pv-insight-number">Usabilidad</div>
+                        <p>Aumenta la confianza y facilita la adopción de la app</p>
+                    </div>
+                    <div class="pv-insight info">
+                        <div class="pv-insight-number">Fare capping</div>
+                        <p>Considerar pagos por uso, abonos semanales y descuentos automáticos</p>
+                    </div>
+                    <div class="pv-insight info">
+                        <div class="pv-insight-number">Automatizaciones</div>
+                        <p>Automatizar acciones frecuentes según patrones de uso para mejorar la experiencia del usuario</p>
+                    </div>
+                </div>
+
+                <h3>Entrevista a los usuarios</h3>
+                <div class="pv-callout">
+                    <p>¿Qué opinan los usuarios sobre la app Tarjeta Transporte de la EMT y qué cambios les ayudarían a usarla de forma más cómoda en su día a día?</p>
+                </div>
+
+                <div class="pv-image">
+                    <img src="./img/users-research.jpg" alt="Grupos de investigación con diferentes perfiles de usuarios del transporte público">
+                    <div class="pv-image-caption">Grupos de investigación con usuarios de diferentes perfiles y edades</div>
+                </div>
+
+                <p>El cuestionario se aplicó tanto de manera digital como telefónica, ofreciendo apoyo a los participantes cuando lo necesitaron y las cuestiones se agruparon en 6 clústeres:</p>
+                <ul>
+                    <li>Hábitos de recarga</li>
+                    <li>Fricciones en la experiencia digital (NFC)</li>
+                    <li>Percepción de control y confianza</li>
+                    <li>Diferencias de uso entre perfiles de usuario</li>
+                    <li>Descubrimiento de oportunidades no anticipadas</li>
+                    <li>Rediseño de la app existente</li>
+                </ul>
+
+                <p>Para rediseñar la aplicación de recarga de abonos de la EMT, enfoqué mi investigación en aspectos clave como la usabilidad, la claridad de la información, la accesibilidad y la satisfacción general.</p>
+
+                <p>Llevé a cabo un estudio mixto de carácter <strong>cuantitativo</strong>, mediante un formulario en Google Forms basado en una escala Likert de 5 puntos para medir el grado de acuerdo o desacuerdo en relación con posibles puntos de dolor, y también <strong>cualitativo</strong>, a través de preguntas abiertas que permitieron identificar oportunidades de mejora.</p>
+
+                <h3>Hallazgos clave</h3>
+                <p>La entrevista arrojó 5 hallazgos clave:</p>
+
+                <div class="pv-icon-caption">
+                    <span class="pv-icon-caption-icon">⚠️</span>
+                    <h4 class="pv-icon-caption-title">Confianza limitada</h4>
+                    <p class="pv-icon-caption-subtitle">Los usuarios prefieren recargar en estaciones porque perciben el flujo de la app como poco confiable</p>
+                </div>
+
+                <div class="pv-icon-caption">
+                    <span class="pv-icon-caption-icon">🔧</span>
+                    <h4 class="pv-icon-caption-title">Errores en la pasarela de pago</h4>
+                    <p class="pv-icon-caption-subtitle">Fallos técnicos y problemas de lectura interrumpen el proceso de recarga</p>
+                </div>
+
+                <div class="pv-icon-caption">
+                    <span class="pv-icon-caption-icon">❌</span>
+                    <h4 class="pv-icon-caption-title">Alta tasa de abandono</h4>
+                    <p class="pv-icon-caption-subtitle">1 de cada 3 usuarios no completa la recarga debido a la complejidad del flujo</p>
+                </div>
+
+                <div class="pv-icon-caption">
+                    <span class="pv-icon-caption-icon">✨</span>
+                    <h4 class="pv-icon-caption-title">Deseo de personalización</h4>
+                    <p class="pv-icon-caption-subtitle">Guardar ajustes o recargas favoritas es la funcionalidad más deseada</p>
+                </div>
+
+                <div class="pv-icon-caption">
+                    <span class="pv-icon-caption-icon">😵‍💫</span>
+                    <h4 class="pv-icon-caption-title">Poco intuitiva</h4>
+                    <p class="pv-icon-caption-subtitle">La app cumple su función, pero la navegación y los flujos generan fricción y confusión</p>
+                </div>
+
+                <div class="pv-quote">
+                    <p>Lo que más echo en falta es tener un botón de 'recarga habitual' o 'favoritos' para cargar con sólo darle un botón y no tener q estar buscando mi título. -A.</p>
+                </div>
+            </section>
+
+            <!-- Define Phase -->
+            <section class="pv-section" id="definir">
+                <h2 class="pv-section-title">Definir</h2>
+                
+                <p>Con lo aprendido en la investigación, armé perfiles y recorridos de usuario para identificar sus principales puntos de dolor. Esto me sirvió como guía clara para enfocar las ideas de diseño.</p>
+
+                <h3>Personas</h3>
+                
+                <div class="pv-image">
+                    <img src="./img/persona-1.jpg" alt="Persona 1: Laura, farmacéutica joven que viaja diariamente en metro">
+                    <div class="pv-image-caption">Persona 1: Laura es una joven farmacéutica que viaja diariamente en metro y necesita una forma clara y confiable de consultar su saldo y confirmar sus recargas, porque le genera ansiedad no saber si el proceso funcionó correctamente</div>
+                </div>
+
+                <div class="pv-image">
+                    <img src="./img/persona-2.jpg" alt="Persona 2: Matías, usuario que necesita acompañamiento durante las recargas">
+                    <div class="pv-image-caption">Persona 2: Matías necesita sentirse acompañado y seguro durante las recargas, porque sin una guía clara y accesible abandona la app y recarga presencialmente, perdiendo tiempo valioso en su trayecto</div>
+                </div>
+
+                <div class="pv-image">
+                    <img src="./img/persona-3.jpg" alt="Persona 3: Jorge, ejecutivo de mediana edad con agenda apretada">
+                    <div class="pv-image-caption">Persona 3: Jorge es un ejecutivo de mediana edad con una agenda apretada que necesita realizar sus recargas de forma rápida y sin fricciones, porque le frustra perder tiempo repitiendo datos y no poder pagar con el método que le resulte más cómodo en ese momento</div>
+                </div>
+
+                <div class="pv-image">
+                    <img src="./img/persona-4.jpg" alt="Persona 4: Joel, joven que busca independencia en el transporte">
+                    <div class="pv-image-caption">Persona 4: Joel necesita una forma de recargar su abono sin depender directamente de sus padres, porque le incomoda no tener control sobre su propio transporte</div>
+                </div>
+
+                <h3>Journey maps</h3>
+
+                <div class="pv-image">
+                    <img src="./img/journey-map-1.jpg" alt="Journey map de Laura mostrando puntos de dolor en la recarga de abonos">
+                    <div class="pv-image-caption">Journey map de Laura: Identifica puntos críticos de ansiedad durante el proceso de recarga</div>
+                </div>
+
+                <div class="pv-image">
+                    <img src="./img/journey-map-2.jpg" alt="Journey map de Matías destacando necesidades de acompañamiento">
+                    <div class="pv-image-caption">Journey map de Matías: Muestra la importancia del feedback claro durante todo el proceso</div>
+                </div>
+
+                <div class="pv-image">
+                    <img src="./img/journey-map-3.jpg" alt="Journey map de Jorge enfocado en eficiencia y rapidez">
+                    <div class="pv-image-caption">Journey map de Jorge: Resalta la necesidad de opciones rápidas y métodos de pago flexibles</div>
+                </div>
+
+                <div class="pv-image">
+                    <img src="./img/journey-map-4.jpg" alt="Journey map de Joel centrado en autonomía e independencia">
+                    <div class="pv-image-caption">Journey map de Joel: Destaca la importancia del control y la independencia en el proceso</div>
+                </div>
+
+                <h3>Solución del problema</h3>
+                <p>Personificar los hallazgos jugó un papel importante en mi capacidad de empatizar con los usuarios. Cada persona me hizo reflexionar sobre los diferentes objetivos que podían tener, las emociones que surgían durante el uso y sus necesidades específicas.</p>
+
+                <p>Gracias a esto, pude definir la solución del problema:</p>
+
+                <div class="pv-callout">
+                    <p>Rediseñé la app de la Tarjeta de Transporte de EMT Madrid para minimizar las fricciones previas y ofrecer una experiencia más rápida, confiable y accesible. El nuevo diseño permite a los usuarios recargar títulos de manera intuitiva con un flujo simplificado y configuraciones favoritas, navegar por una interfaz clara e inclusiva que se adapta a distintos perfiles de usuario, y recibir feedback inmediato con alertas preventivas que aumentan la confianza y el control sobre su saldo, fomentando así el uso del transporte público.</p>
+                </div>
+            </section>
+
+            <!-- Ideate Phase -->
+            <section class="pv-section" id="idear">
+                <h2 class="pv-section-title">Idear</h2>
+                
+                <p>Llegado este punto, ya contaba con una imagen mental muy rica sobre qué ocurría con la aplicación, cómo funcionaban otras empresas del mercado, quiénes eran los usuarios y qué necesitaban, cómo se sentían y hacia dónde tenía que caminar.</p>
+
+                <h3>User Flow</h3>
+                <p>Para trasladar toda esta información "a tierra" armé un User flow general de todos los casos de uso.</p>
+
+                <div class="pv-image">
+                    <img src="./img/final-flowchart.jpg" alt="User Flow general del proceso de recarga rediseñado">
+                    <div class="pv-image-caption">User flow general antes de sufrir cambios debido a la iteración</div>
+                </div>
+
+                <p>Cada iteración me permitió mejorar la claridad del flujo y asegurar que los usuarios pudieran completar la tarea principal sin confusión. Este proceso de refinamiento fue clave para construir wireframes más efectivos y centrados en el usuario.</p>
+
+                <p>Algunos cambios a destacar fueron:</p>
+                <ul>
+                    <li><strong>Punto Clave 1:</strong> En el proceso de iteración, observamos que el tutorial inicial del login interrumpía la tarea principal, por lo que lo trasladé a la barra inferior, para dar acceso opcional.</li>
+                    <li><strong>Punto Clave 2:</strong> Respecto al apartado de grupo familiar, me di cuenta de que incluir tantas opciones en un apartado independiente dificultaba el uso de la app. Por eso, lo eliminé y trasladé sus funciones a otras secciones, logrando un flujo más simple y enfocado en las necesidades reales del usuario.</li>
+                </ul>
+
+                <h3>Wireframings</h3>
+                <p>Aquí muestro algunos wireframes analizando las iteraciones realizadas para entender cómo evolucionó el diseño a partir del feedback y las decisiones de usuario.</p>
+
+                <div class="pv-image">
+                    <img src="./img/wireframes-login.jpg" alt="Wireframes del proceso de inicio de sesión mostrando iteraciones">
+                    <div class="pv-image-caption">Wireframes del proceso de inicio de sesión con mejoras iterativas</div>
+                </div>
+
+                <p>Iteraciones realizadas:</p>
+                <ul>
+                    <li><strong>Splash screen:</strong> Se añadió una pantalla inicial con la imagen de marca. Permite recargas rápidas sin necesidad de autenticarse.</li>
+                    <li><strong>Modales (pop-ups):</strong> Reemplazo de pop-ups por modales con feedback reforzado: colores, texto e iconos. Inclusión de CTAs claros, menos intrusivos para el usuario.</li>
+                    <li><strong>Vinculación de tarjeta de abono:</strong> Ajuste del flujo para reducir abandono causado por tarjetas cambiantes o dificultad para identificarlas. Se mantuvo la funcionalidad pero simplificando la interacción.</li>
+                    <li><strong>Recuperación de contraseña:</strong> Proceso con feedback constante mediante pantallas, iconos y modales. Opción de abandonar la tarea sin frustración, mejorando la experiencia.</li>
+                </ul>
+
+                <div class="pv-image">
+                    <img src="./img/wireframes-recarga.jpg" alt="Wireframes del proceso de recarga con feedback visual">
+                    <div class="pv-image-caption">Wireframes del proceso de recarga con indicadores de progreso</div>
+                </div>
+
+                <p>Iteraciones del proceso de recarga:</p>
+                <ul>
+                    <li><strong>Recargas rápidas vs nueva configuración:</strong> Sección dividida en dos grupos: favoritos configurados para usuarios con prisa y nueva recarga. Reduce el esfuerzo cognitivo y agiliza la navegación.</li>
+                    <li><strong>Feedback continuo:</strong> Elemento gráfico que indica pasos totales y progreso actual en la recarga. Proporciona orientación clara durante todo el proceso.</li>
+                    <li><strong>Selección de nueva configuración:</strong> Opciones de zona tarifaria, tipo de abono y método de pago organizadas con jerarquía visual. Mejora la comprensión y facilita la elección.</li>
+                    <li><strong>Pantalla de confirmación:</strong> Muestra detalles de la recarga antes de finalizar. Permite abandonar el proceso si el usuario lo desea.</li>
+                    <li><strong>Lectura NFC:</strong> Tres pantallas que ofrecen feedback y guías claras para cada acción requerida. Mejora la transparencia y reduce errores.</li>
+                </ul>
+            </section>
+
+            <!-- Design Phase -->
+            <section class="pv-section" id="disenar">
+                <h2 class="pv-section-title">Diseñar</h2>
+                
+                <h3>Mockups</h3>
+                <p>Tras los wireframes, creé los mockups para transformar las estructuras iniciales en interfaces visuales completas. El objetivo fue <strong>dar claridad y consistencia</strong> a cada pantalla, asegurando que la experiencia del usuario fuera intuitiva y fácil de seguir.</p>
+
+                <div class="pv-image">
+                    <img src="./img/mockups-full.jpg" alt="Mockups completos de la aplicación rediseñada">
+                    <div class="pv-image-caption">Mockups finales mostrando la interfaz completa rediseñada</div>
+                </div>
+
+                <h3>Design system</h3>
+                <div class="pv-image">
+                    <img src="./img/design-system.jpg" alt="Sistema de diseño con colores, tipografías y componentes">
+                    <div class="pv-image-caption">Sistema de diseño desarrollado para garantizar consistencia visual</div>
+                </div>
+
+                <h3>Prototyping</h3>
+                <div class="pv-callout">
+                    <p>Esta sección está siendo completada con los prototipos interactivos desarrollados en Figma. Los prototipos incluirán los flujos principales de recarga, navegación y gestión de favoritos identificados durante la investigación.</p>
+                </div>
+            </section>
+
+            <!-- Test Phase -->
+            <section class="pv-section" id="testear">
+                <h2 class="pv-section-title">Testear</h2>
+                
+                <h3>Validación y testing</h3>
+                <div class="pv-callout">
+                    <p>Esta sección está pendiente de completar con los datos de testing y validación una vez finalizada la implementación del prototipo.</p>
+                </div>
+
+                <p>La fase de testing incluirá:</p>
+                <ul>
+                    <li>Tests de usabilidad con usuarios reales representativos de nuestras personas</li>
+                    <li>Evaluación de la comprensión del flujo de recarga NFC</li>
+                    <li>Validación de la eficacia de las recargas favoritas</li>
+                    <li>Medición de tiempo de completado de tareas críticas</li>
+                    <li>Análisis de satisfacción del usuario (SUS Score)</li>
+                </ul>
+
+                <p>Los resultados de testing permitirán validar las decisiones de diseño tomadas durante el proceso de rediseño y identificar oportunidades adicionales de mejora antes del lanzamiento final.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/project.js"></script>
+</body>
+</html>

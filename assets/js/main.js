@@ -382,9 +382,12 @@ function handleParallax() {
     const isMobile = window.innerWidth <= 968; // Match CSS breakpoint
     
     if (isMobile) {
-        // Mobile: Proper parallax - use CSS custom properties
-        domCache.heroImage.classList.add('hero-parallax-mobile');
-        domCache.heroImage.style.setProperty('--parallax-y', `${scrollY * 0.3}px`);
+        // Mobile: Proper parallax - image moves slower than scroll, behind content
+        domCache.heroImage.style.position = 'relative';
+        domCache.heroImage.style.transform = `translateY(${scrollY * 0.3}px)`;
+        domCache.heroImage.style.zIndex = '-1';
+        domCache.heroImage.style.bottom = '';
+        domCache.heroImage.style.right = '';
     } else {
         // Desktop: Window effect + parallax
         const aboutRect = domCache.aboutSection.getBoundingClientRect();
@@ -394,12 +397,16 @@ function handleParallax() {
         if (scrollY > aboutBottom) {
             // Parallax mode: image moves up slowly as we scroll down
             const parallaxAmount = (scrollY - aboutBottom) * 0.5;
-            domCache.heroImage.classList.add('hero-window-effect');
-            domCache.heroImage.style.setProperty('--window-bottom', `${parallaxAmount}px`);
+            domCache.heroImage.style.position = 'fixed';
+            domCache.heroImage.style.bottom = `${parallaxAmount}px`;
+            domCache.heroImage.style.right = '8%';
+            domCache.heroImage.style.transform = 'none';
         } else {
             // Window effect mode: image stays completely fixed
-            domCache.heroImage.classList.add('hero-fixed-bottom');
-            domCache.heroImage.classList.remove('hero-window-effect');
+            domCache.heroImage.style.position = 'fixed';
+            domCache.heroImage.style.bottom = '0';
+            domCache.heroImage.style.right = '8%';
+            domCache.heroImage.style.transform = 'none';
         }
     }
 }

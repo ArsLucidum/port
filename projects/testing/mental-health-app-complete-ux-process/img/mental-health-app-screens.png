@@ -1,0 +1,27 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#f8f9fa"/>
+  <rect x="50" y="50" width="200" height="350" rx="20" fill="#ffffff" stroke="#e9ecef" stroke-width="2"/>
+  <rect x="280" y="50" width="200" height="350" rx="20" fill="#ffffff" stroke="#e9ecef" stroke-width="2"/>
+  <rect x="510" y="50" width="200" height="350" rx="20" fill="#ffffff" stroke="#e9ecef" stroke-width="2"/>
+  
+  <!-- Screen 1 Content -->
+  <circle cx="150" cy="100" r="15" fill="#4ade80"/>
+  <rect x="75" y="140" width="150" height="8" rx="4" fill="#e9ecef"/>
+  <rect x="75" y="160" width="120" height="6" rx="3" fill="#f3f4f6"/>
+  <rect x="75" y="190" width="140" height="20" rx="10" fill="#3b82f6"/>
+  
+  <!-- Screen 2 Content -->
+  <rect x="300" y="90" width="160" height="8" rx="4" fill="#e9ecef"/>
+  <rect x="300" y="110" width="140" height="6" rx="3" fill="#f3f4f6"/>
+  <circle cx="380" cy="160" r="30" fill="#f59e0b"/>
+  <rect x="320" y="210" width="120" height="6" rx="3" fill="#e9ecef"/>
+  
+  <!-- Screen 3 Content -->
+  <rect x="530" y="90" width="160" height="40" rx="8" fill="#ecfdf5"/>
+  <rect x="540" y="100" width="60" height="4" rx="2" fill="#22c55e"/>
+  <rect x="540" y="110" width="80" height="4" rx="2" fill="#86efac"/>
+  <rect x="530" y="150" width="160" height="30" rx="6" fill="#fef3c7"/>
+  <rect x="540" y="160" width="70" height="4" rx="2" fill="#f59e0b"/>
+  
+  <text x="400" y="480" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="16">Mental Health App - Dashboard, Mood Tracking & Resources</text>
+</svg>

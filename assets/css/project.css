@@ -208,6 +208,25 @@
   position: relative;
   background: var(--bg);
   z-index: 100;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.pv-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 100%;
+  background: var(--bg);
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+/* Ensure full background coverage */
+body {
+  background: var(--bg);
 }
 
 /* ===== LEFT STICKY TIMELINE ===== */
@@ -215,7 +234,7 @@
   position: sticky;
   top: calc(var(--project-header-height) + 60px);
   height: calc(100vh - var(--project-header-height) - 60px);
-  background: transparent;
+  background: var(--bg);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -290,11 +309,14 @@
 /* ===== RIGHT CONTENT AREA ===== */
 .pv-content {
   background: var(--bg);
+  min-height: 100vh;
+  width: 100%;
 }
 
 .pv-section {
-  padding: var(--space-8) var(--space-8);
-  max-width: 800px;
+  padding: var(--space-8);
+  padding-left: var(--space-12);
+  max-width: 900px;
 }
 
 .pv-section:first-child {
@@ -405,7 +427,7 @@
 .pv-insight.info { border-top-color: var(--blue-variant); }
 
 .pv-insight-number {
-  font-size: var(--text-3xl);
+  font-size: var(--text-xl);
   font-weight: var(--font-weight-bold);
   color: var(--accent);
   margin-bottom: var(--space-2);
@@ -432,6 +454,144 @@
 .pv-highlight h3 {
   color: var(--fg);
   margin-top: 0;
+}
+
+/* Image Component */
+.pv-image {
+  margin: var(--space-8) 0;
+  text-align: center;
+}
+
+.pv-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pv-image-caption {
+  margin-top: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--muted);
+  font-style: italic;
+  text-align: center;
+}
+
+/* Quote Component */
+.pv-quote {
+  margin: var(--space-8) 0;
+  padding: var(--space-6) var(--space-8);
+  background: var(--surface);
+  border-left: 4px solid var(--accent);
+  position: relative;
+}
+
+.pv-quote::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  left: var(--space-4);
+  font-size: var(--text-4xl);
+  color: var(--accent);
+  line-height: 1;
+}
+
+.pv-quote p {
+  font-size: var(--text-lg);
+  font-style: italic;
+  color: var(--fg);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Icon Caption Component */
+.pv-icon-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-6);
+  background: var(--surface);
+  border-radius: var(--radius);
+  margin: var(--space-4) 0;
+}
+
+.pv-icon-caption-icon {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-3);
+  display: block;
+}
+
+.pv-icon-caption-title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--fg);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.pv-icon-caption-subtitle {
+  font-size: var(--text-sm);
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Callout Component */
+.pv-callout {
+  margin: var(--space-8) 0;
+  padding: var(--space-6);
+  background: linear-gradient(135deg, #fef3c7 0%, #fef3c7 100%);
+  border: 1px solid #f59e0b;
+  border-radius: var(--radius);
+  position: relative;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.1);
+}
+
+.pv-callout::before {
+  content: '💡';
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  font-size: var(--text-lg);
+  line-height: 1;
+}
+
+.pv-callout p {
+  font-size: inherit;
+  color: #92400e;
+  margin: 0;
+  padding-left: var(--space-8);
+  line-height: 1.6;
+  font-weight: var(--font-weight-regular);
+}
+
+/* Callout variants */
+.pv-callout.info {
+  background: linear-gradient(135deg, #dbeafe 0%, #dbeafe 100%);
+  border-color: #3b82f6;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+}
+
+.pv-callout.info::before {
+  content: 'ℹ️';
+}
+
+.pv-callout.info p {
+  color: #1e40af;
+}
+
+.pv-callout.warning {
+  background: linear-gradient(135deg, #fed7d7 0%, #fed7d7 100%);
+  border-color: #ef4444;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.1);
+}
+
+.pv-callout.warning::before {
+  content: '⚠️';
+}
+
+.pv-callout.warning p {
+  color: #dc2626;
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
@@ -509,6 +669,18 @@
   
   .pv-insights {
     grid-template-columns: 1fr;
+  }
+  
+  .pv-icon-caption {
+    padding: var(--space-4);
+  }
+  
+  .pv-callout {
+    padding: var(--space-4);
+  }
+  
+  .pv-callout p {
+    padding-left: var(--space-6);
   }
 }
 

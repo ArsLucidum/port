@@ -1,0 +1,80 @@
+<svg width="1000" height="700" viewBox="0 0 1000 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1000" height="700" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="500" y="40" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="20" font-weight="bold">Patient Portal Information Architecture</text>
+  
+  <!-- Home Node -->
+  <rect x="450" y="80" width="100" height="60" rx="8" fill="#3b82f6"/>
+  <text x="500" y="115" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">HOME</text>
+  
+  <!-- Level 1 Branches -->
+  <rect x="150" y="180" width="120" height="50" rx="6" fill="#10b981"/>
+  <text x="210" y="195" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Appointments</text>
+  <text x="210" y="210" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">& Scheduling</text>
+  
+  <rect x="300" y="180" width="120" height="50" rx="6" fill="#10b981"/>
+  <text x="360" y="195" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Medical</text>
+  <text x="360" y="210" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Records</text>
+  
+  <rect x="450" y="180" width="120" height="50" rx="6" fill="#10b981"/>
+  <text x="510" y="195" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Messages</text>
+  <text x="510" y="210" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">& Communication</text>
+  
+  <rect x="600" y="180" width="120" height="50" rx="6" fill="#10b981"/>
+  <text x="660" y="195" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Prescriptions</text>
+  <text x="660" y="210" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">& Refills</text>
+  
+  <rect x="750" y="180" width="120" height="50" rx="6" fill="#10b981"/>
+  <text x="810" y="195" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Billing &</text>
+  <text x="810" y="210" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Insurance</text>
+  
+  <!-- Connecting Lines -->
+  <line x1="500" y1="140" x2="210" y2="180" stroke="#64748b" stroke-width="2"/>
+  <line x1="500" y1="140" x2="360" y2="180" stroke="#64748b" stroke-width="2"/>
+  <line x1="500" y1="140" x2="510" y2="180" stroke="#64748b" stroke-width="2"/>
+  <line x1="500" y1="140" x2="660" y2="180" stroke="#64748b" stroke-width="2"/>
+  <line x1="500" y1="140" x2="810" y2="180" stroke="#64748b" stroke-width="2"/>
+  
+  <!-- Level 2 Sub-categories -->
+  <rect x="80" y="280" width="80" height="35" rx="4" fill="#e2e8f0"/>
+  <text x="120" y="302" text-anchor="middle" fill="#475569" font-family="Arial, sans-serif" font-size="8">View</text>
+  
+  <rect x="170" y="280" width="80" height="35" rx="4" fill="#e2e8f0"/>
+  <text x="210" y="302" text-anchor="middle" fill="#475569" font-family="Arial, sans-serif" font-size="8">Schedule</text>
+  
+  <rect x="260" y="280" width="80" height="35" rx="4" fill="#e2e8f0"/>
+  <text x="300" y="302" text-anchor="middle" fill="#475569" font-family="Arial, sans-serif" font-size="8">Cancel</text>
+  
+  <rect x="400" y="280" width="80" height="35" rx="4" fill="#e2e8f0"/>
+  <text x="440" y="302" text-anchor="middle" fill="#475569" font-family="Arial, sans-serif" font-size="8">Test Results</text>
+  
+  <rect x="490" y="280" width="80" height="35" rx="4" fill="#e2e8f0"/>
+  <text x="530" y="302" text-anchor="middle" fill="#475569" font-family="Arial, sans-serif" font-size="8">History</text>
+  
+  <rect x="580" y="280" width="80" height="35" rx="4" fill="#e2e8f0"/>
+  <text x="620" y="302" text-anchor="middle" fill="#475569" font-family="Arial, sans-serif" font-size="8">Documents</text>
+  
+  <!-- Key Features Box -->
+  <rect x="150" y="400" width="700" height="120" rx="8" fill="#f0f9ff" stroke="#3b82f6" stroke-width="2"/>
+  <text x="500" y="430" text-anchor="middle" fill="#1e40af" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Key Design Principles</text>
+  
+  <text x="200" y="455" fill="#1e40af" font-family="Arial, sans-serif" font-size="11">✓ Patient-centered navigation (not administrative)</text>
+  <text x="200" y="475" fill="#1e40af" font-family="Arial, sans-serif" font-size="11">✓ Maximum 3 clicks to reach critical information</text>
+  <text x="200" y="495" fill="#1e40af" font-family="Arial, sans-serif" font-size="11">✓ Multiple pathways for different user comfort levels</text>
+  
+  <text x="550" y="455" fill="#1e40af" font-family="Arial, sans-serif" font-size="11">✓ Plain language instead of medical jargon</text>
+  <text x="550" y="475" fill="#1e40af" font-family="Arial, sans-serif" font-size="11">✓ Mobile-first responsive design</text>
+  <text x="550" y="495" fill="#1e40af" font-family="Arial, sans-serif" font-size="11">✓ WCAG 2.1 AAA accessibility compliance</text>
+  
+  <!-- Lines to sub-categories -->
+  <line x1="210" y1="230" x2="120" y2="280" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="210" y1="230" x2="210" y2="280" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="210" y1="230" x2="300" y2="280" stroke="#94a3b8" stroke-width="1"/>
+  
+  <line x1="360" y1="230" x2="440" y2="280" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="360" y1="230" x2="530" y2="280" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="360" y1="230" x2="620" y2="280" stroke="#94a3b8" stroke-width="1"/>
+  
+  <text x="500" y="680" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="14">New Information Architecture - Organized Around Patient Goals</text>
+</svg>

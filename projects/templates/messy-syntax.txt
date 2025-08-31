@@ -1,0 +1,78 @@
+## Banking App Redesign - Improving Financial Literacy
+
+This project focused on redesigning a mobile banking app to make financial management more accessible and educational for younger users.
+
+### Research Phase
+
+I conducted interviews with 20 millennials and gen-z users to understand their banking habits and financial goals.
+
+{
+"type": "data-point"
+"data-text": "68%",
+subquote-text: of users felt overwhelmed by financial jargon
+}
+
+The research showed that traditional banking apps often intimidate younger users with complex terminology and cluttered interfaces.
+
+{
+type: quote,
+text: "I want to understand my money, not just move it around"
+}
+
+### Key Insights
+
+Most users wanted educational content integrated into their banking experience:
+
+{
+type: "icon-caption",
+icon: 📚,
+quote-text: "Learn While Banking",
+subquote-text: "Users wanted contextual financial education"
+}
+
+{
+type: data-point,
+data-text: "84%"
+subquote-text: "preferred bite-sized learning over long articles"
+}
+
+### Design Solutions
+
+I redesigned the app with focus on progressive disclosure and micro-learning:
+
+{
+type: 'image',
+image-source: banking-app-mockup.jpg,
+alt-text: Mobile banking app screens showing clean interface with educational tooltips,
+caption: New design featuring educational overlays and simplified transaction history
+}
+
+The new design included:
+- Contextual tips and explanations
+- Gamified savings goals
+- Simple budgeting tools
+
+{
+type: "quote-subtitle"
+quote-text: "Finally, a bank app that doesn't make me feel stupid",
+subquote-text: User testing feedback
+}
+
+### Results
+
+After launch, the app showed significant improvement in user engagement:
+
+{
+type="data-point",
+data-text: "156%",
+subquote-text: "increase in daily active users"
+}
+
+{
+type: icon-caption
+icon: "💡"
+quote-text: "Financial Confidence"
+subquote-text: "Users reported feeling more confident about their finances"
+}
+
+This project demonstrated how thoughtful UX design can bridge the gap between complex financial systems and everyday user needs.
